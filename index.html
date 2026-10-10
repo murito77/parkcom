@@ -557,9 +557,9 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
       <div class="ctrl-group">
         <div class="gt">Nómina (semifija)</div>
         <div class="ctrl"><label for="in_emp">Empleados operativos <output id="o_emp"></output></label><input type="range" id="in_emp" min="5" max="20" step="1"><div class="hint" id="h_emp"></div><div class="hint">Cocina, línea, lavaloza y limpieza; no incluye gerente, chef ni calidad. Al elegir un escenario se ajusta al volumen; después la controlas tú.</div></div>
-        <div class="ctrl"><label for="in_sal">Sueldo bruto prom. operativo / mes <output id="o_sal"></output></label><input type="range" id="in_sal" min="9600" max="15000" step="100"></div>
+        <div class="ctrl"><label for="in_sal">Sueldo bruto prom. operativo / mes <output id="o_sal"></output></label><input type="range" id="in_sal" min="0" max="15000" step="100"><div class="hint" id="h_sal"></div></div>
         <div class="ctrl"><label for="in_fac">Factor de carga patronal y prestaciones <output id="o_fac"></output></label><input type="range" id="in_fac" min="1.25" max="1.50" step="0.01"><div class="hint">IMSS, INFONAVIT, SAR, ISN, aguinaldo, vacaciones. Validar con contador.</div></div>
-        <div class="ctrl"><label for="in_mgmt">Gerencia + chef + calidad (bruto/mes) <output id="o_mgmt"></output></label><input type="range" id="in_mgmt" min="30000" max="80000" step="500"></div>
+        <div class="ctrl"><label for="in_mgmt">Gerencia + chef + calidad (bruto/mes) <output id="o_mgmt"></output></label><input type="range" id="in_mgmt" min="0" max="80000" step="500"><div class="hint" id="h_mgmt"></div></div>
       </div>
       <div class="ctrl-group">
         <div class="gt">Fijos, inversión y cobranza</div>
@@ -1075,6 +1075,13 @@ function update(){
   if(perOp > 40){ msg += ' Posible falta de capacidad para este volumen: valida con un operador.'; hEmp.style.color = 'var(--bad)'; }
   else if(perOp < 22){ msg += ' Plantilla holgada para este volumen.'; hEmp.style.color = 'var(--warn)'; }
   hEmp.textContent = msg;
+  var SM_MES = 9582.47, hSal = el('h_sal'), hMg = el('h_mgmt');
+  if(state.sal === 0){ hSal.textContent = 'Sin costo de nómina operativa: sólo sirve como ejercicio; el personal operativo siempre tendrá un costo.'; hSal.style.color = 'var(--warn)'; }
+  else if(state.sal < SM_MES){ hSal.textContent = 'Por debajo del salario mínimo 2026 (≈ $9,582/mes). No es legal para personal de tiempo completo.'; hSal.style.color = 'var(--bad)'; }
+  else { hSal.textContent = ''; }
+  if(state.mgmt === 0){ hMg.textContent = 'Sin sueldo de gerencia: equivale a que los socios cubran estos puestos sin cobrar. El costo existe aunque no se pague; considera su valor al negociar la sociedad.'; hMg.style.color = 'var(--warn)'; }
+  else if(state.mgmt < 30000){ hMg.textContent = 'Por debajo de lo que pagan las vacantes de la ZMG para los tres puestos (≈ $43–54k/mes).'; hMg.style.color = 'var(--warn)'; }
+  else { hMg.textContent = ''; }
   var payback = r.ebitda>0 ? (state.inv + r.wc)/r.ebitda : null;
   var outs = [
     ['Ventas mensuales (sin IVA)', mxnK(r.rev), 'Con IVA 16%: '+mxnK(r.rev*1.16)],
