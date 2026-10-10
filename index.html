@@ -530,7 +530,7 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
     <div class="chart-title">EBITDA mensual según comidas diarias, por escenario</div>
     <div class="chart-legend" id="lgEbitda"></div>
     <svg id="chartEbitda" viewBox="0 0 900 380" role="img" aria-label="Gráfica de EBITDA mensual contra comidas por día para escenarios conservador, base y favorable"></svg>
-    <p class="small" style="margin:4px 6px 8px">Los escalones reflejan la contratación de personal adicional cada vez que el volumen supera la productividad supuesta. La línea punteada es tu configuración actual del simulador.</p>
+    <p class="small" style="margin:4px 6px 8px">En los tres escenarios, los escalones reflejan la contratación de personal adicional cada vez que el volumen supera la productividad supuesta. La línea punteada es tu simulación: mantiene fija la plantilla que elijas, por lo que muestra qué pasaría con el mismo equipo a otros volúmenes.</p>
   </div>
 
   <h3 id="simulador">Simulador</h3>
@@ -556,7 +556,7 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
       </div>
       <div class="ctrl-group">
         <div class="gt">Nómina (semifija)</div>
-        <div class="ctrl"><label for="in_prod">Comidas / día por operativo <output id="o_prod"></output></label><input type="range" id="in_prod" min="20" max="45" step="1"></div>
+        <div class="ctrl"><label for="in_emp">Empleados operativos <output id="o_emp"></output></label><input type="range" id="in_emp" min="5" max="20" step="1"><div class="hint" id="h_emp"></div><div class="hint">Cocina, línea, lavaloza y limpieza; no incluye gerente, chef ni calidad. Al elegir un escenario se ajusta al volumen; después la controlas tú.</div></div>
         <div class="ctrl"><label for="in_sal">Sueldo bruto prom. operativo / mes <output id="o_sal"></output></label><input type="range" id="in_sal" min="9600" max="15000" step="100"></div>
         <div class="ctrl"><label for="in_fac">Factor de carga patronal y prestaciones <output id="o_fac"></output></label><input type="range" id="in_fac" min="1.25" max="1.50" step="0.01"><div class="hint">IMSS, INFONAVIT, SAR, ISN, aguinaldo, vacaciones. Validar con contador.</div></div>
         <div class="ctrl"><label for="in_mgmt">Gerencia + chef + calidad (bruto/mes) <output id="o_mgmt"></output></label><input type="range" id="in_mgmt" min="30000" max="80000" step="500"></div>
@@ -577,7 +577,7 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
         <p class="small" style="margin:6px 4px">Nómina y fijos se reparten entre las comidas del mes; por eso bajan por comida cuando sube el volumen.</p>
       </div>
       <div class="chart-box">
-        <div class="chart-title">Sensibilidad del EBITDA mensual (± 10% en cada variable)</div>
+        <div class="chart-title">Sensibilidad del EBITDA mensual (± 10% en cada variable; empleados ± 1)</div>
         <div id="tornado"></div>
       </div>
     </div>
@@ -593,7 +593,7 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
       <p style="margin-bottom:0"><strong>EBIT</strong> = EBITDA − depreciación (equipo / 60 meses)</p>
     </div>
     <div class="card" style="font-size:.9rem">
-      <p><strong>Punto de equilibrio</strong> = menor volumen diario con EBITDA ≥ 0 (calculado iterando, porque la nómina sube por escalones)</p>
+      <p><strong>Punto de equilibrio</strong> = menor volumen diario con EBITDA ≥ 0 (calculado iterando; en los escenarios la nómina sube por escalones, en el simulador se mantiene la plantilla elegida)</p>
       <p><strong>Capital de trabajo</strong> = costos de efectivo diarios × días de cobro − compras diarias de insumos × días de pago + 5 días de inventario</p>
       <p><strong>Flujo antes de impuestos</strong> = EBITDA − aumento de capital de trabajo − inversión</p>
       <p style="margin-bottom:0"><strong>Recuperación (aprox.)</strong> = (inversión + capital de trabajo) ÷ EBITDA mensual. Indicador burdo: ignora impuestos, rampa de arranque y costo del dinero.</p>
@@ -952,7 +952,7 @@ function calc(q, a){
   var foodC = meals * a.food;
   var ovC = meals * a.ov;
   var concC = rev * a.conc / 100;
-  var ops = Math.max(MIN_OPS, Math.ceil(q / a.prod));
+  var ops = (a.emp != null) ? a.emp : Math.max(MIN_OPS, Math.ceil(q / a.prod));
   var opsPay = ops * a.sal * a.fac;
   var mgmtPay = a.mgmt * a.fac;
   var labor = opsPay + mgmtPay;
@@ -1051,14 +1051,15 @@ function renderTimeline(){
 }
 
 /* ---------- Simulador ---------- */
-var FIELDS = ['q','days','price','food','ov','conc','prod','sal','fac','mgmt','oth','inv','dso','dpo'];
+var FIELDS = ['q','days','price','food','ov','conc','emp','sal','fac','mgmt','oth','inv','dso','dpo'];
 var FMT = {q:function(v){return v;},days:function(v){return v;},price:function(v){return mxn(v);},food:function(v){return mxn(v,2);},ov:function(v){return mxn(v,2);},
-  conc:function(v){return v+'%';},prod:function(v){return v;},sal:function(v){return mxn(v);},fac:function(v){return '×'+(+v).toFixed(2);},mgmt:function(v){return mxn(v);},
+  conc:function(v){return v+'%';},emp:function(v){return v+' personas';},sal:function(v){return mxn(v);},fac:function(v){return '×'+(+v).toFixed(2);},mgmt:function(v){return mxn(v);},
   oth:function(v){return mxn(v);},inv:function(v){return mxnK(v);},dso:function(v){return v+' d';},dpo:function(v){return v+' d';}};
-var state = Object.assign({q:500},SCEN.base);
+function staffFor(q,k){ return Math.min(20, Math.max(5, Math.ceil(q / SCEN[k].prod))); }
+var state = Object.assign({q:500},SCEN.base); state.emp = staffFor(500,'base');
 
 function loadPreset(k){
-  var q = state.q; state = Object.assign({},SCEN[k]); state.q = q;
+  var q = state.q; state = Object.assign({},SCEN[k]); state.q = q; state.emp = staffFor(q,k);
   FIELDS.forEach(function(f){ el('in_'+f).value = state[f]; });
   Array.prototype.forEach.call(document.querySelectorAll('.preset button'),function(b){ b.classList.toggle('on', b.getAttribute('data-p')===k); });
   update();
@@ -1068,6 +1069,12 @@ function readInputs(){ FIELDS.forEach(function(f){ state[f] = parseFloat(el('in_
 function update(){
   FIELDS.forEach(function(f){ el('o_'+f).textContent = FMT[f](state[f]); });
   var r = calc(state.q, state), be = breakeven(state);
+  var perOp = state.q / state.emp, hEmp = el('h_emp');
+  var msg = 'Equivale a ' + perOp.toFixed(0) + ' comidas/día por operativo (referencia del modelo: 30–34, supuesto).';
+  hEmp.style.color = '';
+  if(perOp > 40){ msg += ' Posible falta de capacidad para este volumen: valida con un operador.'; hEmp.style.color = 'var(--bad)'; }
+  else if(perOp < 22){ msg += ' Plantilla holgada para este volumen.'; hEmp.style.color = 'var(--warn)'; }
+  hEmp.textContent = msg;
   var payback = r.ebitda>0 ? (state.inv + r.wc)/r.ebitda : null;
   var outs = [
     ['Ventas mensuales (sin IVA)', mxnK(r.rev), 'Con IVA 16%: '+mxnK(r.rev*1.16)],
@@ -1079,7 +1086,7 @@ function update(){
     ['Utilidad bruta / mes', mxnK(r.gross), 'Ventas − alimentos − desechables/gas − nómina operativa'],
     ['EBITDA / mes', mxnK(r.ebitda), 'Margen '+pct(r.margin)],
     ['EBIT / mes', mxnK(r.ebit), 'Depreciación '+mxnK(r.dep)+'/mes'],
-    ['Punto de equilibrio', be?(be+' comidas/día'):'No se alcanza', be?('Volumen actual '+Math.abs(Math.round((state.q/be-1)*100))+'% '+(state.q>=be?'por encima':'por debajo')):'Ni con 2,000 comidas/día'],
+    ['Punto de equilibrio', be?(be+' comidas/día'):'No se alcanza', be?('Con '+state.emp+' operativos fijos · volumen actual '+Math.abs(Math.round((state.q/be-1)*100))+'% '+(state.q>=be?'por encima':'por debajo')):'Ni con 2,000 comidas/día y '+state.emp+' operativos'],
     ['Capital de trabajo', mxnK(r.wc), state.dso+' d cobro · '+state.dpo+' d pago'],
     ['Recuperación aprox.', payback?(payback.toFixed(1)+' meses'):'Sin EBITDA positivo', '(inversión + capital) ÷ EBITDA']
   ];
@@ -1112,11 +1119,12 @@ function renderCostBars(r){
 
 function renderTornado(){
   var base = calc(state.q, state).ebitda;
-  var vars = [['Comidas/día','q'],['Precio','price'],['Costo de alimentos','food'],['Sueldo operativo','sal'],['Productividad','prod'],['Días operativos','days']];
+  var vars = [['Comidas/día','q'],['Precio','price'],['Costo de alimentos','food'],['Sueldo operativo','sal'],['Empleados (±1)','emp'],['Días operativos','days']];
   var res = vars.map(function(v){
     var lo = Object.assign({},state), hi = Object.assign({},state);
     lo[v[1]] = state[v[1]]*0.9; hi[v[1]] = state[v[1]]*1.1;
     if(v[1]==='days'){ lo.days=Math.round(lo.days); hi.days=Math.round(hi.days); }
+    if(v[1]==='emp'){ lo.emp=state.emp-1; hi.emp=state.emp+1; }
     var a = calc(lo.q,lo).ebitda - base, b = calc(hi.q,hi).ebitda - base;
     return {n:v[0], lo:a, hi:b, span:Math.abs(a)+Math.abs(b)};
   }).sort(function(x,y){return y.span-x.span;});
@@ -1126,7 +1134,7 @@ function renderTornado(){
     function seg(v,lbl){ var w = Math.abs(v)/max*50; var left = v<0 ? 50-w : 50; return '<div title="'+lbl+': '+mxnK(v)+'" style="position:absolute;top:2px;bottom:2px;left:'+left.toFixed(2)+'%;width:'+w.toFixed(2)+'%;background:'+(v<0?'#C97A6E':'#7FA58C')+';border-radius:2px"></div>'; }
     h += '<div class="barrow" style="grid-template-columns:140px 1fr 150px"><span>'+r.n+'</span><div style="position:relative;height:18px;background:#F4F0E7;border-radius:3px">'+seg(r.lo,'−10%')+seg(r.hi,'+10%')+'<div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#9A948A"></div></div><span style="font-size:.76rem;text-align:right;font-variant-numeric:tabular-nums">'+sgn(Math.min(r.lo,r.hi))+' / '+sgn(Math.max(r.lo,r.hi))+'</span></div>';
   });
-  h += '<p class="small" style="margin:6px 4px 0">Cambio en EBITDA mensual al mover cada variable −10% / +10% manteniendo las demás. Rojo reduce, verde aumenta.</p>';
+  h += '<p class="small" style="margin:6px 4px 0">Cambio en EBITDA mensual al mover cada variable −10% / +10% (empleados −1 / +1) manteniendo las demás. Rojo reduce, verde aumenta.</p>';
   el('tornado').innerHTML = h;
 }
 
