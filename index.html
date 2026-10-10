@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Evaluación preliminar · Comedores industriales ZMG</title>
-<meta name="description" content="Evaluación preliminar de la oportunidad de crear una empresa de comedores industriales en la Zona Metropolitana de Guadalajara, con un comedor de 500+ usuarios como primer caso de estudio.">
+<title>Cocina y distribución · Parques ZMG</title>
+<meta name="description" content="Evaluación preliminar (versión 3) de una cocina de producción externa que distribuye comida a parques industriales de la Zona Metropolitana de Guadalajara, con simulador financiero.">
 <style>
 :root{
   --bg:#FAF8F3; --paper:#FFFFFF; --ink:#24221F; --ink-2:#4A4741; --muted:#77736B;
@@ -71,6 +71,7 @@ ul.clean li{margin:.3rem 0}
 .t-est{background:var(--warn-soft);color:var(--warn)}
 .t-sup{background:var(--accent-soft);color:var(--accent)}
 .t-ver{background:var(--bad-soft);color:var(--bad)}
+.t-jun{background:#ECE6F2;color:#5B4A7A}
 .legend-tags{display:flex;flex-wrap:wrap;gap:10px 16px;font-size:.85rem;color:var(--ink-2);margin:12px 0 4px}
 /* KPI tiles */
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}
@@ -143,6 +144,8 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 .barrow{display:grid;grid-template-columns:160px 1fr 70px;gap:10px;align-items:center;font-size:.84rem;margin:7px 0}
 .barrow .track{height:14px;background:#F1ECE2;border-radius:3px;overflow:hidden}
 .barrow .fill{height:100%;background:var(--accent-2)}
+.barrow.tor{grid-template-columns:170px 1fr 150px}
+@media (max-width:680px){.barrow.tor{grid-template-columns:92px 1fr 108px;font-size:.72rem;gap:6px}}
 @media (max-width:900px){
   .sim{grid-template-columns:1fr}
   .kpis{grid-template-columns:repeat(2,1fr)}
@@ -167,20 +170,20 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 
 <nav class="topnav" aria-label="Secciones">
   <div class="wrap">
-    <a class="brand" href="#portada">Comedores <b>ZMG</b><span> · evaluación preliminar</span></a>
+    <a class="brand" href="#portada">Cocina <b>+</b> distribución<span> · parques ZMG</span></a>
     <div class="navlinks" id="navlinks">
       <a href="#resumen">Resumen</a>
       <a href="#oportunidad">Oportunidad</a>
       <a href="#mercado">Mercado MX</a>
       <a href="#jalisco">Jalisco/ZMG</a>
-      <a href="#modelos">Modelos</a>
+      <a href="#modelos">Modelo</a>
       <a href="#operacion">Operación</a>
       <a href="#finanzas">Finanzas</a>
       <a href="#competencia">Competencia</a>
       <a href="#legal">Regulación</a>
-      <a href="#socio">Mi aportación</a>
+      <a href="#socio">Tu rol</a>
       <a href="#sociedad">Sociedad</a>
-      <a href="#reunion">Reunión</a>
+      <a href="#reunion">Propuesta 17‑oct</a>
       <a href="#riesgos">Riesgos y plan</a>
       <a href="#conclusion">Conclusión</a>
       <a href="#fuentes">Fuentes</a>
@@ -190,18 +193,19 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 
 <header class="cover" id="portada">
   <div class="wrap">
-    <div class="eyebrow">Evaluación preliminar · Documento de trabajo</div>
-    <h1>¿Existe un negocio de comedores industriales en la ZMG, y bajo qué condiciones vale la pena entrar como socio?</h1>
-    <p class="lede">Análisis de mercado, modelo operativo, economía unitaria y guía de validación, usando como primer caso de estudio un posible comedor de más de 500 usuarios en un parque industrial por abrir.</p>
+    <div class="eyebrow">Evaluación preliminar · Versión 3 · Cocina externa y distribución</div>
+    <h1>¿Hay un negocio en producir fuera del parque y distribuir comida a las empresas que trabajan dentro?</h1>
+    <p class="lede">Plan reestructurado tras la primera reunión: una cocina de producción en un local rentado, 3 cocineros y tú en compras y reparto, con un contrato ancla en el Parque 1 como punto de partida y la posibilidad de crecer a otros parques.</p>
     <dl class="meta-grid">
-      <div><dt>Fecha de investigación</dt><dd>9 de octubre de 2026</dd></div>
-      <div><dt>Alcance geográfico</dt><dd>México · Jalisco · Zona Metropolitana de Guadalajara</dd></div>
+      <div><dt>Fecha</dt><dd>9 oct 2026 · versión 3: 10 oct 2026</dd></div>
+      <div><dt>Alcance</dt><dd>Parque 1 (800–1,000 empleados), Parque 2 y otros parques de la ZMG</dd></div>
       <div><dt>Moneda</dt><dd>MXN, antes de IVA salvo indicación</dd></div>
-      <div><dt>Estado</dt><dd>Hipótesis a validar; no es una decisión</dd></div>
+      <div><dt>Estado</dt><dd>Propuesta base para el sábado 17 de octubre</dd></div>
     </dl>
     <div class="legend-tags" aria-label="Tipos de dato">
       <span><span class="tag t-dato">Dato</span> observado en fuente citada</span>
-      <span><span class="tag t-terc">Tercero</span> proyección o cifra de consultora, no verificada</span>
+      <span><span class="tag t-jun">Junta</span> declarado en la reunión del 10‑oct, sin verificar</span>
+      <span><span class="tag t-terc">Tercero</span> cifra de consultora, no verificada</span>
       <span><span class="tag t-est">Estimación</span> cálculo propio con método explícito</span>
       <span><span class="tag t-sup">Supuesto</span> valor ilustrativo, editable, sin cotización</span>
       <span><span class="tag t-ver">Verificar</span> sólo se resuelve con campo o asesoría</span>
@@ -215,43 +219,50 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 <section class="sec" id="resumen">
 <div class="wrap">
   <div class="secnum">01 · RESUMEN EJECUTIVO</div>
-  <h2>Hay un mercado real; todavía no hay un negocio comprobado</h2>
-  <p class="intro">El contexto industrial de Guadalajara es favorable y el modelo de comedor puede ser rentable, pero la rentabilidad depende casi por completo de tres variables que hoy son desconocidas: <strong>quién paga y a qué precio</strong>, <strong>cuántas comidas reales se venderán desde el primer mes</strong> y <strong>quién pone la cocina</strong>. La conclusión honesta hoy es: <em>no hay veredicto todavía; sí vale la pena una validación de bajo costo.</em></p>
+  <h2>La nueva jugada: una cocina propia que abastece al parque, no un comedor dentro de él</h2>
+  <p class="intro">El plan cambió. Ya no se trata de instalar un comedor industrial, sino de <strong>operar una cocina de producción en un local rentado y distribuir platillos</strong> al Parque 1, y después a otros parques. Arrancarías con 3 cocineros y tú a cargo de compras y reparto. El cliente que hace viable el arranque es la empresa más grande del parque: 150 empleados hoy y 350 en unos 6 meses. Su proveedor actual no la tiene contenta y está dispuesta a subsidiar el 50% de la comida.</p>
 
   <div class="kpis">
-    <div class="kpi"><div class="v">5.9 M m²</div><div class="l">Inventario industrial clase A de Guadalajara, 2T 2026</div><div class="s"><span class="tag t-dato">Dato</span> CBRE <sup class="ref"><a href="#s1">[1]</a></sup></div></div>
-    <div class="kpi"><div class="v">530,075</div><div class="l">Asegurados IMSS en industria de transformación, Jalisco, jun 2026</div><div class="s"><span class="tag t-dato">Dato</span> IIEG/IMSS <sup class="ref"><a href="#s5">[5]</a></sup></div></div>
-    <div class="kpi"><div class="v">~280</div><div class="l">Comidas/día de equilibrio en el escenario base del modelo</div><div class="s"><span class="tag t-est">Estimación</span> con supuestos editables</div></div>
-    <div class="kpi"><div class="v">$23.46</div><div class="l">20% de la UMA 2026: cuota mínima típica del trabajador en esquemas híbridos</div><div class="s"><span class="tag t-dato">Dato</span> LSS art. 27-V, UMA 2026 <sup class="ref"><a href="#s9">[9]</a></sup></div></div>
+    <div class="kpi"><div class="v">150 → 350</div><div class="l">Empleados de la empresa ancla, hoy y en ~6 meses</div><div class="s"><span class="tag t-jun">Junta</span> de segunda mano</div></div>
+    <div class="kpi"><div class="v">≈ $1.0 M</div><div class="l">Inversión inicial con van usada y cocina equipada desde cero (≈ $0.7 M si arriendas la van)</div><div class="s"><span class="tag t-est">Estimación</span> sin cotizaciones</div></div>
+    <div class="kpi"><div class="v">≈ $1.2 M</div><div class="l">Capital máximo que necesitarían los socios, incluido el capital de trabajo (escenario base, van usada)</div><div class="s"><span class="tag t-est">Estimación</span> cobro a 30 días</div></div>
+    <div class="kpi"><div class="v">Mes 14</div><div class="l">Recuperación en el escenario base con van usada; mes 12 con van arrendada</div><div class="s"><span class="tag t-est">Estimación</span> antes de impuestos</div></div>
   </div>
 
   <div class="cols">
     <div>
-      <h3>Lo que sabemos</h3>
+      <h3>Cómo funcionaría</h3>
       <ul class="clean">
-        <li>Guadalajara sigue sumando espacio industrial: ~425 mil m² en construcción al 2T 2026, concentrados en <strong>El Salto</strong>, con vacancia al alza (6.0%) <sup class="ref"><a href="#s1">[1]</a></sup>.</li>
-        <li>Jalisco tuvo absorción industrial récord en 2025 (677,906 m²) <sup class="ref"><a href="#s3">[3]</a></sup> y ~150 parques industriales, casi todos en corredores de la ZMG <sup class="ref"><a href="#s4">[4]</a></sup>.</li>
-        <li>El empleo formal de Jalisco está prácticamente plano en 2026 (+0.8% anual a junio); la manufactura crece algo más (+1.3%) <sup class="ref"><a href="#s5">[5]</a></sup>. Más naves no significa automáticamente más comensales.</li>
-        <li>Hay operadores nacionales, multinacionales y regionales activos en la ZMG (p. ej., Grupo Servi‑A en El Salto, Live Natura en Guadalajara/Tlajomulco) <sup class="ref"><a href="#s14">[14]</a></sup><sup class="ref"><a href="#s15">[15]</a></sup>.</li>
-        <li>El marco laboral encarece la operación: salario mínimo $315.04/día en 2026 (+13%) y reducción de jornada a 46 h en 2027 hasta 40 h en 2030 <sup class="ref"><a href="#s8">[8]</a></sup><sup class="ref"><a href="#s12">[12]</a></sup>.</li>
+        <li><strong>Producción en un local rentado</strong> cerca del parque, porque dentro no hay gas ni permiso para cocinar.</li>
+        <li><strong>Equipo inicial:</strong> 3 cocineros. Tú haces compras, carga, reparto y administración.</li>
+        <li><strong>Entrega diaria en caliente</strong> a la empresa ancla. Hoy no tiene comedor: su proveedor actual lleva la comida y la empresa coloca mesas y sillas de manera informal.</li>
+        <li><strong>Venta del mismo menú</strong> a empleados de otras empresas del parque, aprovechando La Terraza y el mismo envío.</li>
+        <li><strong>Contrato con la ancla:</strong> mínimo de 150 platillos diarios, 50% pagado por la empresa, subiendo conforme crece su plantilla.</li>
+        <li><strong>Crecimiento:</strong> más personal de cocina conforme sube el volumen y, después, una segunda ruta para el Parque 2 y otros parques.</li>
       </ul>
     </div>
     <div>
-      <h3>Lo que no sabemos (y decide todo)</h3>
+      <h3>Qué decide si funciona</h3>
       <ul class="clean">
-        <li>Si existe una <strong>empresa ancla</strong> y cuántas personas trabajarán en el parque, por turno y en qué fechas.</li>
-        <li>Si el cliente será el <strong>desarrollador del parque, cada inquilino o los trabajadores</strong>, y quién garantiza volumen.</li>
-        <li>Si hay <strong>cocina construida y equipada</strong>; sin ella, la inversión puede pasar de cientos de miles a varios millones de pesos <span class="tag t-sup">Supuesto</span>.</li>
-        <li>El <strong>precio</strong> que el mercado local paga por comida y los <strong>plazos de cobro</strong>.</li>
-        <li>Qué espera el socio de ti (tiempo, dinero, rol) y qué aporta él además del contacto.</li>
+        <li><strong>El mínimo de 150.</strong> Con él, el escenario base genera ≈ $83k de EBITDA en el mes 1. Sin él, ≈ $38k. En el escenario conservador, sin mínimo, pierde ≈ $35k desde el arranque.</li>
+        <li><strong>Que la ancla llegue a 350 empleados.</strong> Ahí está el salto de ≈ 130 a ≈ 300 platillos diarios, y en el mes 12 el EBITDA base llega a ≈ $143k (margen ≈ 20%).</li>
+        <li><strong>Precio, costo y productividad.</strong> Con $78 por platillo, costos más altos y 35 platillos por persona (escenario conservador), el negocio pierde dinero en cuanto contrata para crecer. Su equilibrio está en ≈ 345 platillos diarios.</li>
+        <li><strong>Tu tiempo.</strong> Compras de madrugada y reparto al mediodía no caben junto con un empleo de oficina y un restaurante. Si pagas tu función a precio de mercado (≈ $25k), la recuperación pasa del mes 14 al 17.</li>
+        <li><strong>La concentración.</strong> Al inicio, casi todo el ingreso depende de un solo contrato.</li>
       </ul>
     </div>
   </div>
 
   <div class="verdict">
-    <h3>Valoración preliminar</h3>
-    <p>La oportunidad es <strong>atractiva como hipótesis</strong>: acceso preferente a un parque nuevo en un mercado industrial en expansión, con un modelo que, a volúmenes de 400–600 comidas diarias y precios cercanos a $80, puede generar márgenes EBITDA de un dígito alto o bajo doble dígito en el modelo ilustrativo. Pero es <strong>frágil</strong>: en el escenario conservador del mismo modelo (precio $75, 22 días, productividad baja) la unidad <strong>no alcanza equilibrio ni con 650 comidas</strong>. La diferencia entre ambos mundos no la decide la cocina, la decide el contrato.</p>
-    <p style="margin-bottom:0"><strong>Siguiente paso recomendado:</strong> una validación de ~30 días sin inversión de capital ni firma de sociedad (ver <a href="#riesgos">plan</a>), centrada en obtener por escrito: cliente contractual, volumen mínimo, precio, infraestructura y condiciones del parque.</p>
+    <h3>Valoración</h3>
+    <p>El modelo es <strong>más simple y más escalable</strong> que un comedor en sitio: la cocina y el vehículo sirven para cualquier parque cercano. En el escenario base es atractivo, pero <strong>toda la viabilidad inicial descansa en un solo contrato</strong>, y el escenario conservador muestra que precio y productividad mal calibrados lo vuelven deficitario. Recomendaciones:</p>
+    <ul class="clean">
+      <li>No firmar el local ni comprar equipo antes de tener una carta de intención de la ancla con precio y mínimo.</li>
+      <li>Empezar con van usada o arrendada, no con food truck. El food truck eleva la inversión a ≈ $1.5 M y no sustituye a la cocina.</li>
+      <li>Cotizar equipo de cocina usado.</li>
+      <li>Presupuestar desde el mes 4–6 un repartidor y un encargado, para que tu tiempo no sea el cuello de botella.</li>
+    </ul>
+    <p style="margin-bottom:0">Todo se puede probar en el <a href="#simulador">simulador</a>.</p>
   </div>
 </div>
 </section>
@@ -259,21 +270,38 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 <!-- ================= OPORTUNIDAD ================= -->
 <section class="sec" id="oportunidad">
 <div class="wrap">
-  <div class="secnum">02 · FICHA DE LA OPORTUNIDAD</div>
-  <h2>Qué es un hecho y qué es todavía una hipótesis</h2>
+  <div class="secnum">02 · LA OPORTUNIDAD</div>
+  <h2>Qué sabemos y qué falta confirmar</h2>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Elemento</th><th>Lo que se sabe</th><th>Estatus</th><th>Cómo validarlo</th></tr></thead>
     <tbody>
-      <tr><td>Socio potencial</td><td>Opera un food truck en un parque industrial de la ZMG; vende desayunos a ~50–100 personas/día.</td><td><span class="tag t-dato">Hecho declarado</span></td><td>Ver ventas, tickets promedio, permisos y costos reales de su operación actual.</td></tr>
-      <tr><td>Acceso comercial</td><td>Relación con el dueño/desarrollador de varios parques; uno nuevo está por abrir.</td><td><span class="tag t-ver">Verificar</span></td><td>Reunión directa con el desarrollador; quién decide y bajo qué figura contrata.</td></tr>
-      <tr><td>Volumen</td><td>"Más de 500 personas al día" mencionado verbalmente.</td><td><span class="tag t-ver">Hipótesis</span></td><td>Plantilla prevista por inquilino, turnos, fechas de arranque y rampa de ocupación.</td></tr>
-      <tr><td>Empresa ancla</td><td>No confirmada.</td><td><span class="tag t-ver">Desconocido</span></td><td>Nombre, giro, plantilla, si ya tiene comedor propio o proveedor.</td></tr>
-      <tr><td>Contrato o compromiso</td><td>No existe.</td><td><span class="tag t-ver">Desconocido</span></td><td>Carta de intención, términos de concesión o solicitud de propuesta.</td></tr>
-      <tr><td>Infraestructura</td><td>No se sabe si hay comedor/cocina construida.</td><td><span class="tag t-ver">Desconocido</span></td><td>Planos, visita física, instalaciones de gas, extracción, drenaje y trampas de grasa.</td></tr>
-      <tr><td>Tu rol</td><td>Posible socio operativo y profesionalizador; sin acuerdo de capital, sueldo ni participación.</td><td><span class="tag t-ver">Por definir</span></td><td>Conversación explícita de expectativas (ver <a href="#sociedad">sección 11</a>).</td></tr>
+      <tr><td>Parque 1</td><td>Abierto, 90% ocupado, 800–1,000 empleados.</td><td><span class="tag t-jun">Junta</span></td><td>Lista de inquilinos con plantilla, turnos y quién les da de comer hoy.</td></tr>
+      <tr><td>Parque 2</td><td>Contiguo, en construcción; se ocupará en 1–2 años.</td><td><span class="tag t-jun">Junta</span></td><td>Calendario de entrega e inquilinos comprometidos.</td></tr>
+      <tr><td>Empresa ancla</td><td>150 empleados hoy, 350 en ~6 meses. Sin comedor: un food service lleva la comida y la empresa coloca mesas y sillas de manera informal. $100 por platillo, 50% subsidiado. Inconforme con calidad y precio.</td><td><span class="tag t-jun">Junta</span> de segunda mano</td><td>Reunión con RH o compras: turnos, qué incluye el precio, contrato vigente, calendario de contratación.</td></tr>
+      <tr><td>Exclusividad</td><td>Un familiar del contacto es dueño de los parques; el contacto sería el único autorizado para vender alimentos.</td><td><span class="tag t-ver">Verificar</span></td><td>Documento con alcance y plazo, a nombre de la nueva empresa. No impide que cada empresa elija proveedor, como muestra la ancla.</td></tr>
+      <tr><td>La Terraza</td><td>Módulo fijo del contacto junto al área común; snacks y lonches; ~50 clientes/día. Lo quiere conservar.</td><td><span class="tag t-jun">Junta</span></td><td>Ventas, ticket, permisos y si puede vender la comida del día.</td></tr>
+      <tr><td>Infraestructura del parque</td><td>Sin gas; no se puede cocinar dentro.</td><td><span class="tag t-jun">Junta</span></td><td>La producción tiene que ser externa. Confirmar acceso de vehículos y horarios.</td></tr>
+      <tr><td>Cocina del restaurante</td><td>No es opción por capacidad.</td><td><span class="tag t-dato">Decidido</span></td><td>Se renta un local propio para producir.</td></tr>
+      <tr><td>Equipo y roles</td><td>3 cocineros; tú en compras y distribución. El contacto quiere administrar y auditar, no operar.</td><td><span class="tag t-dato">Plan</span></td><td>Definir dedicación, firmas y compensación (<a href="#sociedad">sección 11</a>).</td></tr>
+      <tr><td>Siguiente paso</td><td>Presentar una propuesta base el sábado 17 de octubre.</td><td><span class="tag t-dato">Acordado</span></td><td><a href="#reunion">Sección 12</a></td></tr>
     </tbody>
   </table></div>
-  <div class="callout warn"><p><strong>Brecha de escala.</strong> Pasar de 50–100 desayunos desde un food truck a 500+ comidas en un comedor formal no es crecer 5 veces la misma operación: implica producción por lotes, cadena de frío, nómina de 15–20 personas, control sanitario documentado, facturación a empresas y, probablemente, registro como prestador de servicios especializados. Ni la experiencia del food truck ni la de un restaurante pequeño cubren esto por sí solas.</p></div>
+
+  <h3>Demanda alcanzable, de personas a platillos</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Segmento</th><th class="num">Personas</th><th>Supuesto</th><th class="num">Platillos/día</th></tr></thead>
+    <tbody>
+      <tr><td>Empresa ancla, arranque</td><td class="num">150</td><td>75–90% come cada día (ausencias, quien trae comida)</td><td class="num">110–135 consumidos · 150 garantizados</td></tr>
+      <tr><td>Empresa ancla, en ~6 meses</td><td class="num">350</td><td>75–90% de participación</td><td class="num">260–315</td></tr>
+      <tr><td>Otros empleados del Parque 1 (venta directa)</td><td class="num">650–850</td><td>3–10% compra la comida del día sin subsidio</td><td class="num">20–80</td></tr>
+      <tr><td>Otras empresas del Parque 1 con contrato</td><td class="num">por definir</td><td>1–3 empresas con esquema subsidiado</td><td class="num">100–300</td></tr>
+      <tr><td>Parque 2 y otros parques (segunda ruta)</td><td class="num">por definir</td><td>Ocupación gradual; requiere otro vehículo o turno de reparto</td><td class="num">—</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tbl-note">Personas: <span class="tag t-jun">Junta</span>. Participación y porcentajes: <span class="tag t-sup">Supuesto</span>.</p>
+
+  <div class="callout warn"><p><strong>El mínimo de 150 equivale al 100% de la plantilla actual.</strong> Si come el 85% (≈ 128 personas), la empresa pagaría unos 22 platillos diarios que nadie consume, ≈ $44k al mes, hasta que crezca. Puede aceptarlo si el precio total y la calidad son mejores que hoy, pero conviene llevar una alternativa: por ejemplo 120 garantizados, o el 85% de la plantilla activa, lo que sea mayor.</p></div>
+  <div class="callout neutral"><p><strong>Toda la información de la ancla es de segunda mano.</strong> Precio, subsidio, descontento y plan de crecimiento llegaron a través del contacto. Hay que confirmarlos directamente antes de fijar precio y mínimo.</p></div>
 </div>
 </section>
 
@@ -282,7 +310,7 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 <div class="wrap">
   <div class="secnum">03 · MERCADO MEXICANO</div>
   <h2>No hay una cifra pública confiable del mercado de comedores industriales</h2>
-  <p class="intro">Las cifras disponibles miden mercados mucho más amplios (todo el foodservice, todo el catering B2B) y varían entre consultoras. Ninguna demuestra por sí misma que los comedores industriales estén creciendo. Lo que sí se puede argumentar es crecimiento de los <em>impulsores</em> de la demanda.</p>
+  <p class="intro">Para este plan, la categoría relevante es la alimentación de personal contratada por empresas, se cocine dentro o fuera de sus instalaciones. Las cifras disponibles miden mercados mucho más amplios (todo el foodservice, todo el catering B2B) y varían entre consultoras. Ninguna demuestra por sí misma que los comedores industriales estén creciendo. Lo que sí se puede argumentar es crecimiento de los <em>impulsores</em> de la demanda.</p>
 
   <h3>Lo que dicen las fuentes amplias, y por qué no basta</h3>
   <div class="tbl-wrap"><table>
@@ -325,10 +353,10 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
     <tbody>
       <tr><td><strong>TAM</strong> — alimentación de personal industrial en México</td><td>Trabajadores en manufactura y logística × % atendible con comedor × comidas/día × días × precio</td><td>Requiere asegurados IMSS nacionales por sector (Data México/IMSS) y una encuesta de prevalencia de comedores que no es pública.</td><td class="num"><span class="tag t-ver">No calculado</span></td></tr>
       <tr><td><strong>SAM</strong> — manufactura en Jalisco</td><td>530,075 asegurados <sup class="ref"><a href="#s5">[5]</a></sup> × 50% con comedor × 1 comida × 264 días × $80</td><td>Asegurados: <span class="tag t-dato">Dato</span>. 50%, 264 días y $80: <span class="tag t-sup">Supuesto</span>. Incluye plantas fuera de la ZMG y comedores autogestionados.</td><td class="num">≈ $5,600 M/año</td></tr>
-      <tr><td><strong>SOM</strong> — nueva empresa, años 1–3</td><td>Unidades operadas × comidas/día × días × precio</td><td>1 unidad × 500 × 288 × $80 en año 1; 2–3 unidades al año 3. <span class="tag t-sup">Supuesto</span></td><td class="num">≈ $11.5 M → $25–35 M/año</td></tr>
+      <tr><td><strong>SOM</strong> — este plan, años 1–3</td><td>Platillos/día × días × precio</td><td>Año 1, escenario base: ancla de 150 a 350 empleados más venta directa ≈ $6.9 M. Año 3, con una segunda ruta y ≈ 600 platillos/día ≈ $12–15 M. <span class="tag t-sup">Supuesto</span></td><td class="num">≈ $6.9 M → $12–15 M/año</td></tr>
     </tbody>
   </table></div>
-  <div class="callout neutral"><p><strong>Lectura correcta.</strong> El SOM es menos del 1% del SAM ilustrativo: el tamaño del mercado <em>no es</em> la restricción. Las restricciones son acceso a contratos, capital de trabajo y capacidad de ejecución. Por eso la reunión de mañana importa más que cualquier cifra de mercado.</p></div>
+  <div class="callout neutral"><p><strong>Lectura correcta.</strong> El SOM es menos del 1% del SAM ilustrativo: el tamaño del mercado <em>no es</em> la restricción. Las restricciones son acceso a contratos, capital de trabajo y capacidad de ejecución. Por eso ganar y sostener el contrato con la ancla importa más que cualquier cifra de mercado.</p></div>
 </div>
 </section>
 
@@ -376,249 +404,311 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
     <li>IED en Jalisco: US$723 M en 1T 2026, 3.1% del total nacional <sup class="ref"><a href="#s1">[1]</a></sup>. <span class="tag t-dato">Dato</span></li>
     <li>Sectores demandantes de espacio en 2026: manufactura avanzada, electrónica y logística <sup class="ref"><a href="#s1">[1]</a></sup>. Para un comedor, las <strong>plantas de manufactura con turnos</strong> valen mucho más que los <strong>almacenes logísticos</strong> de baja densidad.</li>
   </ul>
-  <div class="callout warn"><p><strong>No confundir metros cuadrados con comidas.</strong> Un parque de naves logísticas puede tener pocas decenas de personas por nave; uno de manufactura electrónica, cientos por turno. La pregunta clave sobre el parque nuevo es el <em>giro y la plantilla por inquilino</em>, no su superficie.</p></div>
+  <div class="callout warn"><p><strong>No confundir metros cuadrados con comidas.</strong> Un parque de naves logísticas puede tener pocas decenas de personas por nave; uno de manufactura electrónica, cientos por turno. Para el Parque 2, la pregunta clave es el <em>giro y la plantilla por inquilino</em>, no su superficie.</p></div>
 
   <h3>Replicabilidad</h3>
-  <p>Si el desarrollador tiene varios parques, la oportunidad estratégica no es un comedor sino <strong>ser el operador preferente de su portafolio</strong>. Eso sólo tiene valor si se documenta (derecho de preferencia, exclusividad por parque o acuerdo marco). Sin ello, cada parque se gana o se pierde por separado.</p>
+  <p>Una cocina externa puede atender cualquier parque a una distancia razonable. El dueño ya tiene dos parques contiguos: el Parque 1, ocupado al 90%, y el Parque 2, en construcción. La ZMG concentra la mayor parte de los ~150 parques de Jalisco <sup class="ref"><a href="#s4">[4]</a></sup>, con El Salto como principal nodo de expansión <sup class="ref"><a href="#s1">[1]</a></sup>. La escala se construye con <strong>rutas</strong>: cada nuevo cliente o parque cercano se suma a la misma cocina hasta llenar su capacidad. La exclusividad en áreas comunes ayuda, pero no obliga a las empresas inquilinas, que eligen a su propio proveedor.</p>
 </div>
 </section>
 
 <!-- ================= MODELOS ================= -->
 <section class="sec" id="modelos">
 <div class="wrap">
-  <div class="secnum">05 · CÓMO FUNCIONA EL NEGOCIO</div>
-  <h2>El modelo contractual define quién asume el riesgo de volumen</h2>
-  <p class="intro">La misma cocina puede ser un buen o mal negocio según el contrato. La diferencia esencial: ¿te pagan por comida servida, por comida garantizada, o sólo por lo que un trabajador decida comprar?</p>
+  <div class="secnum">05 · MODELO DE NEGOCIO</div>
+  <h2>Cómo gana dinero: un contrato ancla con mínimo, venta directa y nuevas rutas</h2>
+  <p class="intro">El negocio es una <strong>cocina de producción que vende platillos a empresas</strong> y los entrega en sus instalaciones. Una sola cocina puede atender varios clientes y varios parques. La rentabilidad viene de llenar su capacidad sobre un costo fijo bajo.</p>
 
   <div class="tbl-wrap"><table>
-    <thead><tr><th></th><th>1. Concesión (venta directa)</th><th>2. Subsidiado</th><th>3. Contrato de servicio</th><th>4. Híbrido</th></tr></thead>
+    <thead><tr><th>Línea de ingreso</th><th>Quién paga</th><th>Precio</th><th>Quién asume el riesgo de volumen</th><th>Papel en el plan</th></tr></thead>
     <tbody>
-      <tr><td><strong>Cliente contractual</strong></td><td>Dueño del inmueble / parque</td><td>Empresa empleadora</td><td>Empresa empleadora</td><td>Empresa empleadora (y a veces el parque)</td></tr>
-      <tr><td><strong>Consume</strong></td><td>Trabajadores de cualquier inquilino</td><td>Trabajadores del cliente</td><td>Trabajadores del cliente</td><td>Trabajadores del cliente</td></tr>
-      <tr><td><strong>Paga</strong></td><td>El trabajador, en caja</td><td>Empresa paga la mayor parte; trabajador una cuota</td><td>Empresa, por comida o tarifa fija</td><td>Empresa + trabajador (p. ej. vía descuento de nómina)</td></tr>
-      <tr><td><strong>Costo de alimentos y mermas</strong></td><td>Operador</td><td>Operador (precio pactado)</td><td>Operador; o cliente en esquema "costo + fee"</td><td>Operador</td></tr>
-      <tr><td><strong>Cocina y equipo</strong></td><td>Negociable; frecuentemente el operador</td><td>Normalmente el cliente</td><td>Normalmente el cliente</td><td>Normalmente el cliente</td></tr>
-      <tr><td><strong>Personal</strong></td><td>Operador</td><td>Operador</td><td>Operador (implica REPSE si trabaja en instalaciones del cliente)</td><td>Operador</td></tr>
-      <tr><td><strong>Riesgo de baja demanda</strong></td><td><strong>100% operador</strong></td><td>Compartido</td><td>Bajo si hay mínimo garantizado</td><td>Compartido</td></tr>
-      <tr><td><strong>Precio</strong></td><td>Mercado; competencia con comida informal y food trucks</td><td>Negociado por licitación</td><td>Negociado; con mínimos y ajustes</td><td>Negociado; cuota de trabajador ≥ 20% UMA</td></tr>
-      <tr><td><strong>Rentabilidad</strong></td><td>Volumen y ticket; alta volatilidad</td><td>Margen sobre costo con volumen previsible</td><td>Margen pactado; menor variabilidad</td><td>Similar a subsidiado</td></tr>
-      <tr><td><strong>Condición para que funcione</strong></td><td>Público cautivo grande, sin alternativas cercanas</td><td>Cliente solvente y con plantilla estable</td><td>Mínimos garantizados y plazos de pago cortos</td><td>Descuento de nómina operado por el cliente</td></tr>
+      <tr><td><strong>1. Contrato con mínimo garantizado</strong> (empresa ancla)</td><td>Empresa 50% y trabajador 50%, idealmente por descuento de nómina</td><td>Pactado y fijo por 6 meses</td><td>La empresa, hasta el mínimo; el operador, por encima</td><td>Base del arranque</td></tr>
+      <tr><td><strong>2. Venta directa en el parque</strong> (La Terraza o un punto móvil)</td><td>El trabajador</td><td>Precio de mostrador</td><td>100% el operador</td><td>Aprovechar el mismo envío para llenar capacidad</td></tr>
+      <tr><td><strong>3. Contratos con otras empresas</strong> del Parque 1</td><td>Igual que la línea 1</td><td>Pactado</td><td>Compartido</td><td>Etapa de crecimiento</td></tr>
+      <tr><td><strong>4. Nuevas rutas:</strong> Parque 2 y otros parques</td><td>Igual que la línea 1</td><td>Pactado</td><td>Compartido</td><td>Escala; requiere otro vehículo o un segundo reparto</td></tr>
+      <tr><td><strong>5. Pedidos especiales</strong> (desayunos, juntas, coffee breaks)</td><td>Empresas</td><td>Por pedido</td><td>Bajo</td><td>Sólo cuando la operación base esté estable</td></tr>
     </tbody>
   </table></div>
 
-  <h4>5. Otras modalidades relevantes</h4>
-  <ul class="clean">
-    <li><strong>Comida transportada</strong> desde cocina central a varios comedores de "ensamble" o regeneración: útil si el parque no tiene cocina completa o si se atienden varias plantas pequeñas.</li>
-    <li><strong>Administración del comedor por fee</strong> (el cliente paga los insumos y nómina a costo más una cuota fija): bajo riesgo, bajo margen; común con clientes grandes.</li>
-  </ul>
-
   <div class="cols">
-    <div class="card">
-      <h4>Ingresos complementarios plausibles</h4>
+    <div class="card"><h4>Reparto de responsabilidades en el contrato ancla</h4>
       <ul class="clean">
-        <li>Desayunos (ya probados por el food truck) y comidas por turno.</li>
-        <li>Cena o refrigerio para turnos nocturnos, sólo si hay plantilla que lo justifique.</li>
-        <li>Coffee breaks y comidas para juntas de los mismos inquilinos.</li>
+        <li><strong>Comida, merma y empaque:</strong> el operador.</li>
+        <li><strong>Cocina, equipo y vehículo:</strong> el operador (local rentado).</li>
+        <li><strong>Personal:</strong> el operador.</li>
+        <li><strong>Espacio para comer</strong> (hoy mesas y sillas informales): la empresa.</li>
+        <li><strong>Baja asistencia:</strong> la empresa, hasta el mínimo pactado.</li>
+        <li><strong>Prestación al trabajador:</strong> si paga ≈ $49 con IVA, supera el 20% de la UMA ($23.46), así que la comida no integra a su salario base de cotización <sup class="ref"><a href="#s9">[9]</a></sup>.</li>
       </ul>
     </div>
-    <div class="card">
-      <h4>Diversificaciones que distraen en el arranque</h4>
+    <div class="card"><h4>Lo que conviene posponer</h4>
       <ul class="clean">
-        <li>Eventos sociales y banquetes.</li>
-        <li>Máquinas expendedoras propias (capital, logística y otra operación).</li>
-        <li>Abrir un segundo parque antes de estabilizar el primero.</li>
+        <li>Eventos sociales y banquetes: otra operación y otros horarios.</li>
+        <li>Abrir una segunda ruta antes de estabilizar la primera.</li>
+        <li>Comprar un food truck antes de probar que la venta directa lo justifica.</li>
+        <li>Diversificar el menú a la carta: complica compras y merma.</li>
       </ul>
     </div>
   </div>
-
-  <div class="callout"><p><strong>Hipótesis para este caso.</strong> Con la información actual, el modelo más defendible es <strong>contrato o híbrido con una empresa ancla</strong> (volumen mínimo y cuota del trabajador vía nómina), complementado con venta directa a otros inquilinos. Una concesión pura del parque, sin ancla, pone todo el riesgo de demanda en los socios justo cuando el parque está empezando a ocuparse. Para decidir faltan: identidad del ancla, su plantilla por turno, si ya da prestación de alimentos y quién firmaría.</p></div>
+  <p class="small">Faltan datos para cerrar el modelo: si la parte del trabajador se cobra por nómina o en efectivo, quién factura cada parte y si los $100 actuales incluyen IVA.</p>
 </div>
 </section>
 
 <!-- ================= OPERACION ================= -->
 <section class="sec" id="operacion">
 <div class="wrap">
-  <div class="secnum">06 · DISEÑO DE LA OPERACIÓN 500+</div>
-  <h2>De 500 personas a un plan de producción</h2>
-  <p class="intro">"Atender a 500 personas" puede significar 500 comidas al día, 500 trabajadores de los que come el 60%, o 250 desayunos y 250 comidas. El diseño cambia en cada caso.</p>
+  <div class="secnum">06 · OPERACIÓN</div>
+  <h2>Un local de producción y una ruta de reparto</h2>
+  <p class="intro">La operación tiene tres piezas: el <strong>local</strong> donde se cocina, el <strong>equipo de personas</strong> que produce, y la <strong>distribución</strong> que lleva la comida caliente al parque a tiempo para cada turno.</p>
 
-  <h3>De personas a comidas facturables</h3>
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Concepto</th><th>Definición</th><th class="num">Ejemplo ilustrativo</th></tr></thead>
-    <tbody>
-      <tr><td>Población del parque</td><td>Personas trabajando en el parque en un día</td><td class="num">800</td></tr>
-      <tr><td>Comida potencial</td><td>Población × servicios a los que tiene derecho o acceso</td><td class="num">800</td></tr>
-      <tr><td>Comida servida</td><td>Potencial × tasa de participación (ausentismo, quien trae comida, quien sale)</td><td class="num">800 × 65% = 520</td></tr>
-      <tr><td>Comida facturable</td><td>Servida y registrada conforme al contrato (gafete, vale, nómina)</td><td class="num">≈ 510</td></tr>
-      <tr><td>Comida cobrada</td><td>Facturada y efectivamente pagada, en el plazo pactado</td><td class="num">≈ 510, a 30–60 días</td></tr>
-    </tbody>
-  </table></div>
-  <p class="tbl-note">Todos los valores son <span class="tag t-sup">Supuesto</span>. La tasa de participación es la variable más sensible y sólo se obtiene con datos del cliente o una prueba piloto.</p>
-
-  <h3>Mapa de procesos de extremo a extremo</h3>
-  <div class="flow">
-    <div class="step"><span class="n">01</span><b>Pronóstico</b>Plantilla por turno, histórico de consumo, calendario del cliente.</div>
-    <div class="step"><span class="n">02</span><b>Menú y costeo</b>Ciclo de 4–6 semanas, receta estándar, gramaje y costo por porción.</div>
-    <div class="step"><span class="n">03</span><b>Compras</b>Explosión de insumos, órdenes a 2–3 proveedores por categoría.</div>
-    <div class="step"><span class="n">04</span><b>Recepción</b>Temperatura, caducidad, peso; rechazo documentado.</div>
-    <div class="step"><span class="n">05</span><b>Almacén</b>PEPS, frío/congelado/seco, etiquetado.</div>
-    <div class="step"><span class="n">06</span><b>Producción</b>Previas el día anterior, cocción por lotes escalonados por turno.</div>
-    <div class="step"><span class="n">07</span><b>Servicio</b>Línea caliente ≥ 60 °C, porcionado controlado, flujo por turno.</div>
-    <div class="step"><span class="n">08</span><b>Registro</b>Consumo por gafete/QR o ticket; conciliación con el cliente.</div>
-    <div class="step"><span class="n">09</span><b>Limpieza y residuos</b>Lavaloza, sanitización, grasa y orgánicos.</div>
-    <div class="step"><span class="n">10</span><b>Cierre y análisis</b>Merma, costo real vs teórico, satisfacción, facturación.</div>
-  </div>
-
-  <div class="cols">
-    <div>
-      <h3>Elementos a definir</h3>
+  <div class="cols3">
+    <div class="card"><h4>El local</h4>
       <ul class="clean">
-        <li><strong>Servicios y horarios:</strong> desayuno y comida por turno; ventanas de 30–45 min por grupo según contrato del cliente.</li>
-        <li><strong>Menú:</strong> 1–2 platos fuertes, opción ligera, arroz/sopa, frijoles, tortilla, agua; ciclo rotativo y menú fijo de respaldo.</li>
-        <li><strong>Capacidad de servicio:</strong> el cuello de botella típico es la línea, no la cocina. Con 25–35 personas por minuto por línea <span class="tag t-sup">Supuesto</span>, 300 comensales en una ventana de 20 minutos requieren al menos una línea doble.</li>
-        <li><strong>Infraestructura:</strong> cocción (marmitas, hornos combi o de convección, estufas, plancha), extracción, refrigeración y congelación, lavaloza, línea caliente/fría, almacén seco, área de recepción separada de residuos.</li>
-        <li><strong>Inocuidad:</strong> flujo de una sola dirección, separación crudo/cocido, registros de temperatura, capacitación documentada y control de plagas (NOM‑251) <sup class="ref"><a href="#s16">[16]</a></sup>.</li>
-        <li><strong>Control de comidas:</strong> gafete o QR ligado a nómina en modelos híbridos; caja o prepago en concesión.</li>
-        <li><strong>Tecnología mínima:</strong> registro de consumos, inventario y receta estándar; tablero diario de costo/comida y merma.</li>
+        <li>≈ 60–100 m² <span class="tag t-sup">Supuesto</span>, a 20–30 minutos del parque como máximo.</li>
+        <li>Uso de suelo compatible y licencia de giro para elaboración de alimentos.</li>
+        <li>Gas con instalación certificada, extracción de humos, drenaje con trampa de grasa.</li>
+        <li>Recepción separada de residuos, área fría y almacén seco.</li>
+        <li>Acceso para carga y espacio para crecer a 400–600 platillos diarios.</li>
       </ul>
     </div>
-    <div>
-      <h3>Personal ilustrativo para 500 comidas/día</h3>
-      <div class="tbl-wrap"><table>
-        <thead><tr><th>Función</th><th class="num">Personas</th><th>Fuente del sueldo de referencia</th></tr></thead>
-        <tbody>
-          <tr><td>Gerente de unidad</td><td class="num">1</td><td>Vacante GDL: $15–20k/mes <sup class="ref"><a href="#s15">[15]</a></sup></td></tr>
-          <tr><td>Chef / jefe de cocina</td><td class="num">1</td><td>Vacante GDL: $15–18k/mes <sup class="ref"><a href="#s15">[15]</a></sup></td></tr>
-          <tr><td>Supervisor de calidad / higienista</td><td class="num">1</td><td>Vacante Tlajomulco: $13–16k/mes <sup class="ref"><a href="#s15">[15]</a></sup></td></tr>
-          <tr><td>Cocineros, auxiliares, línea, lavaloza, limpieza</td><td class="num">≈ 16</td><td>Salario mínimo 2026 ≈ $9,582/mes <sup class="ref"><a href="#s8">[8]</a></sup>; se modela $11,000 promedio <span class="tag t-sup">Supuesto</span></td></tr>
-        </tbody>
-      </table></div>
-      <p class="tbl-note">Productividad modelada: 32 comidas/día por persona operativa <span class="tag t-sup">Supuesto</span>, sin fuente pública; debe validarse con operadores o con la prueba piloto. Incluye cobertura de descansos y ausencias sólo de forma aproximada.</p>
+    <div class="card"><h4>El equipo de cocina</h4>
+      <ul class="clean">
+        <li>Quemadores o estufón, 1–2 marmitas, horno de convección, plancha.</li>
+        <li>Refrigerador y congelador industriales.</li>
+        <li>Mesas y tarjas de acero inoxidable, campana.</li>
+        <li>Contenedores térmicos, básculas y utensilios.</li>
+        <li>Valor de referencia: ≈ $350k nuevo; menos si se compra usado <span class="tag t-sup">Supuesto</span>.</li>
+      </ul>
+    </div>
+    <div class="card"><h4>La distribución</h4>
+      <ul class="clean">
+        <li>Comida en contenedores térmicos, a 60 °C o más (NOM‑251) <sup class="ref"><a href="#s16">[16]</a></sup>.</li>
+        <li>Temperatura registrada al salir y al llegar.</li>
+        <li>Una van lleva holgadamente 150–350 porciones por viaje <span class="tag t-sup">Supuesto</span>.</li>
+        <li>Varios turnos implican dos viajes o baño maría eléctrico en sitio.</li>
+      </ul>
     </div>
   </div>
 
-  <h3>¿Producir en el parque, en cocina central o híbrido?</h3>
+  <h3>Un día de operación (ilustrativo)</h3>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Opción</th><th>Condiciones necesarias</th><th>Ventaja</th><th>Riesgo</th></tr></thead>
+    <thead><tr><th>Horario</th><th>Actividad</th><th>Quién</th></tr></thead>
     <tbody>
-      <tr><td>Cocina en el parque</td><td>Espacio con gas, extracción, drenaje con trampa de grasa, electricidad suficiente, y quién lo paga.</td><td>Comida recién hecha, menos logística.</td><td>Inversión atada a un solo cliente/parque.</td></tr>
-      <tr><td>Cocina central + comida transportada</td><td>Cocina propia con aviso sanitario, vehículos con control de temperatura, comedores de ensamble.</td><td>Escala para varios parques; un solo punto de control.</td><td>Calidad percibida, cadena de calor, costo de transporte; no conviene con una sola unidad.</td></tr>
-      <tr><td>Híbrido</td><td>Producción base central (guisos, salsas) y terminado en sitio.</td><td>Flexibilidad para crecer.</td><td>Complejidad operativa temprana.</td></tr>
+      <tr><td>05:30–07:00</td><td>Compras en mercado o recepción de proveedores</td><td>Tú (después, proveedores con entrega)</td></tr>
+      <tr><td>06:30–10:30</td><td>Producción por lotes según el menú del día</td><td>Cocineros</td></tr>
+      <tr><td>10:30–11:15</td><td>Porcionado o carga a granel, registro de temperatura, carga del vehículo</td><td>Cocineros y tú</td></tr>
+      <tr><td>11:15–11:45</td><td>Traslado al parque</td><td>Tú o repartidor</td></tr>
+      <tr><td>11:45–14:30</td><td>Entrega y servicio por turnos en la ancla; venta en La Terraza</td><td>Tú o repartidor</td></tr>
+      <tr><td>14:30–16:30</td><td>Retorno, lavado, cierre, previas y pedidos del día siguiente; conciliación con la ancla</td><td>Cocineros y tú</td></tr>
     </tbody>
   </table></div>
+  <p class="tbl-note">Son unas 8–10 horas diarias para ti en el arranque. Ese es el punto más débil del plan si mantienes tu empleo actual (ver <a href="#socio">sección 10</a>).</p>
 
-  <div class="callout warn"><p><strong>Cuellos de botella al pasar de food truck a 500+</strong>: 1) planeación de compras y capital para inventario; 2) estandarización de recetas y gramajes (la merma es invisible sin ellos); 3) reclutamiento y rotación de personal operativo; 4) la ventana de servicio de cada turno; 5) documentación sanitaria y laboral que exigirá un cliente corporativo; 6) facturación y cobranza a 30–60 días.</p></div>
+  <h3>Opciones de vehículo</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Opción</th><th class="num">Inversión</th><th class="num">Costo mensual</th><th>A favor</th><th>En contra</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Vehículo propio</strong> (temporal)</td><td class="num">$0</td><td class="num">≈ $6k</td><td>Arranque sin capital.</td><td>No es adecuado como solución permanente para alimentos; seguro, imagen y desgaste personal.</td></tr>
+      <tr><td><strong>Van usada</strong></td><td class="num">≈ $0.30–0.45 M</td><td class="num">≈ $7k</td><td>Buen equilibrio entre costo y capacidad.</td><td>Mantenimiento y riesgo mecánico.</td></tr>
+      <tr><td><strong>Van nueva</strong> (Urvan Panel 2026)</td><td class="num">$0.55 M</td><td class="num">≈ $7k</td><td>Garantía y confiabilidad. Precio de lista $550,900 con IVA <sup class="ref"><a href="#s24">[24]</a></sup>.</td><td>Más capital inmovilizado.</td></tr>
+      <tr><td><strong>Van en arrendamiento</strong></td><td class="num">≈ $30k de depósito</td><td class="num">≈ $20k</td><td>Baja el capital inicial ≈ $0.35 M; renta deducible.</td><td>Más cara al mes; contrato de 24–36 meses.</td></tr>
+      <tr><td><strong>Food truck equipado</strong></td><td class="num">≈ $0.6–1.2 M</td><td class="num">≈ $10k</td><td>Además funciona como punto de venta e imagen.</td><td>No sustituye a la cocina. El gas puede estar restringido en el parque. Inversión alta y menos espacio de carga.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tbl-note"><span class="tag t-sup">Supuesto</span> Salvo el precio de lista de la van nueva, son valores sin cotización. No fue posible consultar anuncios de vans usadas ni de food trucks. Los costos mensuales incluyen combustible, seguro y mantenimiento; en arrendamiento también la renta.</p>
+
+  <h3>Personal: arrancar con 3 y crecer con el volumen</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Momento</th><th class="num">Platillos/día</th><th>Equipo</th></tr></thead>
+    <tbody>
+      <tr><td>Meses 1–3</td><td class="num">≈ 130–200</td><td>3 cocineros; tú en compras, reparto y administración</td></tr>
+      <tr><td>Meses 4–6</td><td class="num">≈ 200–330</td><td>Se agregan cocineros o ayudantes conforme crece la ancla; repartidor desde el mes 5</td></tr>
+      <tr><td>Mes 6 en adelante</td><td class="num">≈ 350</td><td>≈ 8 personas de cocina, 1 repartidor y 1 encargado de cocina, para que tú pases a dirigir</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tbl-note">Capacidad supuesta: 45 platillos diarios por persona de cocina, incluyendo empaque y lavado <span class="tag t-sup">Supuesto</span>. Hay que validarla en la prueba de producción. Salario mínimo 2026: ≈ $9,582/mes <sup class="ref"><a href="#s8">[8]</a></sup>. El modelo usa $12,000 brutos por cocinero.</p>
+
+  <h3>Empaque individual o servicio a granel</h3>
+  <div class="cols">
+    <div class="card"><h4>Platillo individual empacado</h4><p>Rápido de entregar y fácil de contar; sirve igual para la ancla y para La Terraza. Cuesta ≈ $4–6 por platillo en desechables <span class="tag t-sup">Supuesto</span> y genera residuos. Hay que verificar si hay restricciones locales a plásticos de un solo uso.</p></div>
+    <div class="card"><h4>Granel con servicio en sitio</h4><p>Contenedores grandes y alguien que sirve en el espacio de la ancla. Es más barato en empaque y la comida se ve más casera, pero requiere una persona sirviendo durante los turnos. Además, poner personal en instalaciones del cliente puede activar el tema de REPSE (<a href="#legal">sección 9</a>).</p></div>
+  </div>
+
+  <h3>Mapa de procesos</h3>
+  <div class="flow">
+    <div class="step"><span class="n">01</span><b>Pronóstico</b>Plantilla y asistencia de la ancla; ventas en La Terraza.</div>
+    <div class="step"><span class="n">02</span><b>Menú y costeo</b>Ciclo de 4 semanas, receta estándar, gramaje y costo por porción.</div>
+    <div class="step"><span class="n">03</span><b>Compras</b>2–3 proveedores por categoría; entregas en el local en cuanto haya volumen.</div>
+    <div class="step"><span class="n">04</span><b>Recepción</b>Temperatura, caducidad y peso; almacenamiento PEPS.</div>
+    <div class="step"><span class="n">05</span><b>Producción</b>Previas la tarde anterior; lotes que terminan 45–60 min antes de salir.</div>
+    <div class="step"><span class="n">06</span><b>Carga</b>Contenedores precalentados; temperatura de salida ≥ 60 °C.</div>
+    <div class="step"><span class="n">07</span><b>Ruta</b>Horario fijo; vehículo limpio y dedicado a alimentos.</div>
+    <div class="step"><span class="n">08</span><b>Entrega</b>Por turno en la ancla; venta del día en La Terraza.</div>
+    <div class="step"><span class="n">09</span><b>Retorno</b>Recolección, lavado de contenedores y residuos.</div>
+    <div class="step"><span class="n">10</span><b>Cierre</b>Conciliación de platillos, merma, encuesta y facturación.</div>
+  </div>
+
+  <div class="callout warn"><p><strong>Cuellos de botella:</strong> 1) tu tiempo, porque compras y reparto dependen de una sola persona; 2) la ventana entre fin de producción y servicio en cada turno; 3) estandarizar recetas y gramajes desde el día uno; 4) reclutar y retener cocineros; 5) permisos del local, que pueden tardar más que el equipo; 6) cobrar a 30 días mientras pagas nómina e insumos cada semana.</p></div>
 </div>
 </section>
 
 <!-- ================= FINANZAS ================= -->
 <section class="sec" id="finanzas">
 <div class="wrap">
-  <div class="secnum">07 · MODELO FINANCIERO PRELIMINAR</div>
-  <h2>La unidad funciona sólo si precio, volumen y productividad coinciden</h2>
-  <p class="intro">Todas las cifras de esta sección son resultados de un modelo con <strong>supuestos ilustrativos</strong>, no cotizaciones ni precios de mercado confirmados. Los únicos datos externos que alimentan el modelo son referencias de salario y de marco legal. Úsalo para entender sensibilidades y preparar preguntas, no para decidir.</p>
+  <div class="secnum">07 · MODELO FINANCIERO</div>
+  <h2>El mínimo de 150 sostiene el arranque; el crecimiento de la ancla hace el negocio</h2>
+  <p class="intro">El modelo proyecta <strong>36 meses</strong> a partir del arranque. La plantilla de la ancla crece de 150 a 350 empleados, el mínimo garantizado sube con ella, la venta a otros empleados del parque entra de forma gradual y el personal de cocina se contrata conforme lo exige el volumen. Todas las cifras son resultados de <strong>supuestos ilustrativos</strong>. Los únicos datos externos son el precio actual que reportó el contacto, el precio de lista de la van nueva, el salario mínimo y el marco legal.</p>
 
-  <h3>Supuestos por escenario</h3>
-  <div class="tbl-wrap"><table id="tblAssumptions"></table></div>
-  <p class="tbl-note">Precios antes de IVA. Alimentos preparados causan IVA a tasa general (16%) — validar tratamiento con el contador. El precio de $76 por menú (cuota de trabajador $23.56) publicado por un comedor universitario en Puebla para 2026 <sup class="ref"><a href="#s11">[11]</a></sup> es la única referencia pública cercana encontrada; no es comedor industrial ni de Jalisco. Cotizaciones a obtener: precio de 2–3 operadores de la ZMG, insumos con 3 proveedores, gas LP y tarifa eléctrica del parque.</p>
-
-  <h3>Resultados por nivel de actividad</h3>
-  <div class="tbl-wrap"><table id="tblScenarios"></table></div>
-  <p class="tbl-note">EBITDA mensual antes de impuestos, intereses y depreciación. <strong>No es efectivo disponible para repartir:</strong> antes hay que restar ISR, PTU, pago de equipo o deuda, reposición de equipo y el aumento de capital de trabajo.</p>
-
-  <div class="chart-box">
-    <div class="chart-title">EBITDA mensual según comidas diarias, por escenario</div>
-    <div class="chart-legend" id="lgEbitda"></div>
-    <svg id="chartEbitda" viewBox="0 0 900 380" role="img" aria-label="Gráfica de EBITDA mensual contra comidas por día para escenarios conservador, base y favorable"></svg>
-    <p class="small" style="margin:4px 6px 8px">En los tres escenarios, los escalones reflejan la contratación de personal adicional cada vez que el volumen supera la productividad supuesta. La línea punteada es tu simulación: mantiene fija la plantilla que elijas, por lo que muestra qué pasaría con el mismo equipo a otros volúmenes.</p>
+  <div class="cols">
+    <div>
+      <h3>Supuestos por escenario</h3>
+      <div class="tbl-wrap"><table id="tblAssumptions"></table></div>
+    </div>
+    <div>
+      <h3>Estructura base</h3>
+      <div class="tbl-wrap"><table id="tblStructure"></table></div>
+      <h3>Vehículos</h3>
+      <div class="tbl-wrap"><table id="tblVehicles"></table></div>
+    </div>
   </div>
+  <p class="tbl-note">Precios antes de IVA. Los alimentos preparados causan IVA a la tasa general (16%); valida el tratamiento con el contador. El escenario base usa $84 + IVA (≈ $97), igual o menor que los $100 actuales. La única referencia pública cercana encontrada es un comedor universitario en Puebla que cobra $76 por menú en 2026 <sup class="ref"><a href="#s11">[11]</a></sup>; no es comedor industrial ni de Jalisco. Cotizaciones a obtener: renta de locales, equipo de cocina (nuevo y usado), vehículo, insumos con 3 proveedores, empaque y gas.</p>
+
+  <h3>Resultados por escenario y vehículo</h3>
+  <div class="tbl-wrap"><table id="tblScenarios"></table></div>
+  <p class="tbl-note">EBITDA antes de impuestos, intereses y depreciación. <strong>No es efectivo disponible para repartir.</strong> El capital máximo requerido es el punto más bajo de la caja acumulada: inversión más capital de trabajo, menos lo que la operación va generando. Es el dinero que los socios deben tener disponible. La recuperación es el mes en que la caja acumulada vuelve a cero, antes de impuestos. En el escenario conservador la caja sigue cayendo durante los 36 meses del horizonte, así que su "capital máximo" es el saldo del mes 36 y seguiría creciendo.</p>
+
+  <div class="callout"><p><strong>Lectura clave, escenario base con van usada.</strong> Inversión ≈ $1.03 M y capital máximo ≈ $1.2 M, porque el cobro a 30 días obliga a financiar el primer mes completo. El EBITDA es ≈ $83k en el mes 1 gracias al mínimo de 150, y ≈ $143k en el mes 12 con ≈ 350 platillos diarios y margen ≈ 20%. La recuperación llega en el mes 14. Con van arrendada, la inversión baja a ≈ $0.68 M y la recuperación al mes 12. Con food truck, la inversión sube a ≈ $1.5 M y la recuperación se va al mes 17. En el escenario conservador, el EBITDA se vuelve negativo cuando se contrata para crecer y la inversión no se recupera en 36 meses: precio, costo por platillo y productividad tienen que validarse antes de firmar.</p></div>
 
   <h3 id="simulador">Simulador</h3>
   <div class="sim-banner">Resultados generados con supuestos editables. No son cifras de la investigación.</div>
   <div class="sim">
     <div class="controls" id="controls">
-      <div class="preset" role="group" aria-label="Escenario">
-        <button type="button" data-p="cons">Conservador</button>
-        <button type="button" data-p="base" class="on">Base</button>
-        <button type="button" data-p="fav">Favorable</button>
+      <div class="gt" style="font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px">Escenario (precio, costos, demanda)</div>
+      <div class="preset" role="group" aria-label="Escenario" id="presetAssume">
+        <button type="button" data-as="cons">Conservador</button>
+        <button type="button" data-as="base" class="on">Base</button>
+        <button type="button" data-as="fav">Favorable</button>
       </div>
-      <div class="ctrl-group" style="border-top:none;padding-top:0;margin-top:0">
-        <div class="gt">Ingresos</div>
-        <div class="ctrl"><label for="in_q">Comidas facturables / día <output id="o_q"></output></label><input type="range" id="in_q" min="100" max="900" step="10"></div>
-        <div class="ctrl"><label for="in_days">Días operativos / mes <output id="o_days"></output></label><input type="range" id="in_days" min="18" max="30" step="1"></div>
-        <div class="ctrl"><label for="in_price">Precio promedio por comida (sin IVA) <output id="o_price"></output></label><input type="range" id="in_price" min="50" max="120" step="1"><div class="hint">Suma de lo que paga la empresa y el trabajador.</div></div>
+      <div class="gt" style="font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px">Vehículo</div>
+      <div class="preset" role="group" aria-label="Vehículo" id="presetVeh">
+        <button type="button" data-vh="own">Propio</button>
+        <button type="button" data-vh="used" class="on">Van usada</button>
+        <button type="button" data-vh="newv">Van nueva</button>
+        <button type="button" data-vh="lease">Arrendada</button>
+        <button type="button" data-vh="truck">Food truck</button>
+      </div>
+
+      <div class="ctrl-group">
+        <div class="gt">Demanda de la empresa ancla</div>
+        <div class="ctrl"><label for="in_h0">Plantilla al arranque <output id="o_h0"></output></label><input type="range" id="in_h0" min="50" max="400" step="10"><div class="hint">Si arrancan en enero, la ancla quizá ya vaya a la mitad de su crecimiento.</div></div>
+        <div class="ctrl"><label for="in_h1">Plantilla meta <output id="o_h1"></output></label><input type="range" id="in_h1" min="100" max="600" step="10"></div>
+        <div class="ctrl"><label for="in_ramp">Meses para llegar a la meta <output id="o_ramp"></output></label><input type="range" id="in_ramp" min="1" max="12" step="1"></div>
+        <div class="ctrl"><label for="in_part">Participación diaria (% que come) <output id="o_part"></output></label><input type="range" id="in_part" min="50" max="100" step="1"></div>
+        <div class="ctrl"><label for="in_g0">Mínimo garantizado al arranque <output id="o_g0"></output></label><input type="range" id="in_g0" min="0" max="400" step="10"><div class="hint" id="h_g0"></div></div>
+        <div class="ctrl"><label for="in_g1">Mínimo al llegar a la meta <output id="o_g1"></output></label><input type="range" id="in_g1" min="0" max="500" step="10"></div>
       </div>
       <div class="ctrl-group">
-        <div class="gt">Costos variables</div>
-        <div class="ctrl"><label for="in_food">Alimentos por comida, incl. merma <output id="o_food"></output></label><input type="range" id="in_food" min="20" max="55" step="0.5"></div>
-        <div class="ctrl"><label for="in_ov">Desechables + gas por comida <output id="o_ov"></output></label><input type="range" id="in_ov" min="2" max="12" step="0.1"></div>
-        <div class="ctrl"><label for="in_conc">Cuota de concesión / renta (% ventas) <output id="o_conc"></output></label><input type="range" id="in_conc" min="0" max="12" step="0.5"></div>
+        <div class="gt">Otros clientes y precio</div>
+        <div class="ctrl"><label for="in_othQ">Otros clientes (platillos/día al estabilizar) <output id="o_othQ"></output></label><input type="range" id="in_othQ" min="0" max="300" step="5"><div class="hint">Venta directa en La Terraza y otras empresas; entra en 3 meses de forma gradual.</div></div>
+        <div class="ctrl"><label for="in_othStart">Inicio de otros clientes <output id="o_othStart"></output></label><input type="range" id="in_othStart" min="1" max="12" step="1"></div>
+        <div class="ctrl"><label for="in_days">Días operativos / mes <output id="o_days"></output></label><input type="range" id="in_days" min="18" max="30" step="1"><div class="hint">Lunes a viernes ≈ 22; lunes a sábado ≈ 24–26.</div></div>
+        <div class="ctrl"><label for="in_price">Precio de contrato (sin IVA) <output id="o_price"></output></label><input type="range" id="in_price" min="50" max="130" step="1"><div class="hint" id="h_price"></div></div>
+        <div class="ctrl"><label for="in_priceO">Precio de venta directa (sin IVA) <output id="o_priceO"></output></label><input type="range" id="in_priceO" min="40" max="130" step="1"></div>
       </div>
       <div class="ctrl-group">
-        <div class="gt">Nómina (semifija)</div>
-        <div class="ctrl"><label for="in_emp">Empleados operativos <output id="o_emp"></output></label><input type="range" id="in_emp" min="5" max="20" step="1"><div class="hint" id="h_emp"></div><div class="hint">Cocina, línea, lavaloza y limpieza; no incluye gerente, chef ni calidad. Al elegir un escenario se ajusta al volumen; después la controlas tú.</div></div>
-        <div class="ctrl"><label for="in_sal">Sueldo bruto prom. operativo / mes <output id="o_sal"></output></label><input type="range" id="in_sal" min="0" max="15000" step="100"><div class="hint" id="h_sal"></div></div>
-        <div class="ctrl"><label for="in_fac">Factor de carga patronal y prestaciones <output id="o_fac"></output></label><input type="range" id="in_fac" min="1.25" max="1.50" step="0.01"><div class="hint">IMSS, INFONAVIT, SAR, ISN, aguinaldo, vacaciones. Validar con contador.</div></div>
-        <div class="ctrl"><label for="in_mgmt">Gerencia + chef + calidad (bruto/mes) <output id="o_mgmt"></output></label><input type="range" id="in_mgmt" min="0" max="80000" step="500"><div class="hint" id="h_mgmt"></div></div>
+        <div class="gt">Costos por platillo</div>
+        <div class="ctrl"><label for="in_food">Alimentos, incl. merma <output id="o_food"></output></label><input type="range" id="in_food" min="20" max="55" step="0.5"></div>
+        <div class="ctrl"><label for="in_pack">Empaque y desechables <output id="o_pack"></output></label><input type="range" id="in_pack" min="0" max="12" step="0.5"></div>
+        <div class="ctrl"><label for="in_gas">Gas y energía <output id="o_gas"></output></label><input type="range" id="in_gas" min="0" max="6" step="0.1"></div>
       </div>
       <div class="ctrl-group">
-        <div class="gt">Fijos, inversión y cobranza</div>
-        <div class="ctrl"><label for="in_oth">Otros fijos / mes <output id="o_oth"></output></label><input type="range" id="in_oth" min="20000" max="120000" step="1000"><div class="hint">Luz/agua base, limpieza, plagas, residuos, mantenimiento, sistemas, seguros, contador, transporte, uniformes.</div></div>
-        <div class="ctrl"><label for="in_inv">Inversión inicial (sin capital de trabajo) <output id="o_inv"></output></label><input type="range" id="in_inv" min="200000" max="6000000" step="50000"><div class="hint">≈ $0.35–0.75 M si el parque entrega cocina equipada; ≈ $2–5 M si la equipan los socios.</div></div>
-        <div class="ctrl"><label for="in_dso">Días de cobro al cliente <output id="o_dso"></output></label><input type="range" id="in_dso" min="0" max="75" step="5"></div>
+        <div class="gt">Capital humano</div>
+        <div class="ctrl"><label for="in_cooks0">Cocineros al arranque <output id="o_cooks0"></output></label><input type="range" id="in_cooks0" min="1" max="10" step="1"><div class="hint" id="h_cooks0"></div></div>
+        <div class="ctrl"><label for="in_cap">Platillos/día por persona de cocina <output id="o_cap"></output></label><input type="range" id="in_cap" min="25" max="70" step="1"><div class="hint">Incluye empaque y lavado. El modelo contrata personal adicional cuando el volumen supera esta capacidad.</div></div>
+        <div class="ctrl"><label for="in_salC">Sueldo bruto por cocinero / mes <output id="o_salC"></output></label><input type="range" id="in_salC" min="0" max="20000" step="100"><div class="hint" id="h_salC"></div></div>
+        <div class="ctrl"><label for="in_drivers">Repartidores <output id="o_drivers"></output></label><input type="range" id="in_drivers" min="0" max="3" step="1"><div class="hint" id="h_drivers"></div></div>
+        <div class="ctrl"><label for="in_dStart">Repartidor desde <output id="o_dStart"></output></label><input type="range" id="in_dStart" min="1" max="12" step="1"></div>
+        <div class="ctrl"><label for="in_salD">Sueldo bruto repartidor / mes <output id="o_salD"></output></label><input type="range" id="in_salD" min="0" max="20000" step="100"></div>
+        <div class="ctrl"><label for="in_encSal">Encargado de cocina (bruto / mes) <output id="o_encSal"></output></label><input type="range" id="in_encSal" min="0" max="30000" step="500"></div>
+        <div class="ctrl"><label for="in_encStart">Encargado desde <output id="o_encStart"></output></label><input type="range" id="in_encStart" min="0" max="12" step="1"><div class="hint">0 = no se contrata en el año 1.</div></div>
+        <div class="ctrl"><label for="in_socio">Tu sueldo como socio operador / mes <output id="o_socio"></output></label><input type="range" id="in_socio" min="0" max="50000" step="500"><div class="hint" id="h_socio"></div></div>
+        <div class="ctrl"><label for="in_fac">Factor de carga patronal y prestaciones <output id="o_fac"></output></label><input type="range" id="in_fac" min="1.25" max="1.50" step="0.01"><div class="hint">IMSS, INFONAVIT, SAR, ISN, aguinaldo, vacaciones. Se aplica a sueldos de empleados, no al del socio.</div></div>
+      </div>
+      <div class="ctrl-group">
+        <div class="gt">Costos fijos mensuales</div>
+        <div class="ctrl"><label for="in_rentL">Renta del local <output id="o_rentL"></output></label><input type="range" id="in_rentL" min="0" max="60000" step="500"></div>
+        <div class="ctrl"><label for="in_util">Servicios del local (luz, agua, gas base, internet) <output id="o_util"></output></label><input type="range" id="in_util" min="0" max="30000" step="500"></div>
+        <div class="ctrl"><label for="in_othF">Otros fijos <output id="o_othF"></output></label><input type="range" id="in_othF" min="0" max="50000" step="500"><div class="hint">Contador, sistemas, seguros, plagas, limpieza, uniformes, comisiones.</div></div>
+        <div class="ctrl"><label for="in_vmon">Vehículo (combustible, seguro, mantenimiento, renta) <output id="o_vmon"></output></label><input type="range" id="in_vmon" min="0" max="40000" step="500"></div>
+      </div>
+      <div class="ctrl-group">
+        <div class="gt">Inversión inicial</div>
+        <div class="ctrl"><label for="in_kit">Equipo de cocina <output id="o_kit"></output></label><input type="range" id="in_kit" min="0" max="1500000" step="10000"><div class="hint">Usado puede costar 30–50% menos <span class="tag t-sup">Supuesto</span>.</div></div>
+        <div class="ctrl"><label for="in_adec">Adecuaciones del local <output id="o_adec"></output></label><input type="range" id="in_adec" min="0" max="800000" step="10000"><div class="hint">Gas, eléctrica, extracción, trampa de grasa, acabados sanitarios.</div></div>
+        <div class="ctrl"><label for="in_cont">Contenedores térmicos y utensilios <output id="o_cont"></output></label><input type="range" id="in_cont" min="0" max="300000" step="5000"></div>
+        <div class="ctrl"><label for="in_dep">Depósito de renta y trámites <output id="o_dep"></output></label><input type="range" id="in_dep" min="0" max="300000" step="5000"></div>
+        <div class="ctrl"><label for="in_inv0">Inventario inicial <output id="o_inv0"></output></label><input type="range" id="in_inv0" min="0" max="150000" step="5000"></div>
+        <div class="ctrl"><label for="in_vinv">Vehículo <output id="o_vinv"></output></label><input type="range" id="in_vinv" min="0" max="1500000" step="10000"></div>
+      </div>
+      <div class="ctrl-group">
+        <div class="gt">Cobranza</div>
+        <div class="ctrl"><label for="in_dso">Días de cobro a la ancla <output id="o_dso"></output></label><input type="range" id="in_dso" min="0" max="75" step="5"></div>
         <div class="ctrl"><label for="in_dpo">Días de pago a proveedores <output id="o_dpo"></output></label><input type="range" id="in_dpo" min="0" max="45" step="5"></div>
       </div>
     </div>
     <div>
       <div class="out-grid" id="outs"></div>
       <div class="chart-box">
-        <div class="chart-title">Desglose de cada peso de precio por comida</div>
-        <div id="costBars"></div>
-        <p class="small" style="margin:6px 4px">Nómina y fijos se reparten entre las comidas del mes; por eso bajan por comida cuando sube el volumen.</p>
+        <div class="chart-title">Inversión, EBITDA mensual y caja acumulada (primeros 18 meses)</div>
+        <div class="chart-legend" id="lgCash"></div>
+        <svg id="chartCash" viewBox="0 0 900 360" role="img" aria-label="Gráfica de barras de EBITDA mensual y línea de caja acumulada para los primeros 18 meses"></svg>
+        <p class="small" style="margin:4px 6px 8px">La caja acumulada incluye la inversión inicial y el capital de trabajo, que es lo que se financia mientras la ancla paga a 30 días. Su punto más bajo es el capital máximo que hay que tener.</p>
       </div>
       <div class="chart-box">
-        <div class="chart-title">Sensibilidad del EBITDA mensual (± 10% en cada variable; empleados ± 1)</div>
+        <div class="chart-title">Desglose del precio por platillo facturado (mes 12)</div>
+        <div id="costBars"></div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">Sensibilidad del EBITDA del mes 12 (± 10% en cada variable)</div>
         <div id="tornado"></div>
       </div>
     </div>
   </div>
 
+  <h3>Proyección mensual del año 1</h3>
+  <div class="tbl-wrap"><table id="tblProj"></table></div>
+  <p class="tbl-note">"Personal cocina" muestra cocineros y ayudantes; +R indica repartidor y +E encargado. El flujo es EBITDA menos el aumento de capital de trabajo, antes de impuestos.</p>
+
   <h3>Fórmulas esenciales</h3>
   <div class="cols">
     <div class="card" style="font-size:.9rem">
-      <p><strong>Ventas</strong> = comidas/día × días × precio</p>
-      <p><strong>Margen de contribución por comida</strong> = precio − alimentos − desechables y gas − (precio × % concesión)</p>
-      <p><strong>Utilidad bruta</strong> = ventas − alimentos − desechables y gas − nómina operativa</p>
-      <p><strong>EBITDA</strong> = ventas − variables − concesión − nómina total con cargas − otros fijos</p>
-      <p style="margin-bottom:0"><strong>EBIT</strong> = EBITDA − depreciación (equipo / 60 meses)</p>
+      <p><strong>Plantilla del mes</strong> = inicial + (meta − inicial) × avance, con avance lineal hasta el mes indicado</p>
+      <p><strong>Platillos de la ancla</strong> = plantilla × participación; <strong>facturados</strong> = el mayor valor entre esos platillos y el mínimo del mes</p>
+      <p><strong>Ventas</strong> = (facturados ancla × precio de contrato + otros clientes × precio directo) × días</p>
+      <p><strong>Personal de cocina</strong> = el mayor valor entre cocineros iniciales y platillos ÷ capacidad, redondeado hacia arriba</p>
+      <p style="margin-bottom:0"><strong>EBITDA</strong> = ventas − alimentos − empaque − gas − nómina con cargas − tu sueldo − renta − servicios − otros fijos − vehículo</p>
     </div>
     <div class="card" style="font-size:.9rem">
-      <p><strong>Punto de equilibrio</strong> = menor volumen diario con EBITDA ≥ 0 (calculado iterando; en los escenarios la nómina sube por escalones, en el simulador se mantiene la plantilla elegida)</p>
-      <p><strong>Capital de trabajo</strong> = costos de efectivo diarios × días de cobro − compras diarias de insumos × días de pago + 5 días de inventario</p>
-      <p><strong>Flujo antes de impuestos</strong> = EBITDA − aumento de capital de trabajo − inversión</p>
-      <p style="margin-bottom:0"><strong>Recuperación (aprox.)</strong> = (inversión + capital de trabajo) ÷ EBITDA mensual. Indicador burdo: ignora impuestos, rampa de arranque y costo del dinero.</p>
+      <p><strong>Capital de trabajo</strong> = ventas × días de cobro ÷ 30 − compras de insumos y empaque × días de pago ÷ 30 + 5 días de inventario</p>
+      <p><strong>Flujo</strong> = EBITDA − aumento de capital de trabajo; <strong>caja acumulada</strong> = −inversión + suma de flujos</p>
+      <p><strong>Capital máximo requerido</strong> = el punto más bajo de la caja acumulada</p>
+      <p style="margin-bottom:0"><strong>Equilibrio</strong> = platillos diarios a precio de contrato con los que el EBITDA llega a cero, con la estructura del mes 12 y sin mínimo garantizado</p>
     </div>
   </div>
 
   <h3>Inversión inicial por rangos</h3>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Rubro</th><th class="num">Caso A · el parque entrega cocina equipada</th><th class="num">Caso B · los socios equipan</th></tr></thead>
+    <thead><tr><th>Rubro</th><th class="num">Mínima (usado, arrendado)</th><th class="num">Base del modelo</th><th class="num">Alta (todo nuevo, food truck)</th></tr></thead>
     <tbody>
-      <tr><td>Equipo de cocción, refrigeración, lavado, línea de servicio y extracción</td><td class="num">—</td><td class="num">$1.5–3.5 M</td></tr>
-      <tr><td>Adecuaciones: gas, eléctrica, hidráulica, trampa de grasa</td><td class="num">$0–0.1 M</td><td class="num">$0.3–1.0 M</td></tr>
-      <tr><td>Utensilios, vajilla, charolas, mobiliario menor</td><td class="num">$0.12–0.25 M</td><td class="num">$0.12–0.25 M</td></tr>
-      <tr><td>Tecnología: control de consumos, inventario, punto de venta</td><td class="num">$0.04–0.12 M</td><td class="num">$0.04–0.12 M</td></tr>
-      <tr><td>Apertura: trámites, análisis, uniformes, 2 semanas de capacitación</td><td class="num">$0.12–0.25 M</td><td class="num">$0.12–0.25 M</td></tr>
-      <tr><td>Inventario inicial</td><td class="num">$0.06–0.12 M</td><td class="num">$0.06–0.12 M</td></tr>
-      <tr><td><strong>Total sin capital de trabajo</strong></td><td class="num"><strong>≈ $0.35–0.75 M</strong></td><td class="num"><strong>≈ $2.1–5.2 M</strong></td></tr>
-      <tr><td>Depósito o garantía contractual (fianza de cumplimiento)</td><td class="num" colspan="2">A negociar; puede ser 1 mes de renta o una fianza sobre el valor del contrato</td></tr>
+      <tr><td>Equipo de cocina</td><td class="num">$0.18 M</td><td class="num">$0.35 M</td><td class="num">$0.60 M</td></tr>
+      <tr><td>Adecuaciones del local</td><td class="num">$0.08 M</td><td class="num">$0.15 M</td><td class="num">$0.30 M</td></tr>
+      <tr><td>Contenedores térmicos y utensilios</td><td class="num">$0.04 M</td><td class="num">$0.06 M</td><td class="num">$0.10 M</td></tr>
+      <tr><td>Depósito de renta y trámites</td><td class="num">$0.05 M</td><td class="num">$0.06 M</td><td class="num">$0.08 M</td></tr>
+      <tr><td>Inventario inicial</td><td class="num">$0.02 M</td><td class="num">$0.03 M</td><td class="num">$0.04 M</td></tr>
+      <tr><td>Vehículo</td><td class="num">$0.03 M (depósito de arrendamiento)</td><td class="num">$0.38 M (van usada)</td><td class="num">$0.85 M (food truck)</td></tr>
+      <tr><td><strong>Total sin capital de trabajo</strong></td><td class="num"><strong>≈ $0.40 M</strong></td><td class="num"><strong>≈ $1.03 M</strong></td><td class="num"><strong>≈ $1.97 M</strong></td></tr>
     </tbody>
   </table></div>
-  <p class="tbl-note"><span class="tag t-sup">Supuesto</span> Órdenes de magnitud sin cotización. Antes de cualquier decisión: 3 cotizaciones de equipo para el menú y volumen definidos, y un levantamiento técnico del espacio. El modelo usa $600,000 (caso A) como valor inicial del simulador.</p>
-
-  <h3>Capital de trabajo según plazo de cobro</h3>
-  <div class="tbl-wrap"><table id="tblWC"></table></div>
-  <p class="tbl-note">Escenario base, 500 comidas/día, pago a proveedores a 15 días. Un contrato con pago a 60 días puede exigir más capital que el propio equipo del caso A. Además, el IVA trasladado se cobra con la factura: conviene modelar su efecto con el contador.</p>
+  <p class="tbl-note"><span class="tag t-sup">Supuesto</span> Órdenes de magnitud sin cotización, salvo la van nueva <sup class="ref"><a href="#s24">[24]</a></sup>. A esto hay que sumar el capital de trabajo: con cobro a 30 días, aproximadamente un mes de ventas.</p>
 </div>
 </section>
 
@@ -626,25 +716,24 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 <section class="sec" id="competencia">
 <div class="wrap">
   <div class="secnum">08 · COMPETENCIA Y DIFERENCIACIÓN</div>
-  <h2>El mercado ya tiene operadores con escala; la ventaja inicial sería de acceso y servicio, no de precio</h2>
+  <h2>El rival es el food service que hoy abastece a la ancla</h2>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Operador</th><th>Tipo</th><th>Cobertura y evidencia</th><th>Servicios</th><th>Diferenciador identificable</th></tr></thead>
+    <thead><tr><th>Competidor</th><th>Tipo</th><th>Evidencia</th><th>Fortaleza</th><th>Debilidad u oportunidad</th></tr></thead>
     <tbody>
-      <tr><td><strong>Sodexo México</strong><br><a href="https://www.sodexo.com.mx" rel="noopener">sodexo.com.mx</a></td><td>Multinacional</td><td>Nacional; vacantes de gerente de comedor industrial en CDMX y Edomex <sup class="ref"><a href="#s20">[20]</a></sup></td><td>Comedores, facility services, beneficios</td><td>Escala, servicios integrales, cuentas corporativas grandes</td></tr>
-      <tr><td><strong>Aramark México</strong></td><td>Multinacional</td><td>Comedores industriales en CDMX, Querétaro y Silao (planta Pirelli) según sus vacantes <sup class="ref"><a href="#s21">[21]</a></sup></td><td>Comedores industriales y corporativos, limpieza</td><td>Escala de compras, estándares de higiene corporativos</td></tr>
-      <tr><td><strong>Newrest</strong> (antes Compass México)<br><a href="https://www.newrest.eu" rel="noopener">newrest.eu</a></td><td>Multinacional</td><td>Adquirió la operación mexicana de Compass; cierre en México el 2 dic 2024 <sup class="ref"><a href="#s13">[13]</a></sup></td><td>Catering institucional, sitios remotos, business &amp; industry</td><td>Escala; integración reciente</td></tr>
-      <tr><td><strong>Grupo Servi‑A</strong></td><td>Regional (Guadalajara)</td><td>Se describe como operador de comedores industriales en Guadalajara y otras entidades; vacantes en El Salto <sup class="ref"><a href="#s14">[14]</a></sup>. Sitio web no verificado.</td><td>Comedores industriales</td><td>Presencia local en el corredor El Salto</td></tr>
-      <tr><td><strong>Live Natura</strong></td><td>Regional (Jalisco y Edomex)</td><td>Vacantes de gerente, chef y coordinador en Guadalajara, Zapopan y Tlajomulco <sup class="ref"><a href="#s15">[15]</a></sup>. Sitio web no verificado.</td><td>Comedores industriales, clubes deportivos, banquetes</td><td>Enfoque en nutrición; estructura de coordinación multiunidad</td></tr>
-      <tr><td><strong>Tabares Comedores</strong></td><td>Nacional (CDMX)</td><td>Perfil de empleador en Indeed <sup class="ref"><a href="#s22">[22]</a></sup></td><td>Comedores, cafeterías, eventos, facility services</td><td>Oferta integrada de servicios generales</td></tr>
+      <tr><td><strong>Proveedor actual de la ancla</strong><br><span class="small">nombre por confirmar</span></td><td>Food service local</td><td>Lleva la comida a diario; la empresa coloca mesas y sillas <span class="tag t-jun">Junta</span></td><td>Ya está dentro y conoce al cliente</td><td>Descontento por calidad y precio ($100 por platillo)</td></tr>
+      <tr><td><strong>Fondas, cocinas económicas y vendedores</strong> cercanos al parque</td><td>Informal o pequeño</td><td><span class="tag t-ver">Verificar</span> en la visita al parque</td><td>Precio bajo y cercanía</td><td>Sin factura ni subsidio de la empresa; calidad variable</td></tr>
+      <tr><td><strong>La Terraza</strong></td><td>Aliado</td><td>Módulo del contacto, ~50 clientes/día <span class="tag t-jun">Junta</span></td><td>Presencia diaria en el área común</td><td>Punto de venta natural para el resto del parque</td></tr>
+      <tr><td><strong>Operadores regionales y nacionales</strong> (Grupo Servi‑A, Live Natura, Tabares)</td><td>Comedores industriales y servicios de alimentos</td><td>Vacantes en El Salto, Guadalajara y Tlajomulco; Tabares opera desde CDMX <sup class="ref"><a href="#s14">[14]</a></sup><sup class="ref"><a href="#s15">[15]</a></sup><sup class="ref"><a href="#s22">[22]</a></sup></td><td>Experiencia y estructura multiunidad</td><td>Podrían competir por la ancla si crece</td></tr>
+      <tr><td><strong>Multinacionales</strong> (Sodexo, Aramark, Newrest)</td><td>Contract catering</td><td>Operación en México <sup class="ref"><a href="#s13">[13]</a></sup><sup class="ref"><a href="#s20">[20]</a></sup><sup class="ref"><a href="#s21">[21]</a></sup></td><td>Escala de compras y cumplimiento</td><td>Les interesan cuentas grandes y estables; 150–350 comidas no suele ser su objetivo</td></tr>
     </tbody>
   </table></div>
-  <p class="tbl-note">Ninguno publica precios. La lista no es exhaustiva: los directorios muestran decenas de operadores pequeños. Falta verificar quién atiende hoy los parques del mismo desarrollador.</p>
+  <p class="tbl-note">Ninguno publica precios. La lista no es exhaustiva.</p>
 
   <h3>Hipótesis de posicionamiento</h3>
-  <p><strong>"Operador local, cercano y medible para parques en arranque":</strong> capaz de empezar con volúmenes bajos y crecer con la ocupación del parque, con reportes mensuales de consumo, costo, satisfacción y merma para el cliente, y una sola persona responsable con poder de decisión.</p>
+  <p><strong>"Comida casera con estándar restaurantero, puntual y medible, de un equipo que está todos los días en el parque."</strong> Sería la misma comodidad del servicio actual, con mejor comida, precio igual o menor, temperatura y puntualidad registradas, y un reporte mensual para RH.</p>
   <div class="cols">
-    <div class="card"><h4>Diferenciadores realistas</h4><ul class="clean"><li>Flexibilidad para volúmenes bajos y crecientes (los grandes suelen preferir cuentas estables).</li><li>Transparencia: tablero de consumo y costo compartido con el cliente.</li><li>Respuesta rápida y dueño presente.</li><li>Continuidad: el socio ya conoce a la comunidad del parque.</li></ul></div>
-    <div class="card"><h4>Lo que no es ventaja exclusiva</h4><ul class="clean"><li>Menús balanceados, variedad y puntualidad: cualquier competidor serio lo promete.</li><li>Precio: sin escala de compras, difícilmente serás el más barato.</li><li>Tecnología: los grandes ya tienen sistemas de control de consumo.</li></ul></div>
+    <div class="card"><h4>Diferenciadores realistas</h4><ul class="clean"><li>Sabor y consistencia: receta estándar y gramaje controlado.</li><li>Puntualidad por turno y temperatura registrada.</li><li>Trato directo con el dueño de la operación.</li><li>Reporte mensual de consumo y satisfacción.</li><li>Flexibilidad para crecer con la plantilla de la ancla.</li></ul></div>
+    <div class="card"><h4>Lo que no es ventaja exclusiva</h4><ul class="clean"><li>Precio: sin escala de compras, difícilmente serás el más barato.</li><li>Menús balanceados y variedad: cualquier proveedor serio los promete.</li><li>El acceso al parque no obliga a la ancla a elegirte.</li></ul></div>
   </div>
 </div>
 </section>
@@ -653,33 +742,32 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 <section class="sec" id="legal">
 <div class="wrap">
   <div class="secnum">09 · REGULACIÓN</div>
-  <h2>Obligaciones confirmadas y las que dependen del modelo</h2>
-  <div class="callout warn"><p><strong>Nota expresa:</strong> este listado es una guía de investigación, no asesoría legal. Debe revisarse con abogado laboral, contador y un gestor sanitario y de Protección Civil del municipio antes de operar.</p></div>
+  <h2>Las obligaciones se concentran en el local y en el transporte</h2>
+  <div class="callout warn"><p><strong>Nota expresa:</strong> este listado es una guía de investigación, no asesoría legal. Debe revisarse con un abogado laboral, un contador y un gestor municipal y sanitario antes de operar.</p></div>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Tema</th><th>Qué aplica</th><th>Certeza</th></tr></thead>
     <tbody>
-      <tr><td>Higiene de alimentos</td><td>NOM‑251‑SSA1‑2009, capítulo de establecimientos de servicio de alimentos: control de temperaturas (calientes ≥ 60 °C), materias primas, plagas, residuos, capacitación <sup class="ref"><a href="#s16">[16]</a></sup>.</td><td><span class="tag t-dato">Confirmado</span></td></tr>
-      <tr><td>Aviso sanitario</td><td>Aviso de funcionamiento ante la autoridad sanitaria (COFEPRIS / autoridad estatal en Jalisco) para el establecimiento de preparación de alimentos.</td><td><span class="tag t-ver">Verificar</span> trámite y si lo presenta el operador o el titular del inmueble</td></tr>
-      <tr><td>Licencia municipal</td><td>Licencia de giro o anuencia del municipio donde está el parque (El Salto, Tlajomulco, Zapopan…), aun dentro de un parque privado.</td><td><span class="tag t-ver">Verificar</span> por municipio</td></tr>
-      <tr><td>Protección Civil, gas e incendios</td><td>Dictamen o programa interno, instalación de gas LP certificada, extintores y extracción; NOM‑002‑STPS para prevención de incendios en centros de trabajo.</td><td><span class="tag t-ver">Verificar</span> responsabilidades parque vs operador</td></tr>
-      <tr><td>Servicios especializados (REPSE)</td><td>Si el personal del operador presta el servicio en instalaciones de un cliente cuya actividad no es alimentos, la práctica y la guía de la STPS tratan el comedor como servicio especializado; registro en REPSE, número en cada contrato, y obligaciones informativas ICSOE/SISUB <sup class="ref"><a href="#s23">[23]</a></sup>. En una concesión pura con venta al público podría no aplicar.</td><td><span class="tag t-ver">Verificar</span> según modelo contractual</td></tr>
-      <tr><td>Seguridad social y laboral</td><td>Registro patronal IMSS, INFONAVIT, ISN estatal; salario mínimo $315.04 diario en 2026 <sup class="ref"><a href="#s8">[8]</a></sup>; jornada máxima 46 h en 2027, 44 h en 2028, 42 h en 2029 y 40 h en 2030, sin reducción salarial y con horas extra al 100% adicional <sup class="ref"><a href="#s12">[12]</a></sup>; NOM‑035‑STPS.</td><td><span class="tag t-dato">Confirmado</span></td></tr>
-      <tr><td>Alimentación como prestación (lado del cliente)</td><td>No integra al salario base de cotización si es en especie y el trabajador paga ≥ 20% de UMA ($23.46 en 2026); si es gratuita, se integra 8.33% por cada comida <sup class="ref"><a href="#s9">[9]</a></sup>. Deducibilidad del comedor con tope por trabajador y día más la cuota de recuperación, y sólo si está a disposición de todos <sup class="ref"><a href="#s10">[10]</a></sup>. El IMSS exige que sea efectivamente en especie y registrada <sup class="ref"><a href="#s9">[9]</a></sup>.</td><td><span class="tag t-dato">Confirmado</span>; tope exacto <span class="tag t-ver">validar</span> (la ley cita salario mínimo; algunos asesores lo leen como UMA)</td></tr>
-      <tr><td>Ley General de la Alimentación Adecuada y Sostenible</td><td>Vigente desde abril 2024; incluye disposiciones sobre alimentación en centros de trabajo <sup class="ref"><a href="#s9">[9]</a></sup>.</td><td><span class="tag t-ver">Verificar</span> obligaciones concretas para el operador</td></tr>
-      <tr><td>Fiscal</td><td>CFDI por cada venta o servicio; IVA a tasa general en alimentos preparados; régimen de la sociedad.</td><td><span class="tag t-dato">Confirmado</span> en lo general; detalle con contador</td></tr>
-      <tr><td>Residuos</td><td>Residuos sólidos urbanos y aceite/grasa; trampa de grasa y recolección autorizada según reglamento municipal.</td><td><span class="tag t-ver">Verificar</span></td></tr>
-      <tr><td>Responsabilidad contractual</td><td>Cláusulas de enfermedades transmitidas por alimentos, alérgenos, interrupción del servicio, penalizaciones y seguro de responsabilidad civil.</td><td><span class="tag t-ver">Negociar</span></td></tr>
+      <tr><td>Uso de suelo y licencia de giro</td><td>En el municipio donde esté el local, para elaboración de alimentos. Revísalo <strong>antes de firmar</strong> el arrendamiento.</td><td><span class="tag t-ver">Verificar</span> por municipio</td></tr>
+      <tr><td>Aviso sanitario</td><td>Aviso de funcionamiento del establecimiento de preparación de alimentos ante la autoridad sanitaria (COFEPRIS o la autoridad estatal en Jalisco).</td><td><span class="tag t-ver">Verificar</span> trámite y tiempos</td></tr>
+      <tr><td>Higiene de alimentos</td><td>NOM‑251‑SSA1‑2009: control de temperaturas (calientes a 60 °C o más), materias primas, plagas, residuos y capacitación, también durante el transporte <sup class="ref"><a href="#s16">[16]</a></sup>.</td><td><span class="tag t-dato">Confirmado</span></td></tr>
+      <tr><td>Protección Civil, gas e incendios</td><td>Instalación de gas certificada, extintores, programa o dictamen de Protección Civil del local; NOM‑002‑STPS en el centro de trabajo.</td><td><span class="tag t-ver">Verificar</span></td></tr>
+      <tr><td>Vehículo</td><td>Uso dedicado a alimentos, limpio, con seguro de responsabilidad civil. Si es food truck, permisos del parque y restricciones de gas.</td><td><span class="tag t-ver">Verificar</span></td></tr>
+      <tr><td>Servicios especializados (REPSE)</td><td>Si sólo entregas comida terminada y tu personal no queda bajo la dirección del cliente, en principio se trata de una venta de bienes. Si tu personal sirve dentro de las instalaciones de la ancla de forma regular, puede considerarse servicio especializado: registro en REPSE, número en el contrato y obligaciones informativas <sup class="ref"><a href="#s23">[23]</a></sup>. Algunas áreas de compras lo piden de todos modos.</td><td><span class="tag t-ver">Verificar</span> con abogado laboral</td></tr>
+      <tr><td>Laboral y seguridad social</td><td>Registro patronal IMSS, INFONAVIT, ISN; salario mínimo $315.04 diarios en 2026 <sup class="ref"><a href="#s8">[8]</a></sup>; jornada máxima de 46 h en 2027 bajando a 40 h en 2030, sin reducción salarial <sup class="ref"><a href="#s12">[12]</a></sup>; NOM‑035.</td><td><span class="tag t-dato">Confirmado</span></td></tr>
+      <tr><td>Prestación de alimentos (lado de la ancla)</td><td>No integra al salario base de cotización si es en especie y el trabajador paga al menos el 20% de la UMA ($23.46 en 2026) <sup class="ref"><a href="#s9">[9]</a></sup>. La deducción del comedor tiene tope por trabajador y día <sup class="ref"><a href="#s10">[10]</a></sup>.</td><td><span class="tag t-dato">Confirmado</span>; detalle con contador</td></tr>
+      <tr><td>Fiscal</td><td>CFDI por cada venta; IVA al 16% en alimentos preparados. Si la empresa cobra al trabajador por nómina, se emite una sola factura a la empresa; si el trabajador paga en efectivo, se factura al público en general.</td><td><span class="tag t-dato">Confirmado</span> en lo general</td></tr>
+      <tr><td>Empaque y residuos</td><td>Posibles restricciones municipales a plásticos de un solo uso; manejo de aceite usado y trampa de grasa.</td><td><span class="tag t-ver">Verificar</span></td></tr>
+      <tr><td>Responsabilidad contractual</td><td>Cláusulas sobre enfermedades transmitidas por alimentos, alérgenos, retrasos e interrupción del servicio; seguro de responsabilidad civil.</td><td><span class="tag t-ver">Negociar</span></td></tr>
     </tbody>
   </table></div>
-  <h4>Validaciones legales previas al inicio</h4>
+  <h4>Validaciones previas al inicio</h4>
   <ol class="clean">
-    <li>Definir el modelo contractual (concesión, contrato, híbrido) y quién es el titular del establecimiento.</li>
-    <li>Confirmar con abogado laboral si aplica REPSE y cómo se documenta.</li>
-    <li>Confirmar con el municipio licencia de giro y requisitos de Protección Civil para el inmueble.</li>
-    <li>Confirmar trámite sanitario aplicable y quién lo presenta.</li>
-    <li>Revisar el contrato de arrendamiento/concesión: plazo, exclusividad, salida, mantenimiento del equipo y servicios.</li>
-    <li>Contratar seguro de responsabilidad civil y definir protocolos documentados de inocuidad.</li>
-    <li>Estructurar la sociedad (tipo, estatutos, pacto de socios) antes de firmar con el cliente.</li>
+    <li>Confirmar uso de suelo y licencia de giro del local antes de firmar el arrendamiento.</li>
+    <li>Constituir la empresa (acta, RFC, registro patronal IMSS) antes de firmar con la ancla.</li>
+    <li>Tramitar el aviso sanitario y el visto bueno de Protección Civil del local.</li>
+    <li>Definir con abogado laboral si el modelo de entrega activa REPSE.</li>
+    <li>Formalizar la exclusividad con el dueño del parque y el contrato con la ancla.</li>
+    <li>Contratar seguro de responsabilidad civil y documentar los protocolos de inocuidad.</li>
   </ol>
 </div>
 </section>
@@ -687,32 +775,33 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 <!-- ================= SOCIO ================= -->
 <section class="sec" id="socio">
 <div class="wrap">
-  <div class="secnum">10 · MI PROPUESTA DE VALOR</div>
-  <h2>Una base transferible, no experiencia probada en comedores industriales</h2>
-  <p class="intro">Tu contacto aporta acceso comercial y presencia en el parque. Tú podrías aportar disciplina de gestión y estructura. La complementariedad es real, pero queda un hueco evidente: <strong>nadie de los dos ha operado un comedor de 500+ comidas</strong>. Ese hueco se cubre contratando, no prometiendo.</p>
+  <div class="secnum">10 · TU ROL Y TU APORTACIÓN</div>
+  <h2>Arrancarías como operador de tiempo completo, y eso choca con tu agenda actual</h2>
+  <p class="intro">El contacto aporta el acceso y quiere administrar y auditar. Tú pondrías la operación: compras, reparto, personal, costeo y finanzas del día a día. Es el rol que más valor genera al inicio y también el que más tiempo exige.</p>
 
+  <div class="cols">
+    <div class="card"><h4>Lo que aporta el contacto</h4><ul class="clean"><li>Acceso preferente a los parques por relación familiar con el dueño.</li><li>Relación con la empresa ancla y conocimiento del Parque 1.</li><li>La Terraza como punto de venta.</li><li>Administración y auditoría.</li></ul></div>
+    <div class="card"><h4>Lo que aportarías tú</h4><ul class="clean"><li>Operación diaria: compras, producción, reparto y servicio.</li><li>Costeo, control de merma y flujo de caja.</li><li>Reclutamiento y supervisión de cocineros.</li><li>Diseño de un modelo replicable para nuevas rutas.</li></ul></div>
+  </div>
+
+  <h3>Tu tiempo en el arranque</h3>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Dimensión</th><th>Valor que podrías generar</th><th>Cómo medirlo</th><th>Lo que habría que complementar</th></tr></thead>
+    <thead><tr><th>Actividad</th><th class="num">Horas/día</th><th>Cómo liberarla</th></tr></thead>
     <tbody>
-      <tr><td><strong>A. Construcción de la operación</strong></td><td>Procesos de compras, recepción, almacén, producción, servicio y cierre diario.</td><td>Cumplimiento de checklist, tiempos de servicio, incidencias sanitarias.</td><td>Chef/gerente con experiencia en producción masiva; capacitación en NOM‑251 y HACCP.</td></tr>
-      <tr><td><strong>B. Disciplina financiera</strong></td><td>Receta estándar costeada, control de merma, margen por comida, flujo semanal.</td><td>Costo real vs teórico (desviación &lt; 3 pts), merma, días de cobranza.</td><td>Contador con experiencia en servicios especializados y nómina.</td></tr>
-      <tr><td><strong>C. Profesionalización</strong></td><td>Roles, rutinas de supervisión, indicadores, manuales.</td><td>Rotación de personal, ausentismo, auditorías internas.</td><td>Reclutamiento operativo masivo; abogado laboral.</td></tr>
-      <tr><td><strong>D. Escalabilidad</strong></td><td>Paquete replicable: manual, plantillas, criterios para abrir unidades.</td><td>Tiempo y costo de apertura de la segunda unidad.</td><td>Capital y capacidad comercial para nuevas cuentas.</td></tr>
-      <tr><td><strong>E. Mejora continua</strong></td><td>Análisis estructurado de problemas para productividad y calidad.</td><td>Comidas por hora‑persona, satisfacción, quejas.</td><td>Datos confiables desde el primer día (sistema de registro).</td></tr>
+      <tr><td>Compras (madrugada)</td><td class="num">1–1.5</td><td>Proveedores con entrega en el local y pedidos semanales.</td></tr>
+      <tr><td>Supervisión de producción y carga</td><td class="num">1–2</td><td>Encargado de cocina (el modelo lo incluye desde el mes 6).</td></tr>
+      <tr><td>Traslado, entrega y servicio</td><td class="num">3–3.5</td><td>Repartidor (el modelo lo incluye desde el mes 5).</td></tr>
+      <tr><td>Cierre, pedidos, facturación y conciliación</td><td class="num">1.5–2</td><td>Sistema simple de registro y apoyo administrativo del contacto.</td></tr>
+      <tr><td><strong>Total</strong></td><td class="num"><strong>≈ 7–9</strong></td><td>De lunes a viernes o sábado</td></tr>
     </tbody>
   </table></div>
-  <div class="callout neutral"><p><strong>Restricción a explicitar:</strong> tienes un restaurante y un empleo en consultoría. Un comedor en arranque exige presencia diaria temprano. Antes de hablar de participación, define cuántas horas reales puedes aportar y quién está en sitio todos los días.</p></div>
+  <div class="callout warn"><p><strong>Decisión previa al sábado:</strong> ¿puedes dedicarte de lleno los primeros 3–6 meses? Si no, presupuesta desde el mes 1 un repartidor y un encargado. En el simulador, adelantar ambos al mes 1 baja el EBITDA del mes 1 de ≈ $83k a ≈ $47k y mueve la recuperación al mes 15. Y define si tu función tendrá sueldo: con $25k al mes, la recuperación pasa al mes 17.</p></div>
 
-  <h3>Cómo presentarlo en la reunión</h3>
-  <h4>Versión de 20 segundos</h4>
-  <blockquote class="pitch">"Creo que lo que traes tiene potencial. Lo que yo puedo sumar es la parte de estructura: costeo, procesos, indicadores y control, para que si esto arranca, arranque medible y se pueda repetir en otros parques."</blockquote>
-  <h4>Versión de 60 segundos</h4>
-  <blockquote class="pitch">"Tú tienes algo difícil de conseguir: la relación con el desarrollador y la confianza de la gente del parque. Yo opero un restaurante y trabajo en consultoría, así que mi fuerte está en convertir una operación en algo ordenado: costeo por platillo, compras, control de merma, rutinas de supervisión y números claros cada semana. Un comedor de 500 comidas es otra escala y ninguno de los dos lo ha hecho, así que lo primero que yo haría es entender bien la demanda y quién paga, y luego armar el equipo y los procesos para no improvisar. Si los números dan, me interesa construirlo contigo de forma que sea replicable."</blockquote>
-  <details><summary>Versión extensa para hablar de complementariedad</summary>
-    <p>"Me gustaría que veamos esto como dos piezas que se complementan. Tú aportas acceso: la relación con el dueño de los parques, conocer a quienes trabajan ahí y la experiencia diaria de vender comida en ese entorno. Eso es lo que abre la puerta, y no se compra.</p>
-    <p>Lo que yo puedo aportar es la parte que hace que la puerta no se cierre después: diseñar cómo compramos, cómo producimos y cómo controlamos el costo de cada comida; definir qué medimos cada día y cada semana; poner orden en la nómina y en la relación con el cliente con reportes claros. Eso lo hago hoy en mi restaurante y en mi trabajo de consultoría, aunque reconozco que un comedor industrial tiene exigencias propias —sanitarias, laborales y de volumen— que habría que cubrir con gente con experiencia en esto.</p>
-    <p>Antes de hablar de porcentajes o inversiones, propondría algo sencillo: las próximas semanas validamos juntos si el negocio existe —quién contrata, cuánta gente, a qué precio, qué instalaciones hay— y armamos los números con cotizaciones reales. Si los números funcionan, definimos con claridad qué aporta cada quien en dinero, tiempo y responsabilidades, y cómo se reconoce cada aportación. Si no funcionan, lo sabremos sin haber arriesgado capital ni la relación."</p>
-  </details>
+  <h3>Cómo presentarlo</h3>
+  <h4>Mensaje central para el contacto (30 segundos)</h4>
+  <blockquote class="pitch">"Le dimos la vuelta al plan: en lugar de un comedor en el parque, montamos una cocina de producción en un local cercano y llevamos la comida caliente. Arrancamos con tres cocineros y yo en la operación. El punto de partida es un contrato con la empresa más grande, con 150 platillos garantizados, y de ahí crecemos con su plantilla, con La Terraza y con otros parques. Tú llevas la relación y la administración; yo la operación. Antes de rentar o comprar nada, necesitamos la carta de intención de esa empresa."</blockquote>
+  <h4>Pitch para la empresa ancla (60 segundos, para RH o compras)</h4>
+  <blockquote class="pitch">"Sabemos que la comida es de las prestaciones que más perciben sus colaboradores. Somos un equipo local con oficio restaurantero y presencia diaria en el parque. Les proponemos comida casera preparada cada mañana en nuestra cocina y entregada caliente en cada turno, con temperatura registrada, porciones estandarizadas, un menú de cuatro semanas y un reporte mensual de consumo y satisfacción. Mantenemos su esquema de subsidio, con un precio igual o menor al actual. Antes de firmar, los invitamos a una degustación y a una prueba de dos semanas."</blockquote>
 </div>
 </section>
 
@@ -720,84 +809,101 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 <section class="sec" id="sociedad">
 <div class="wrap">
   <div class="secnum">11 · EVALUACIÓN DE LA SOCIEDAD</div>
-  <h2>Separar acciones, trabajo, sueldo y utilidades evita la mayoría de los conflictos</h2>
-  <div class="cols">
-    <div class="card"><h4>Cuatro cosas distintas</h4>
-      <ul class="clean">
-        <li><strong>Acciones:</strong> propiedad y voto; se ganan por aportar capital o activos y asumir riesgo.</li>
-        <li><strong>Trabajar en la empresa:</strong> una función con responsabilidades medibles.</li>
-        <li><strong>Sueldo:</strong> pago de mercado por esa función, aunque no haya utilidades.</li>
-        <li><strong>Utilidades:</strong> lo que queda después de impuestos, reinversión y reservas, repartido según acciones.</li>
-      </ul>
-      <p class="small">Un contacto comercial o horas de trabajo no determinan por sí solos un porcentaje justo: hay que valorar qué riesgo asume cada uno y qué se pierde si se va.</p>
-    </div>
-    <div class="card"><h4>Criterios para una sociedad equilibrada</h4>
-      <ul class="clean">
-        <li>Capital en riesgo de cada socio.</li>
-        <li>Dedicación comprometida (horas, exclusividad).</li>
-        <li>Aportes difícilmente reemplazables (contrato, relación, know‑how).</li>
-        <li>Responsabilidad legal y personal asumida (avales, fianzas).</li>
-        <li>Mecanismo de adquisición gradual de acciones (vesting) ligado a permanencia e hitos.</li>
-      </ul>
-    </div>
-  </div>
-  <h3>Esquemas posibles</h3>
+  <h2>Quien pone el tiempo, quien pone el acceso y quien pone el dinero</h2>
+  <p class="intro">Con el nuevo modelo hay activos concretos (local, equipo, vehículo) y un rol operativo de tiempo completo. Conviene ordenar estos temas antes de invertir.</p>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Esquema</th><th>Ventaja</th><th>Riesgo</th></tr></thead>
+    <thead><tr><th>Tema</th><th>Por qué importa</th><th>Propuesta para discutir</th></tr></thead>
     <tbody>
-      <tr><td>Contacto lidera lo comercial; tú la operación</td><td>Roles claros y complementarios.</td><td>Si nadie está en sitio a diario, la operación se degrada; la relación comercial queda en una sola persona.</td></tr>
-      <tr><td>Uno aporta capital, otro gestión</td><td>Simple de explicar.</td><td>Conflicto típico: quien pone dinero quiere control; quien trabaja quiere sueldo y reconocimiento.</td></tr>
-      <tr><td>Ambos aportan capital, responsabilidades distintas</td><td>Alineación de riesgo.</td><td>Desacuerdos si la dedicación real es desigual.</td></tr>
-      <tr><td>Empresa conjunta para el primer comedor</td><td>Limita el riesgo a una unidad; facilita salir.</td><td>Duplicar estructuras si se crece; definir a quién pertenece el "modelo" replicable.</td></tr>
-      <tr><td>Acuerdo de validación previo a la sociedad</td><td>Permite conocerse trabajando, sin capital comprometido.</td><td>Necesita un documento breve sobre confidencialidad, gastos y qué pasa con lo trabajado si no se sigue.</td></tr>
+      <tr><td><strong>Capital</strong></td><td>Se necesitan ≈ $0.9–1.2 M en el peor momento, incluido el capital de trabajo (escenario base).</td><td>Definir cuánto pone cada socio y en qué calendario, si hay deuda o arrendamiento, y si quien aporta capital recupera antes.</td></tr>
+      <tr><td><strong>Activos a nombre de la empresa</strong></td><td>Local, equipo y vehículo deben ser de la sociedad, no de un socio en lo personal.</td><td>Contrato de arrendamiento y facturas a nombre de la empresa constituida.</td></tr>
+      <tr><td><strong>Tu función operativa</strong></td><td>Es tiempo completo al inicio.</td><td>Sueldo de mercado por la función, separado de las acciones, aunque se difiera los primeros meses.</td></tr>
+      <tr><td><strong>"Administrar y auditar"</strong></td><td>Puede chocar con la operación si no se define.</td><td>Acceso de consulta a banco y sistemas, revisión del cierre mensual, firma conjunta arriba de un monto, y la relación con el dueño y con la ancla.</td></tr>
+      <tr><td><strong>Exclusividad</strong></td><td>Hoy es verbal y depende del vínculo familiar.</td><td>Contrato entre el dueño de los parques y la nueva empresa: alcance, plazo y qué pasa si cambia la relación.</td></tr>
+      <tr><td><strong>La Terraza</strong></td><td>Puede ser canal de venta o competir por los mismos clientes.</td><td>Precio pactado si sigue siendo del contacto y revende la comida del día, o reparto si vende a nombre de la nueva empresa.</td></tr>
     </tbody>
   </table></div>
-  <h4>Temas a negociar antes de constituir</h4>
-  <p>Participación accionaria · aportaciones de capital y calendario · sueldo por funciones operativas · política de distribución y reinversión · decisiones reservadas a unanimidad · firmas bancarias y límites de gasto · dedicación y exclusividad · titularidad de la relación comercial y del contrato con el parque · qué pasa si el parque no se concreta · salida voluntaria o forzosa de un socio (derecho de preferencia, valuación, compra‑venta) · resolución de conflictos (mediación/arbitraje).</p>
+  <div class="cols">
+    <div class="card"><h4>Cuatro cosas distintas</h4><ul class="clean"><li><strong>Acciones:</strong> propiedad y voto, por capital o activos aportados y riesgo asumido.</li><li><strong>Trabajar en la empresa:</strong> una función medible.</li><li><strong>Sueldo:</strong> pago por esa función.</li><li><strong>Utilidades:</strong> lo que queda después de impuestos, reinversión y reservas.</li></ul></div>
+    <div class="card"><h4>Criterios para una sociedad equilibrada</h4><ul class="clean"><li>Capital en riesgo de cada socio.</li><li>Dedicación comprometida.</li><li>Aportes difíciles de reemplazar: exclusividad formalizada, relación con la ancla, operación.</li><li>Avales o garantías personales.</li><li>Acciones que se ganan gradualmente con permanencia e hitos, como firmar con la ancla o llegar a 350 platillos.</li></ul></div>
+  </div>
+  <p><strong>Secuencia sugerida:</strong> primero un acuerdo breve de validación (confidencialidad, gastos y qué pasa con lo trabajado si no se sigue). Después, la constitución de la empresa con pacto de socios antes de firmar el local o el contrato con la ancla.</p>
 </div>
 </section>
 
 <!-- ================= REUNIÓN ================= -->
 <section class="sec" id="reunion">
 <div class="wrap">
-  <div class="secnum">12 · GUÍA PARA LA REUNIÓN</div>
-  <h2>Quince preguntas, en el orden de una conversación natural</h2>
-  <p class="intro">Empieza por su historia y lo que ve en el parque; deja dinero y sociedad para el final. Toma notas sobre qué es dato y qué es expectativa.</p>
-  <div class="qa">
-    <div class="phase">Abrir: su historia y la oportunidad</div>
-    <div class="q"><div><div class="qt">¿Cómo surgió esto y qué te dijo exactamente el dueño del parque?</div><div class="qw">Averigua si hubo una petición, una invitación a proponer o un comentario. Cambia todo entre "tenemos una puerta" y "nos pidieron propuesta".</div></div></div>
-    <div class="q"><div><div class="qt">¿Quién decidiría contratar el comedor: el desarrollador, cada empresa o ambos?</div><div class="qw">Define el cliente contractual y quién paga. Sin esto no hay modelo de negocio.</div></div></div>
-    <div class="q"><div><div class="qt">Cuando dicen "más de 500 personas", ¿son trabajadores, comidas o una estimación del parque lleno?</div><div class="qw">Separa población, comidas potenciales y comidas facturables.</div></div></div>
-    <div class="q"><div><div class="qt">¿Qué empresas llegarán primero, de qué giro y con cuántas personas por turno?</div><div class="qw">Identifica el ancla y la rampa de ocupación. Manufactura con turnos ≠ almacén logístico.</div></div></div>
-    <div class="q"><div><div class="qt">¿Cuándo abre y cómo se espera que se llene durante el primer año?</div><div class="qw">Determina cuántos meses operarías por debajo del equilibrio.</div></div></div>
-    <div class="phase">Infraestructura y operación</div>
-    <div class="q"><div><div class="qt">¿Hay un comedor o cocina construida? ¿Con qué instalaciones y equipo?</div><div class="qw">Decide entre caso A (inversión menor) y caso B (inversión de millones). Pide planos o fotos.</div></div></div>
-    <div class="q"><div><div class="qt">¿Quién pagaría adecuaciones y equipo, y quién se queda con ellos si termina el contrato?</div><div class="qw">Riesgo de quedar con inversión atrapada en un inmueble ajeno.</div></div></div>
-    <div class="q"><div><div class="qt">¿Qué horarios, turnos y estándares esperan (menú, tiempos, certificaciones)?</div><div class="qw">Dimensiona personal, líneas de servicio y costo de cumplimiento.</div></div></div>
-    <div class="phase">Modelo comercial</div>
-    <div class="q"><div><div class="qt">¿Cómo se pagaría cada comida y quién fijaría el precio?</div><div class="qw">Concesión vs contrato vs híbrido; si la empresa subsidia y cuánto paga el trabajador.</div></div></div>
-    <div class="q"><div><div class="qt">¿Habría contrato con volumen mínimo, plazo y exclusividad? ¿Qué pide el parque a cambio (renta, % de ventas)?</div><div class="qw">Mínimos garantizados y cuota de concesión son las variables con más impacto en el modelo.</div></div></div>
-    <div class="q"><div><div class="qt">¿Quién más vende comida hoy en el parque o alrededor, y quién atiende los otros parques del desarrollador?</div><div class="qw">Competencia directa y posible operador incumbente.</div></div></div>
-    <div class="q"><div><div class="qt">¿Cuánto vende hoy el food truck y qué has aprendido de lo que compran y pagan?</div><div class="qw">Única evidencia de demanda real: tickets, precio promedio y frecuencia.</div></div></div>
-    <div class="phase">La posible sociedad</div>
-    <div class="q"><div><div class="qt">¿Qué te imaginas que haría yo y por qué pensaste en mí?</div><div class="qw">Expectativas de rol, tiempo y dinero; detecta si busca socio operativo, inversionista o ambos.</div></div></div>
-    <div class="q"><div><div class="qt">¿Qué puedes aportar tú además del contacto: capital, tiempo, equipo, permisos?</div><div class="qw">Balance de aportaciones y capacidad financiera real.</div></div></div>
-    <div class="q"><div><div class="qt">¿Te parece si las próximas semanas validamos juntos con números antes de hablar de porcentajes?</div><div class="qw">Mide su disposición a un proceso ordenado; su respuesta es en sí una señal.</div></div></div>
+  <div class="secnum">12 · PROPUESTA BASE PARA EL SÁBADO 17 DE OCTUBRE</div>
+  <h2>Qué llevar a la segunda reunión</h2>
+  <p class="intro">El objetivo no es cerrar la sociedad. Es acordar el <strong>modelo de cocina externa y distribución</strong>, la <strong>oferta para la ancla</strong>, el <strong>capital y los roles</strong> y el <strong>plan de las próximas semanas</strong>.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Bloque</th><th>Contenido</th><th>Dónde está</th></tr></thead>
+    <tbody>
+      <tr><td>1. Diagnóstico</td><td>Parque 1, ancla, proveedor actual y su problema.</td><td>Secciones <a href="#resumen">1</a> y <a href="#oportunidad">2</a></td></tr>
+      <tr><td>2. Modelo</td><td>Cocina rentada, 3 cocineros, reparto en caliente, venta en La Terraza, nuevas rutas.</td><td>Secciones <a href="#modelos">5</a> y <a href="#operacion">6</a></td></tr>
+      <tr><td>3. Oferta para la ancla</td><td>Borrador de condiciones y degustación.</td><td>Esta sección</td></tr>
+      <tr><td>4. Números</td><td>Escenarios por vehículo, capital máximo y recuperación; qué tiene que ser cierto.</td><td><a href="#finanzas">Sección 7</a></td></tr>
+      <tr><td>5. Capital y roles</td><td>Cuánto pone cada quién, tu dedicación, administración y auditoría.</td><td>Secciones <a href="#socio">10</a> y <a href="#sociedad">11</a></td></tr>
+      <tr><td>6. Plan</td><td>Calendario hacia enero de 2027 y criterios para avanzar.</td><td><a href="#riesgos">Sección 13</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Borrador de oferta para la empresa ancla</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Condición</th><th>Propuesta inicial</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td>Servicio</td><td>Entrega diaria en caliente por turno en su planta; porcionado o servicio sencillo; retiro de contenedores y residuos.</td><td>Igual de cómodo que hoy, con mejor ejecución.</td></tr>
+      <tr><td>Menú</td><td>Ciclo de 4 semanas: plato fuerte con dos opciones, guarnición, frijoles o sopa, tortillas y agua; opción ligera.</td><td>Un menú publicado da certeza y variedad.</td></tr>
+      <tr><td>Precio</td><td>Igual o menor al actual. Base del modelo: $84 + IVA (≈ $97), fijo 6 meses.</td><td>El precio es parte del descontento. Antes hay que confirmar si los $100 incluyen IVA.</td></tr>
+      <tr><td>Subsidio</td><td>Se mantiene: 50% la empresa y 50% el trabajador, este último por descuento de nómina.</td><td>Simplifica la cobranza; el trabajador paga más del 20% de la UMA <sup class="ref"><a href="#s9">[9]</a></sup>.</td></tr>
+      <tr><td>Mínimo garantizado</td><td>150 platillos diarios desde el inicio, que suben con la plantilla hasta 250 al llegar a 350 empleados. Alternativa: el 85% de la plantilla activa, lo que sea mayor.</td><td>Hace viable el arranque. Hoy implica que paguen ≈ 20 platillos diarios no consumidos.</td></tr>
+      <tr><td>Plazo</td><td>12 meses con precio revisable a los 6, o 6 meses con renovación automática.</td><td>La inversión se recupera en 12–17 meses: un contrato de sólo 6 meses deja expuestos a los socios.</td></tr>
+      <tr><td>Prueba</td><td>Degustación con RH y un comité de empleados; prueba pagada de 2 semanas.</td><td>Reduce el riesgo de cambiar de proveedor.</td></tr>
+      <tr><td>Indicadores</td><td>Puntualidad, temperatura registrada, satisfacción mensual (meta ≥ 85%) e incidencias.</td><td>Hace medible la mejora.</td></tr>
+      <tr><td>Facturación y pago</td><td>Factura semanal o quincenal con la lista conciliada; pago a 15 días.</td><td>Cada 15 días menos de cobro reduce el capital necesario en ≈ $0.15 M al arranque y en ≈ $0.35 M con 350 platillos diarios.</td></tr>
+      <tr><td>Cumplimiento</td><td>Empresa constituida, IMSS, aviso sanitario del local, seguro de responsabilidad civil, REPSE si aplica.</td><td>Requisitos típicos de alta como proveedor.</td></tr>
+      <tr><td>Salida</td><td>Aviso de 30 días; penalización sólo por incumplimiento grave. Si la empresa sale antes de 12 meses, se pactan los costos de terminación.</td><td>Equilibra flexibilidad y protección de la inversión.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tbl-note"><span class="tag t-sup">Supuesto</span> Son puntos de partida para negociar. Precio y mínimo se fijan después de la reunión de descubrimiento y del menú costeado.</p>
+
+  <div class="cols">
+    <div>
+      <h3>Preguntas pendientes para el contacto</h3>
+      <div class="qa">
+        <div class="q"><div><div class="qt">¿Dónde está exactamente el parque, y en qué zona conviene buscar el local?</div><div class="qw">La distancia define la cadena de calor y los tiempos de reparto.</div></div></div>
+        <div class="q"><div><div class="qt">¿Qué cubre la exclusividad y puede quedar a nombre de la nueva empresa?</div><div class="qw">Es el activo que diferencia la oportunidad.</div></div></div>
+        <div class="q"><div><div class="qt">¿Puedes conseguir la reunión con RH o compras de la ancla en las próximas dos semanas?</div><div class="qw">Sin ella, los datos de la ancla siguen siendo de segunda mano.</div></div></div>
+        <div class="q"><div><div class="qt">¿Cuánto capital estás dispuesto a aportar y en qué calendario?</div><div class="qw">El plan necesita ≈ $0.9–1.2 M en el peor momento.</div></div></div>
+        <div class="q"><div><div class="qt">¿Qué significa para ti "administrar y auditar" en tiempo, firmas y compensación?</div><div class="qw">Evita choques con la operación.</div></div></div>
+        <div class="q"><div><div class="qt">¿La Terraza podría vender la comida del día, y bajo qué esquema?</div><div class="qw">Es el canal para el resto del parque.</div></div></div>
+      </div>
+    </div>
+    <div>
+      <h3>Preguntas para la empresa ancla</h3>
+      <div class="qa">
+        <div class="q"><div><div class="qt">¿Cuántos turnos de comida tienen, a qué hora, cuántas personas por turno y qué días?</div><div class="qw">Define viajes, personal y días operativos.</div></div></div>
+        <div class="q"><div><div class="qt">¿Qué incluye hoy el platillo de $100 y si incluye IVA?</div><div class="qw">Sin esto no hay precio comparable.</div></div></div>
+        <div class="q"><div><div class="qt">¿Qué es lo que más les molesta del servicio actual?</div><div class="qw">Orienta la propuesta de valor.</div></div></div>
+        <div class="q"><div><div class="qt">¿Cómo se cobra la parte del trabajador y cómo controlan quién comió?</div><div class="qw">Define facturación y conciliación.</div></div></div>
+        <div class="q"><div><div class="qt">¿Tienen contrato vigente? ¿Con cuánto aviso pueden terminarlo?</div><div class="qw">Determina la fecha real de arranque.</div></div></div>
+        <div class="q"><div><div class="qt">¿Cuál es el calendario de contratación hacia 350 empleados?</div><div class="qw">Define el mínimo escalonado y el ritmo de contratación de cocina.</div></div></div>
+        <div class="q"><div><div class="qt">¿Prefieren platillo individual o servicio a granel? ¿Tienen tomas eléctricas en el área donde comen?</div><div class="qw">Define empaque, equipo y si alguien debe servir.</div></div></div>
+        <div class="q"><div><div class="qt">¿Qué pide compras para dar de alta a un proveedor y en qué plazo pagan?</div><div class="qw">REPSE, opinión de cumplimiento, IMSS, seguro, días de pago.</div></div></div>
+      </div>
+    </div>
   </div>
 
-  <div class="callout"><p><strong>Las cinco respuestas que más cambian la evaluación:</strong> 1) quién es el cliente contractual y si hay ancla; 2) si existe volumen mínimo garantizado; 3) si hay cocina equipada; 4) el precio por comida y quién lo paga; 5) los plazos de pago.</p></div>
+  <h3>Sondeo del resto del Parque 1</h3>
+  <div class="cols">
+    <div class="card"><h4>Método</h4><ul class="clean"><li>Lista de inquilinos con plantilla, a través del dueño del parque.</li><li>Encuesta de 2 minutos con código QR en La Terraza durante 2 semanas.</li><li>Visita a RH de las 3–5 empresas más grandes después de la ancla.</li><li>Una vez arrancado, la venta directa en La Terraza funciona como prueba continua de demanda.</li></ul></div>
+    <div class="card"><h4>Preguntas de la encuesta</h4><ol class="clean"><li>¿En qué empresa trabajas y en qué turno?</li><li>¿Qué haces hoy para comer?</li><li>¿Cuánto gastas en promedio en tu comida?</li><li>¿Comprarías una comida completa caliente en el parque? ¿Hasta qué precio?</li><li>¿Qué es lo más importante: precio, sabor, porción, rapidez o algo saludable?</li></ol></div>
+  </div>
 
   <h3>Señales de alerta</h3>
   <div class="cols">
-    <div class="card"><h4>Se pueden resolver con validación</h4><ul class="clean">
-      <li>Volumen sólo verbal todavía.</li><li>No se sabe qué equipo hay.</li><li>Precio aún sin definir.</li><li>Roles de socios sin hablar.</li><li>Sin permisos todavía (normal antes de abrir).</li></ul></div>
-    <div class="card"><h4>Justificarían detenerse</h4><ul class="clean">
-      <li>Te piden invertir en equipo antes de un documento firmado con el parque o el ancla.</li>
-      <li>El precio que paga el cliente no cubre alimentos más nómina en el modelo con cotizaciones.</li>
-      <li>Cobro a 60+ días sin capital para financiarlo.</li>
-      <li>Se insiste en presentar la demanda como "garantizada" sin evidencia.</li>
-      <li>Resistencia a poner por escrito roles, aportaciones y salida.</li>
-      <li>Disposición a operar sin control sanitario o con personal informal.</li></ul></div>
+    <div class="card"><h4>Se pueden resolver con validación</h4><ul class="clean"><li>Los datos de la ancla son de segunda mano.</li><li>No se sabe si los $100 incluyen IVA.</li><li>La exclusividad es verbal.</li><li>Aún no hay local identificado.</li><li>Tu dedicación no está definida.</li></ul></div>
+    <div class="card"><h4>Justificarían detenerse o replantear</h4><ul class="clean"><li>La ancla no acepta ningún mínimo o tiene contrato largo con su proveedor.</li><li>El precio que aceptaría no cubre insumos más nómina con el menú costeado.</li><li>Se presiona para rentar o comprar equipo antes de la carta de intención.</li><li>No hay capital para cubrir el peor mes de caja.</li><li>Nadie puede estar en la operación diaria y no hay presupuesto para contratar.</li></ul></div>
   </div>
 </div>
 </section>
@@ -805,48 +911,53 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 <!-- ================= RIESGOS Y PLAN ================= -->
 <section class="sec" id="riesgos">
 <div class="wrap">
-  <div class="secnum">13 · RIESGOS Y PLAN DE VALIDACIÓN</div>
-  <h2>Treinta días para pasar de conversación a decisión</h2>
+  <div class="secnum">13 · RIESGOS Y PLAN</div>
+  <h2>De la propuesta base al arranque en enero de 2027</h2>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Riesgo</th><th>Tipo</th><th>Severidad</th><th>Mitigación</th></tr></thead>
     <tbody>
-      <tr><td>Ocupación lenta del parque</td><td>Comercial</td><td>Alta</td><td>Ancla con mínimo; arrancar con desayuno/comida reducida; nómina escalonada.</td></tr>
-      <tr><td>Inversión atrapada en inmueble ajeno</td><td>Financiero</td><td>Alta</td><td>Que el parque equipe; si no, plazo de contrato ≥ periodo de recuperación y cláusula de compra del equipo.</td></tr>
-      <tr><td>Capital de trabajo insuficiente</td><td>Financiero</td><td>Alta</td><td>Negociar pago a 15–30 días o anticipo; línea de crédito antes de firmar.</td></tr>
-      <tr><td>Brote o incidente sanitario</td><td>Operativo / reputacional</td><td>Alta</td><td>Higienista desde el día uno, registros, seguro RC.</td></tr>
-      <tr><td>Costo laboral creciente (salario mínimo, jornada 40 h)</td><td>Regulatorio</td><td>Media‑alta</td><td>Cláusula de ajuste de precio anual ligada a salario mínimo e inflación de alimentos.</td></tr>
-      <tr><td>Rotación de personal</td><td>Operativo</td><td>Media</td><td>Sueldos competitivos, transporte, capacitación cruzada.</td></tr>
-      <tr><td>Conflicto entre socios</td><td>Gobierno</td><td>Media</td><td>Pacto de socios y acuerdo de validación previo.</td></tr>
-      <tr><td>Respuesta de un competidor con escala</td><td>Competitivo</td><td>Media</td><td>Exclusividad o preferencia documentada con el desarrollador.</td></tr>
+      <tr><td>Dependencia de un solo cliente</td><td>Comercial</td><td>Alta</td><td>Contrato de 12 meses, venta directa desde el inicio, sondeo y nuevas empresas.</td></tr>
+      <tr><td>La ancla no firma o no acepta el mínimo</td><td>Comercial</td><td>Alta</td><td>Descubrimiento y degustación antes de invertir; alternativa de mínimo en porcentaje de plantilla.</td></tr>
+      <tr><td>El crecimiento a 350 se retrasa</td><td>Comercial</td><td>Media‑alta</td><td>Personal de cocina contratado sólo conforme sube el volumen.</td></tr>
+      <tr><td>Permisos del local tardan</td><td>Regulatorio</td><td>Alta</td><td>Revisar uso de suelo antes de firmar; iniciar trámites en cuanto haya carta de intención.</td></tr>
+      <tr><td>Tu tiempo como cuello de botella</td><td>Operativo</td><td>Alta</td><td>Repartidor y encargado presupuestados; proveedores con entrega.</td></tr>
+      <tr><td>Pérdida de temperatura o retrasos</td><td>Operativo / sanitario</td><td>Alta</td><td>Contenedores térmicos, registro, ruta fija y prueba cronometrada.</td></tr>
+      <tr><td>Precio o productividad peores que lo supuesto</td><td>Financiero</td><td>Alta</td><td>Menú costeado con cotizaciones y prueba de producción; precio revisable a los 6 meses.</td></tr>
+      <tr><td>Capital de trabajo</td><td>Financiero</td><td>Media</td><td>Pago a 15 días y facturación quincenal; reserva para el peor mes.</td></tr>
+      <tr><td>Rotación de cocineros</td><td>Operativo</td><td>Media</td><td>Sueldo competitivo, receta estándar documentada, capacitación cruzada.</td></tr>
+      <tr><td>Exclusividad no formalizada</td><td>Gobierno</td><td>Media</td><td>Contrato con el dueño del parque a nombre de la empresa.</td></tr>
     </tbody>
   </table></div>
 
-  <h3>Cronograma de validación (condicionado a que la reunión revele una oportunidad real)</h3>
+  <h3>Cronograma sugerido (12 de octubre de 2026 a 10 de enero de 2027)</h3>
   <div class="timeline" id="timeline"></div>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Etapa</th><th>Entregable o evidencia</th></tr></thead>
     <tbody>
-      <tr><td>1. Relación comercial y demanda</td><td>Reunión con el desarrollador; nombre del ancla, plantilla por turno y fechas por escrito (correo o minuta).</td></tr>
-      <tr><td>2. Visita y levantamiento</td><td>Fotos, planos, inventario de instalaciones y lista de faltantes.</td></tr>
-      <tr><td>3. Conversaciones con contratantes</td><td>Necesidades, presupuesto, proveedor actual, plazos de pago.</td></tr>
-      <tr><td>4. Menús, precios, competidores, proveedores</td><td>Menú de 4 semanas costeado; 3 cotizaciones por categoría; precios de referencia de competidores.</td></tr>
-      <tr><td>5. Costeo y modelo con cotizaciones</td><td>Este modelo actualizado con datos reales; equilibrio y capital de trabajo.</td></tr>
-      <tr><td>6. Modelo de operación</td><td>Organigrama, turnos, flujo de servicio y sistema de registro.</td></tr>
-      <tr><td>7. Inversión y capital</td><td>Presupuesto con cotizaciones; fuentes de financiamiento.</td></tr>
-      <tr><td>8. Condiciones de la sociedad</td><td>Hoja de términos (no vinculante) con roles, aportaciones y salida.</td></tr>
-      <tr><td>9. Decisión</td><td>Memo de 2 páginas: avanzar, renegociar o descartar, con criterios.</td></tr>
+      <tr><td>1. Propuesta base (17‑oct)</td><td>Acuerdo sobre modelo, roles, capital y siguientes pasos.</td></tr>
+      <tr><td>2. Descubrimiento con la ancla</td><td>Minuta con turnos, precio actual, requisitos de compras y calendario de contratación.</td></tr>
+      <tr><td>3. Búsqueda de local</td><td>2–3 opciones con renta, uso de suelo verificado y costo de adecuaciones. Sin firmar.</td></tr>
+      <tr><td>4. Menú costeado y degustación</td><td>Menú de 4 semanas con costo por platillo; la degustación puede prepararse en una cocina existente porque es sólo una tanda.</td></tr>
+      <tr><td>5. Propuesta formal y carta de intención</td><td>Documento firmado por la ancla con precio, mínimo, plazo y fecha de inicio.</td></tr>
+      <tr><td>6. Hoja de términos de la sociedad</td><td>Roles, capital, compensación, exclusividad y salida.</td></tr>
+      <tr><td>7. Local, adecuaciones y equipo</td><td>Arrendamiento firmado a nombre de la empresa, obra y equipo instalado. Sólo después de la carta de intención.</td></tr>
+      <tr><td>8. Constitución y permisos</td><td>Acta, RFC, IMSS, licencia de giro, aviso sanitario, Protección Civil, seguro.</td></tr>
+      <tr><td>9. Contratación y capacitación</td><td>3 cocineros contratados; dos semanas de prueba de producción y traslado.</td></tr>
+      <tr><td>10. Arranque</td><td>Prueba pagada de 2 semanas a inicios de enero.</td></tr>
     </tbody>
   </table></div>
+  <p class="small">La ruta crítica es <strong>carta de intención → local → permisos</strong>. Si la carta llega a mediados de noviembre, quedan unas 7 semanas, con diciembre de por medio, para tener el local listo. Es ajustado: conviene ir verificando el uso de suelo de los locales candidatos desde octubre.</p>
 
-  <h3>Criterios de avance</h3>
+  <h3>Criterios para firmar y arrancar</h3>
   <ul class="clean">
-    <li>Documento escrito del parque o del ancla que identifique al cliente, el modelo de pago y un volumen esperado.</li>
-    <li>Con cotizaciones reales, el volumen <em>esperado del mes 3</em> supera el punto de equilibrio con un margen de seguridad que ustedes fijen (propuesta: ≥ 25%), y el volumen <em>mínimo garantizado</em> cubre al menos alimentos más nómina.</li>
-    <li>Inversión más capital de trabajo de los primeros 3 meses cubiertos sin comprometer el patrimonio personal más allá de lo acordado.</li>
-    <li>Recuperación de la inversión dentro del plazo del contrato.</li>
-    <li>Hoja de términos de sociedad aceptada por ambos.</li>
+    <li>Carta de intención o contrato de la ancla con precio, plazo de al menos 12 meses (o 6 con renovación) y mínimo garantizado.</li>
+    <li>Con menú costeado y cotizaciones reales, el escenario resultante recupera la inversión dentro del plazo del contrato.</li>
+    <li>Capital para cubrir el peor mes de caja comprometido por los socios.</li>
+    <li>Local con uso de suelo compatible y permisos viables en el plazo.</li>
+    <li>Prueba de producción y traslado exitosa: a tiempo y a 60 °C o más.</li>
+    <li>Tu dedicación resuelta, o repartidor y encargado presupuestados.</li>
+    <li>Hoja de términos de la sociedad aceptada.</li>
   </ul>
-  <p class="small">Los umbrales numéricos (margen mínimo, recuperación máxima) no se pueden fijar con confianza hasta tener precio y cotizaciones; se proponen como punto de partida para la decisión de los socios.</p>
 </div>
 </section>
 
@@ -854,37 +965,31 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
 <section class="sec" id="conclusion">
 <div class="wrap">
   <div class="secnum">14 · CONCLUSIÓN</div>
-  <h2>Todavía no es posible emitir un veredicto, y eso está bien</h2>
+  <h2>Vale la pena llevar la propuesta a la ancla antes de comprometer un peso</h2>
   <div class="cols">
     <div>
-      <h4>Qué la hace atractiva</h4>
-      <p>Acceso preferente a un parque nuevo, en el mercado industrial que más crece del occidente, con un socio que ya conoce a los usuarios y un modelo de ingresos recurrentes con potencial de replicarse en el portafolio del desarrollador.</p>
-      <h4>Qué información falta</h4>
-      <p>Cliente contractual, ancla, volumen por turno y rampa, infraestructura, precio, plazos de pago y condiciones del parque.</p>
-      <h4>Riesgos más importantes</h4>
-      <p>Demanda menor o más lenta de lo dicho, inversión en un inmueble ajeno sin contrato, capital de trabajo, inocuidad y conflicto entre socios.</p>
+      <h4>Qué la hace atractiva</h4><p>Un cliente concreto, insatisfecho y a punto de duplicar su plantilla; un parque lleno y otro en camino; un modelo de cocina externa que sirve para cualquier parque; y acceso preferente a través del socio.</p>
+      <h4>Qué información falta</h4><p>Confirmar con la ancla el precio, los turnos, el contrato vigente, la disposición a un mínimo y el calendario de contratación. Falta también ubicar el local y su uso de suelo, costear el menú y definir capital, dedicación y roles.</p>
+      <h4>Riesgos más importantes</h4><p>Concentración en un cliente, permisos del local, tu tiempo, cadena de calor, y precio o productividad peores que lo supuesto.</p>
     </div>
     <div>
-      <h4>Qué tendría que ser cierto</h4>
-      <p>Un cliente solvente que garantice cerca de 300+ comidas diarias desde los primeros meses a un precio que cubra con holgura alimentos más nómina; cocina provista por el parque o recuperable dentro del contrato; cobro a 30 días o menos; y un equipo con experiencia real en producción masiva.</p>
-      <h4>Tu rol realista</h4>
-      <p>Arquitecto de la operación y responsable de finanzas y control, con un gerente de unidad experimentado en sitio. No operador diario, salvo que decidas dedicar ese tiempo.</p>
-      <h4>Siguiente paso de mayor aprendizaje y menor compromiso</h4>
-      <p>Reunión con el desarrollador para obtener por escrito los datos del ancla y del inmueble, más el levantamiento físico. Cero capital comprometido.</p>
+      <h4>Qué tendría que ser cierto</h4><p>Que la ancla firme con precio cercano a $84 + IVA y un mínimo de ~150; que crezca hacia 350; que 3 cocineros produzcan ~130–150 platillos diarios con la calidad prometida; que los socios cubran ≈ $0.9–1.2 M de capital en el peor momento; y que alguien esté en la operación cada día.</p>
+      <h4>Tu rol realista</h4><p>Operador de tiempo completo los primeros meses y, desde el mes 5–6, director de operación con repartidor y encargado.</p>
+      <h4>Siguiente paso de mayor aprendizaje y menor compromiso</h4><p>Presentar la propuesta base el sábado, conseguir la reunión con RH de la ancla y preparar una degustación. En paralelo, identificar 2–3 locales y verificar su uso de suelo. Nada de esto requiere capital.</p>
     </div>
   </div>
   <h3>Diez variables críticas antes de comprometer capital o firmar</h3>
   <ol class="clean">
-    <li>Cliente contractual y quién firma.</li>
-    <li>Empresa ancla: giro, plantilla y turnos.</li>
-    <li>Volumen mínimo garantizado y rampa de ocupación.</li>
-    <li>Precio por comida y división empresa/trabajador.</li>
-    <li>Infraestructura existente y quién invierte en el faltante.</li>
-    <li>Cuota de concesión, renta o participación del parque.</li>
-    <li>Plazo de cobro y forma de pago.</li>
-    <li>Plazo del contrato, exclusividad y condiciones de salida.</li>
-    <li>Costo real por comida con cotizaciones de insumos y productividad validada.</li>
-    <li>Aportaciones, dedicación y reglas de la sociedad.</li>
+    <li>Precio por platillo y si los $100 actuales incluyen IVA.</li>
+    <li>Mínimo garantizado que la ancla esté dispuesta a firmar, y su plazo.</li>
+    <li>Turnos, horarios y días de servicio.</li>
+    <li>Calendario real de crecimiento a 350 empleados.</li>
+    <li>Ubicación del local, uso de suelo y tiempo de traslado.</li>
+    <li>Costo por platillo con menú costeado y cotizaciones.</li>
+    <li>Productividad real del equipo de cocina, medida en una prueba.</li>
+    <li>Días de pago de la ancla y forma de cobro al trabajador.</li>
+    <li>Capital disponible de cada socio y opción de vehículo.</li>
+    <li>Tu dedicación, roles, compensación y exclusividad formalizada.</li>
   </ol>
 </div>
 </section>
@@ -919,286 +1024,327 @@ sup.ref a{text-decoration:none;font-size:.72rem;font-family:var(--mono);padding:
     <li id="s21">Indeed México, perfil y empleos de Aramark (consultado oct‑2026). <a href="https://mx.indeed.com/cmp/Aramark/jobs" rel="noopener">Enlace</a></li>
     <li id="s22">Indeed México, perfil de Tabares Comedores (consultado oct‑2026). <a href="https://mx.indeed.com/cmp/Tabares-Comedores" rel="noopener">Enlace</a></li>
     <li id="s23">ContadorMX, "Registro de servicios especializados ante la STPS" (REPSE; art. 13 LFT). <a href="https://contadormx.com/registro-de-servicios-especializados-ante-la-stps/" rel="noopener">Enlace</a></li>
+    <li id="s24">mycar.mx, ficha de Nissan Urvan Panel 2026: precio de lista $550,900 (Panel Ventana Amplia) y $552,900 (Panel Amplia AA), con IVA (consultado 10‑oct‑2026). <a href="https://my-car.mx/auto/nissan-urvan-panel" rel="noopener">Enlace</a></li>
   </ol>
 
   <h3>Metodología y limitaciones</h3>
   <ul class="clean">
+    <li><strong>Datos de la junta del 10 de octubre de 2026</strong> (parques, empresa ancla, precio de $100, subsidio, La Terraza, exclusividad, restricciones de gas): declarados por el contacto y marcados como <span class="tag t-jun">Junta</span>. No están verificados; los de la ancla son de segunda mano.</li>
     <li>No se encontró una cifra pública confiable del mercado de comedores industriales en México. Las cifras de INEGI para la clase de actividad de servicios de comedor para empresas e instituciones pueden consultarse en el Sistema Automatizado de Información Censal de los Censos Económicos 2024; no se incorporaron porque no fue posible extraerlas en esta revisión.</li>
     <li>Las cifras de mercado de consultoras son proyecciones de terceros con definiciones distintas y, en general, de pago; se reportan sólo como contexto.</li>
+    <li>Vehículos: el precio de la van nueva proviene de su ficha de lista. Los valores de van usada, arrendamiento y food truck son supuestos, porque no fue posible consultar los sitios de anuncios.</li>
     <li>El modelo financiero es ilustrativo: los precios, costos de alimentos, productividad, cuota de concesión e inversión son supuestos sin cotización. Los sueldos de referencia provienen de vacantes publicadas, que no son estadística salarial.</li>
     <li>No se distinguen cifras reales de nominales en el modelo porque es una fotografía mensual a precios de 2026.</li>
-    <li><strong>Sólo se resuelven en campo:</strong> volumen y rampa del parque, precio aceptable, infraestructura, condiciones del desarrollador, tasa de participación de los trabajadores, plazos de pago y la competencia dentro del propio parque.</li>
+    <li><strong>Sólo se resuelven en campo:</strong> precio y condiciones reales de la ancla, interés del resto del parque, capacidad de la cocina de producción, condiciones del dueño del parque, tasa de participación de los trabajadores, plazos de pago y la competencia dentro del propio parque.</li>
   </ul>
 </div>
 </section>
 </main>
 
-<footer class="footer"><div class="wrap">Documento de trabajo preparado el 9 de octubre de 2026 para una reunión exploratoria. No constituye asesoría legal, fiscal ni financiera.</div></footer>
+<footer class="footer"><div class="wrap">Documento de trabajo preparado el 9 de octubre de 2026 y reestructurado el 10 de octubre (versión 3: cocina externa y distribución). No constituye asesoría legal, fiscal ni financiera.</div></footer>
 
 <script>
 (function(){
 'use strict';
-/* ---------- Escenarios (supuestos ilustrativos) ---------- */
-var SCEN = {
-  cons:{name:'Conservador',color:'#9B3328',price:75,days:22,food:36,ov:5.9,conc:5,prod:30,sal:11000,fac:1.38,mgmt:48500,oth:52000,inv:600000,dso:45,dpo:15},
-  base:{name:'Base',color:'#3E5C7A',price:80,days:24,food:34,ov:5.5,conc:4,prod:32,sal:11000,fac:1.35,mgmt:48500,oth:49000,inv:600000,dso:30,dpo:15},
-  fav: {name:'Favorable',color:'#3D6B4F',price:85,days:24,food:33,ov:5.2,conc:3,prod:34,sal:11000,fac:1.35,mgmt:48500,oth:46000,inv:600000,dso:15,dpo:15}
+/* ===== Escenarios de supuestos (precio, costos, demanda) ===== */
+var ASSUME = {
+  cons:{name:'Conservador',color:'#9B3328',price:78,priceO:75,days:22,food:36,pack:6,gas:2.5,part:75,othQ:20,othStart:4,cap:35,dso:45,dpo:15,fac:1.38,rentL:25000},
+  base:{name:'Base',color:'#3E5C7A',price:84,priceO:80,days:24,food:34,pack:5,gas:2,part:85,othQ:50,othStart:3,cap:45,dso:30,dpo:15,fac:1.35,rentL:18000},
+  fav: {name:'Favorable',color:'#3D6B4F',price:88,priceO:85,days:24,food:32.5,pack:4.5,gas:1.8,part:90,othQ:80,othStart:3,cap:50,dso:15,dpo:15,fac:1.35,rentL:16000}
 };
-var DEP_MONTHS = 60, MIN_OPS = 6, INV_DAYS = 5;
+/* ===== Opciones de vehículo ===== */
+var VEH = {
+  own:  {name:'Vehículo propio (temporal)',vinv:0,vmon:6000},
+  used: {name:'Van usada',vinv:380000,vmon:7000},
+  newv: {name:'Van nueva (Urvan Panel 2026)',vinv:551000,vmon:7000},
+  lease:{name:'Van en arrendamiento',vinv:30000,vmon:20000},
+  truck:{name:'Food truck equipado',vinv:850000,vmon:10000}
+};
+/* ===== Estructura base del plan ===== */
+var BASE = {h0:150,h1:350,ramp:6,g0:150,g1:250,cooks0:3,salC:12000,drivers:1,dStart:5,salD:11000,encSal:16000,encStart:6,socio:0,
+  util:8000,othF:12000,kit:350000,adec:150000,cont:60000,dep:60000,inv0:30000};
+var A_FIELDS = ['price','priceO','days','food','pack','gas','part','othQ','othStart','cap','dso','dpo','fac','rentL'];
+var V_FIELDS = ['vinv','vmon'];
+var SM_MES = 9582.47, HORIZON = 36, SHOW = 18;
 
-function calc(q, a){
-  var meals = q * a.days;
-  var rev = meals * a.price;
-  var foodC = meals * a.food;
-  var ovC = meals * a.ov;
-  var concC = rev * a.conc / 100;
-  var ops = (a.emp != null) ? a.emp : Math.max(MIN_OPS, Math.ceil(q / a.prod));
-  var opsPay = ops * a.sal * a.fac;
-  var mgmtPay = a.mgmt * a.fac;
-  var labor = opsPay + mgmtPay;
-  var ebitda = rev - foodC - ovC - concC - labor - a.oth;
-  var dep = (a.inv || 0) / DEP_MONTHS;
-  var cmMeal = a.price - a.food - a.ov - a.price * a.conc / 100;
-  var gross = rev - foodC - ovC - opsPay;
-  var cashCosts = foodC + ovC + concC + labor + a.oth;
-  var wc = cashCosts / 30 * a.dso - foodC / 30 * a.dpo + q * a.food * INV_DAYS;
-  return {meals:meals,rev:rev,foodC:foodC,ovC:ovC,concC:concC,ops:ops,opsPay:opsPay,labor:labor,ebitda:ebitda,ebit:ebitda-dep,dep:dep,
-    cmMeal:cmMeal,gross:gross,wc:Math.max(0,wc),margin:rev?ebitda/rev:0,laborPct:rev?labor/rev:0,foodPct:a.food/a.price};
+function merge(){ var o={}; for(var i=0;i<arguments.length;i++){ var s=arguments[i]; for(var k in s) if(Object.prototype.hasOwnProperty.call(s,k)) o[k]=s[k]; } return o; }
+function invTotal(a){ return a.kit+a.adec+a.cont+a.dep+a.inv0+a.vinv; }
+
+/* ===== Proyección mensual ===== */
+function month(a, m){
+  var prog = Math.min(1, (m-1)/Math.max(1,a.ramp));
+  var head = a.h0 + (a.h1-a.h0)*prog;
+  var g = a.g0 + (a.g1-a.g0)*prog;
+  var ancS = head*a.part/100, ancB = Math.max(ancS, g);
+  var oth = (a.othQ>0 && m>=a.othStart) ? a.othQ*Math.min(1,(m-a.othStart+1)/3) : 0;
+  var served = ancS + oth, billed = ancB + oth;
+  var rev = (ancB*a.price + oth*a.priceO)*a.days;
+  var foodC = served*a.days*a.food, packC = served*a.days*a.pack, gasC = served*a.days*a.gas;
+  var need = Math.ceil(served/a.cap);
+  var cooks = Math.max(a.cooks0, need);
+  var drv = m>=a.dStart && a.dStart>0 ? a.drivers : 0;
+  var enc = (a.encStart>0 && m>=a.encStart) ? 1 : 0;
+  var labor = (cooks*a.salC + drv*a.salD + enc*a.encSal)*a.fac + a.socio;
+  var fixed = a.rentL + a.util + a.othF + a.vmon;
+  var ebitda = rev - foodC - packC - gasC - labor - fixed;
+  var wc = rev*a.dso/30 - (foodC+packC)*a.dpo/30 + served*a.food*5;
+  return {m:m,head:head,g:g,ancS:ancS,ancB:ancB,oth:oth,served:served,billed:billed,unserved:Math.max(0,g-ancS),rev:rev,varC:foodC+packC+gasC,
+    foodC:foodC,packC:packC,gasC:gasC,cooks:cooks,need:need,drv:drv,enc:enc,labor:labor,fixed:fixed,ebitda:ebitda,wc:wc};
 }
-function breakeven(a){ for(var q=50;q<=2000;q++){ if(calc(q,a).ebitda>=0) return q; } return null; }
+function project(a){
+  var rows=[], inv=invTotal(a), cum=-inv, wcPrev=0;
+  for(var m=1;m<=HORIZON;m++){
+    var r = month(a,m);
+    r.dwc = r.wc - wcPrev; wcPrev = r.wc;
+    r.cf = r.ebitda - r.dwc; cum += r.cf; r.cum = cum;
+    rows.push(r);
+  }
+  var minCum = 0, minM = 0; rows.forEach(function(r){ if(r.cum<minCum){minCum=r.cum;minM=r.m;} });
+  if(-inv < minCum){ minCum=-inv; minM=0; }
+  var pay = null; for(var i=0;i<rows.length;i++){ if(rows[i].cum>=0){ pay=rows[i].m; break; } }
+  var firstPos = null; for(i=0;i<rows.length;i++){ if(rows[i].ebitda>=0){ firstPos=rows[i].m; break; } }
+  var y1 = rows.slice(0,12);
+  return {rows:rows,inv:inv,minCum:minCum,minM:minM,pay:pay,firstPos:firstPos,
+    y1rev:y1.reduce(function(s,r){return s+r.rev;},0), y1e:y1.reduce(function(s,r){return s+r.ebitda;},0)};
+}
+/* Equilibrio en platillos/día con la estructura del mes 12, sin mínimo, todo a precio de contrato */
+function breakevenQ(a){
+  var drv = (a.dStart>0 && a.dStart<=12) ? a.drivers : 0, enc = (a.encStart>0 && a.encStart<=12) ? 1 : 0;
+  for(var q=20;q<=2000;q++){
+    var cooks = Math.max(a.cooks0, Math.ceil(q/a.cap));
+    var e = q*a.days*(a.price-a.food-a.pack-a.gas) - ((cooks*a.salC+drv*a.salD+enc*a.encSal)*a.fac + a.socio) - (a.rentL+a.util+a.othF+a.vmon);
+    if(e>=0) return q;
+  }
+  return null;
+}
 
-/* ---------- formato ---------- */
+/* ===== Formato ===== */
 function mxn(v,dec){ var s=Math.abs(v).toLocaleString('es-MX',{maximumFractionDigits:dec||0,minimumFractionDigits:dec||0}); return (v<0?'−$':'$')+s; }
 function mxnK(v){ var a=Math.abs(v); var s = a>=1e6 ? (a/1e6).toLocaleString('es-MX',{maximumFractionDigits:2})+' M' : (a/1e3).toLocaleString('es-MX',{maximumFractionDigits:0})+' k'; return (v<0?'−$':'$')+s; }
 function pct(v){ return (v*100).toLocaleString('es-MX',{maximumFractionDigits:1,minimumFractionDigits:1})+'%'; }
 function el(id){ return document.getElementById(id); }
 function sgn(v){ return (v>=0?'+':'')+mxnK(v); }
-function esc(s){ return String(s); }
+function n0(v){ return Math.round(v).toLocaleString('es-MX'); }
+function payTxt(p){ return p ? ('mes '+p) : '> 36 meses'; }
 
-/* ---------- Tabla de supuestos ---------- */
+/* ===== Tablas estáticas ===== */
 function renderAssumptions(){
   var rows = [
-    ['Precio promedio por comida (sin IVA)','price',function(v){return mxn(v);},'Sin precio público local verificable'],
-    ['Días operativos al mes','days',function(v){return v;},'L–V ≈ 22; L–S ≈ 24–26'],
-    ['Alimentos por comida, incl. merma','food',function(v){return mxn(v,2);},'Validar con menú costeado'],
-    ['Desechables + gas por comida','ov',function(v){return mxn(v,2);},'Validar con tarifa de gas LP'],
-    ['Cuota de concesión / renta','conc',function(v){return v+'% de ventas';},'Depende del parque'],
-    ['Comidas/día por operativo','prod',function(v){return v;},'Sin fuente pública'],
-    ['Sueldo bruto prom. operativo','sal',function(v){return mxn(v)+'/mes';},'Mínimo 2026 ≈ $9,582/mes'],
-    ['Factor de carga y prestaciones','fac',function(v){return '×'+v.toFixed(2);},'Validar con contador'],
-    ['Gerencia + chef + calidad (bruto)','mgmt',function(v){return mxn(v)+'/mes';},'Rango de vacantes en ZMG'],
-    ['Otros fijos','oth',function(v){return mxn(v)+'/mes';},'Servicios, limpieza, seguros, sistemas…'],
-    ['Días de cobro','dso',function(v){return v;},'Concesión ≈ 0–15; contrato 30–60']
+    ['Precio contrato por platillo (sin IVA)','price',function(v){return mxn(v);}],
+    ['→ con IVA 16%','price',function(v){return mxn(v*1.16,2);}],
+    ['Precio venta directa (sin IVA)','priceO',function(v){return mxn(v);}],
+    ['Días operativos / mes','days',function(v){return v;}],
+    ['Alimentos por platillo, incl. merma','food',function(v){return mxn(v,2);}],
+    ['Empaque y desechables','pack',function(v){return mxn(v,2);}],
+    ['Gas y energía por platillo','gas',function(v){return mxn(v,2);}],
+    ['Participación en la ancla','part',function(v){return v+'%';}],
+    ['Otros clientes (platillos/día)','othQ',function(v){return v;}],
+    ['Platillos/día por persona de cocina','cap',function(v){return v;}],
+    ['Renta del local','rentL',mxnK],
+    ['Días de cobro','dso',function(v){return v;}]
   ];
-  var h = '<thead><tr><th>Supuesto <span class="tag t-sup">Ilustrativo</span></th><th class="num">Conservador</th><th class="num">Base</th><th class="num">Favorable</th><th>Nota</th></tr></thead><tbody>';
-  rows.forEach(function(r){
-    h += '<tr><td>'+r[0]+'</td><td class="num">'+r[2](SCEN.cons[r[1]])+'</td><td class="num">'+r[2](SCEN.base[r[1]])+'</td><td class="num">'+r[2](SCEN.fav[r[1]])+'</td><td class="small">'+r[3]+'</td></tr>';
-    if(r[1]==='food'){
-      h += '<tr><td style="padding-left:24px;color:var(--muted)">→ Alimentos como % del precio</td>'+['cons','base','fav'].map(function(k){return '<td class="num">'+pct(SCEN[k].food/SCEN[k].price)+'</td>';}).join('')+'<td class="small">Resultado, no supuesto</td></tr>';
-    }
-  });
-  el('tblAssumptions').innerHTML = h + '</tbody>';
-}
+  var h = '<thead><tr><th>Supuesto <span class="tag t-sup">Ilustrativo</span></th><th class="num">Cons.</th><th class="num">Base</th><th class="num">Fav.</th></tr></thead><tbody>';
+  rows.forEach(function(r){ h += '<tr><td>'+r[0]+'</td>'+['cons','base','fav'].map(function(k){return '<td class="num">'+r[2](ASSUME[k][r[1]])+'</td>';}).join('')+'</tr>'; });
+  el('tblAssumptions').innerHTML = h+'</tbody>';
 
-/* ---------- Tabla de escenarios ---------- */
+  var s = [
+    ['Plantilla de la ancla: inicial → meta', BASE.h0+' → '+BASE.h1+' en '+BASE.ramp+' meses'],
+    ['Mínimo garantizado: inicial → al llegar a la meta', BASE.g0+' → '+BASE.g1+' platillos/día'],
+    ['Cocineros al arranque', BASE.cooks0+' (se contrata más personal de cocina según capacidad)'],
+    ['Sueldo bruto cocinero', mxn(BASE.salC)+'/mes'],
+    ['Repartidor', BASE.drivers+' desde el mes '+BASE.dStart+' · '+mxn(BASE.salD)+'/mes'],
+    ['Encargado de cocina', 'desde el mes '+BASE.encStart+' · '+mxn(BASE.encSal)+'/mes'],
+    ['Tu sueldo como socio operador', mxn(BASE.socio)+' (editable)'],
+    ['Servicios del local / otros fijos', mxn(BASE.util)+' / '+mxn(BASE.othF)+' al mes'],
+    ['Equipo de cocina · adecuaciones', mxnK(BASE.kit)+' · '+mxnK(BASE.adec)],
+    ['Contenedores y utensilios · depósito y trámites · inventario', mxnK(BASE.cont)+' · '+mxnK(BASE.dep)+' · '+mxnK(BASE.inv0)]
+  ];
+  el('tblStructure').innerHTML = '<thead><tr><th>Estructura base <span class="tag t-sup">Ilustrativo</span></th><th>Valor</th></tr></thead><tbody>'+s.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>';}).join('')+'</tbody>';
+
+  var v = '<thead><tr><th>Vehículo</th><th class="num">Inversión</th><th class="num">Costo mensual</th></tr></thead><tbody>';
+  Object.keys(VEH).forEach(function(k){ v += '<tr><td>'+VEH[k].name+'</td><td class="num">'+mxnK(VEH[k].vinv)+'</td><td class="num">'+mxnK(VEH[k].vmon)+'</td></tr>'; });
+  el('tblVehicles').innerHTML = v+'</tbody>';
+}
 function renderScenarios(){
-  var vols = [250,350,500,650];
-  var h = '<thead><tr><th>Escenario</th><th class="num">Comidas/día</th><th class="num">Ventas/mes</th><th class="num">Contrib./comida</th><th class="num">Operativos</th><th class="num">Nómina %</th><th class="num">EBITDA/mes</th><th class="num">Margen</th><th class="num">Equilibrio (comidas/día)</th></tr></thead><tbody>';
-  ['cons','base','fav'].forEach(function(k){
-    var a = SCEN[k], be = breakeven(a);
-    vols.forEach(function(q,i){
-      var r = calc(q,a);
-      h += '<tr>'+(i===0?'<td rowspan="4"><strong>'+a.name+'</strong></td>':'')+
-        '<td class="num">'+q+'</td><td class="num">'+mxnK(r.rev)+'</td><td class="num">'+mxn(r.cmMeal,2)+'</td><td class="num">'+r.ops+'</td><td class="num">'+pct(r.laborPct)+'</td>'+
-        '<td class="num '+(r.ebitda<0?'neg':'pos')+'">'+mxnK(r.ebitda)+'</td><td class="num '+(r.ebitda<0?'neg':'pos')+'">'+pct(r.margin)+'</td>'+
-        (i===0?'<td class="num" rowspan="4">'+(be?('≈ '+be):'&gt; 2,000')+'</td>':'')+'</tr>';
+  var h = '<thead><tr><th>Escenario</th><th>Vehículo</th><th class="num">Inversión inicial</th><th class="num">EBITDA mes 1</th><th class="num">EBITDA mes 12</th><th class="num">EBITDA año 1</th><th class="num">Capital máximo requerido</th><th class="num">Recuperación</th></tr></thead><tbody>';
+  ['cons','base','fav'].forEach(function(ak){
+    ['used','lease','truck'].forEach(function(vk,i){
+      var a = merge(BASE, ASSUME[ak], {vinv:VEH[vk].vinv, vmon:VEH[vk].vmon});
+      var p = project(a), r1=p.rows[0], r12=p.rows[11];
+      function c(v){ return '<td class="num '+(v<0?'neg':'pos')+'">'+mxnK(v)+'</td>'; }
+      h += '<tr>'+(i===0?'<td rowspan="3"><strong>'+ASSUME[ak].name+'</strong></td>':'')+'<td>'+VEH[vk].name+'</td><td class="num">'+mxnK(p.inv)+'</td>'+c(r1.ebitda)+c(r12.ebitda)+c(p.y1e)+'<td class="num">'+mxnK(-p.minCum)+'</td><td class="num">'+payTxt(p.pay)+'</td></tr>';
     });
   });
-  el('tblScenarios').innerHTML = h + '</tbody>';
+  el('tblScenarios').innerHTML = h+'</tbody>';
 }
-
-/* ---------- Capital de trabajo ---------- */
-function renderWC(){
-  var h = '<thead><tr><th>Días de cobro</th><th class="num">Capital de trabajo estimado</th><th class="num">Meses de EBITDA base que representa</th></tr></thead><tbody>';
-  [0,15,30,45,60].forEach(function(d){
-    var a = Object.assign({},SCEN.base,{dso:d});
-    var r = calc(500,a);
-    h += '<tr><td>'+d+(d===0?' (cobro en caja / nómina inmediata)':'')+'</td><td class="num">'+mxnK(r.wc)+'</td><td class="num">'+(r.ebitda>0?(r.wc/r.ebitda).toFixed(1):'—')+'</td></tr>';
-  });
-  el('tblWC').innerHTML = h + '</tbody>';
-}
-
-/* ---------- Barras municipios ---------- */
 function renderMuni(){
   var d = [['Guadalajara',700452],['Zapopan',492992],['San Pedro Tlaquepaque',140573],['Tlajomulco de Zúñiga',120178],['El Salto',76198],['Tonalá',36225]];
   var max = d[0][1], h='';
-  d.forEach(function(x){
-    h += '<div class="barrow"><span>'+x[0]+'</span><div class="track"><div class="fill" style="width:'+(x[1]/max*100).toFixed(1)+'%"></div></div><span style="text-align:right;font-variant-numeric:tabular-nums">'+(x[1]/1000).toFixed(0)+'k</span></div>';
-  });
+  d.forEach(function(x){ h += '<div class="barrow"><span>'+x[0]+'</span><div class="track"><div class="fill" style="width:'+(x[1]/max*100).toFixed(1)+'%"></div></div><span style="text-align:right;font-variant-numeric:tabular-nums">'+(x[1]/1000).toFixed(0)+'k</span></div>'; });
   el('muniBars').innerHTML = h;
 }
-
-/* ---------- Timeline ---------- */
 function renderTimeline(){
-  var t = [['1. Relación comercial y demanda',1,7],['2. Visita y levantamiento',4,9],['3. Contratantes y usuarios',6,14],['4. Menús, precios, proveedores',8,18],['5. Costeo con cotizaciones',15,22],['6. Modelo de operación',16,23],['7. Inversión y capital',20,25],['8. Condiciones de sociedad',22,27],['9. Decisión formal',28,30,true]];
+  var SPAN = 91;
+  var t = [['1. Propuesta base (17‑oct)',1,6,true],['2. Descubrimiento con la ancla',8,21],['3. Búsqueda de local (sin firmar)',8,30],['4. Menú costeado y degustación',10,32],['5. Propuesta formal y carta de intención',25,40],['6. Hoja de términos sociedad',7,36],['7. Firma del local, adecuaciones y equipo',40,80],['8. Constitución y permisos',30,82],['9. Contratación y capacitación',66,84],['10. Arranque (prueba pagada)',85,91,true]];
   var h='';
-  t.forEach(function(x){
-    var l=(x[1]-1)/30*100, w=(x[2]-x[1]+1)/30*100;
-    h+='<div class="tl-row"><span>'+x[0]+'</span><div class="tl-track"><div class="tl-bar'+(x[3]?' gate':'')+'" style="left:'+l.toFixed(1)+'%;width:'+w.toFixed(1)+'%" title="Días '+x[1]+'–'+x[2]+'"></div></div></div>';
-  });
-  h+='<div class="tl-axis"><span></span><div class="ticks"><span>Día 1</span><span>10</span><span>20</span><span>30</span></div></div>';
+  t.forEach(function(x){ var l=(x[1]-1)/SPAN*100, w=(x[2]-x[1]+1)/SPAN*100; h+='<div class="tl-row"><span>'+x[0]+'</span><div class="tl-track"><div class="tl-bar'+(x[3]?' gate':'')+'" style="left:'+l.toFixed(1)+'%;width:'+w.toFixed(1)+'%" title="Días '+x[1]+'–'+x[2]+'"></div></div></div>'; });
+  var ticks = [[1,'12 oct'],[21,'1 nov'],[51,'1 dic'],[91,'10 ene']];
+  h+='<div class="tl-axis"><span></span><div style="position:relative;height:16px">'+ticks.map(function(k,i){ var left=(k[0]-1)/SPAN*100; var tf = i===0?'none':(i===ticks.length-1?'translateX(-100%)':'translateX(-50%)'); return '<span style="position:absolute;white-space:nowrap;left:'+left.toFixed(1)+'%;transform:'+tf+'">'+k[1]+'</span>'; }).join('')+'</div></div>';
   el('timeline').innerHTML=h;
 }
 
-/* ---------- Simulador ---------- */
-var FIELDS = ['q','days','price','food','ov','conc','emp','sal','fac','mgmt','oth','inv','dso','dpo'];
-var FMT = {q:function(v){return v;},days:function(v){return v;},price:function(v){return mxn(v);},food:function(v){return mxn(v,2);},ov:function(v){return mxn(v,2);},
-  conc:function(v){return v+'%';},emp:function(v){return v+' personas';},sal:function(v){return mxn(v);},fac:function(v){return '×'+(+v).toFixed(2);},mgmt:function(v){return mxn(v);},
-  oth:function(v){return mxn(v);},inv:function(v){return mxnK(v);},dso:function(v){return v+' d';},dpo:function(v){return v+' d';}};
-function staffFor(q,k){ return Math.min(20, Math.max(5, Math.ceil(q / SCEN[k].prod))); }
-var state = Object.assign({q:500},SCEN.base); state.emp = staffFor(500,'base');
+/* ===== Simulador ===== */
+var FIELDS = ['h0','h1','ramp','part','g0','g1','othQ','othStart','days','price','priceO','food','pack','gas','cooks0','cap','salC','drivers','dStart','salD','encSal','encStart','socio','fac','rentL','util','othF','vmon','kit','adec','cont','dep','inv0','vinv','dso','dpo'];
+var money = function(v){return mxn(v);}, moneyK = function(v){return mxnK(v);}, money2 = function(v){return mxn(v,2);};
+var FMT = {h0:function(v){return v+' empleados';},h1:function(v){return v+' empleados';},ramp:function(v){return v+(v==1?' mes':' meses');},part:function(v){return v+'%';},
+  g0:function(v){return v?v+'/día':'sin mínimo';},g1:function(v){return v?v+'/día':'sin mínimo';},othQ:function(v){return v+'/día';},othStart:function(v){return 'mes '+v;},days:function(v){return v;},
+  price:money,priceO:money,food:money2,pack:money2,gas:money2,cooks0:function(v){return v+' personas';},cap:function(v){return v+'/día';},salC:money,
+  drivers:function(v){return v;},dStart:function(v){return 'mes '+v;},salD:money,encSal:function(v){return v?mxn(v):'sin encargado';},encStart:function(v){return v?('mes '+v):'nunca';},
+  socio:money,fac:function(v){return '×'+(+v).toFixed(2);},rentL:money,util:money,othF:money,vmon:money,kit:moneyK,adec:moneyK,cont:moneyK,dep:moneyK,inv0:moneyK,vinv:moneyK,
+  dso:function(v){return v+' d';},dpo:function(v){return v+' d';}};
+var curA='base', curV='used';
+var state = merge(BASE, ASSUME.base, {vinv:VEH.used.vinv, vmon:VEH.used.vmon});
 
-function loadPreset(k){
-  var q = state.q; state = Object.assign({},SCEN[k]); state.q = q; state.emp = staffFor(q,k);
-  FIELDS.forEach(function(f){ el('in_'+f).value = state[f]; });
-  Array.prototype.forEach.call(document.querySelectorAll('.preset button'),function(b){ b.classList.toggle('on', b.getAttribute('data-p')===k); });
-  update();
+function syncInputs(){ FIELDS.forEach(function(f){ el('in_'+f).value = state[f]; }); }
+function markPresets(){
+  Array.prototype.forEach.call(document.querySelectorAll('#presetAssume button'),function(b){ b.classList.toggle('on', b.getAttribute('data-as')===curA); });
+  Array.prototype.forEach.call(document.querySelectorAll('#presetVeh button'),function(b){ b.classList.toggle('on', b.getAttribute('data-vh')===curV); });
 }
-function readInputs(){ FIELDS.forEach(function(f){ state[f] = parseFloat(el('in_'+f).value); }); }
+function loadAssume(k){ curA=k; A_FIELDS.forEach(function(f){ state[f]=ASSUME[k][f]; }); syncInputs(); markPresets(); update(); }
+function loadVeh(k){ curV=k; state.vinv=VEH[k].vinv; state.vmon=VEH[k].vmon; syncInputs(); markPresets(); update(); }
+function hint(id, text, color){ var h=el(id); if(!h) return; h.textContent=text||''; h.style.color=color||''; }
 
 function update(){
   FIELDS.forEach(function(f){ el('o_'+f).textContent = FMT[f](state[f]); });
-  var r = calc(state.q, state), be = breakeven(state);
-  var perOp = state.q / state.emp, hEmp = el('h_emp');
-  var msg = 'Equivale a ' + perOp.toFixed(0) + ' comidas/día por operativo (referencia del modelo: 30–34, supuesto).';
-  hEmp.style.color = '';
-  if(perOp > 40){ msg += ' Posible falta de capacidad para este volumen: valida con un operador.'; hEmp.style.color = 'var(--bad)'; }
-  else if(perOp < 22){ msg += ' Plantilla holgada para este volumen.'; hEmp.style.color = 'var(--warn)'; }
-  hEmp.textContent = msg;
-  var SM_MES = 9582.47, hSal = el('h_sal'), hMg = el('h_mgmt');
-  if(state.sal === 0){ hSal.textContent = 'Sin costo de nómina operativa: sólo sirve como ejercicio; el personal operativo siempre tendrá un costo.'; hSal.style.color = 'var(--warn)'; }
-  else if(state.sal < SM_MES){ hSal.textContent = 'Por debajo del salario mínimo 2026 (≈ $9,582/mes). No es legal para personal de tiempo completo.'; hSal.style.color = 'var(--bad)'; }
-  else { hSal.textContent = ''; }
-  if(state.mgmt === 0){ hMg.textContent = 'Sin sueldo de gerencia: equivale a que los socios cubran estos puestos sin cobrar. El costo existe aunque no se pague; considera su valor al negociar la sociedad.'; hMg.style.color = 'var(--warn)'; }
-  else if(state.mgmt < 30000){ hMg.textContent = 'Por debajo de lo que pagan las vacantes de la ZMG para los tres puestos (≈ $43–54k/mes).'; hMg.style.color = 'var(--warn)'; }
-  else { hMg.textContent = ''; }
-  var payback = r.ebitda>0 ? (state.inv + r.wc)/r.ebitda : null;
+  var P = project(state), r1 = P.rows[0], r12 = P.rows[11], be = breakevenQ(state);
+
+  // hints
+  hint('h_price','Con IVA: '+mxn(state.price*1.16,2)+'. Hoy la ancla paga $100 (sin confirmar si incluye IVA). Al trabajador le tocaría '+mxn(state.price*1.16/2,2)+' con el subsidio de 50%.', state.price*1.16>100?'var(--warn)':'');
+  if(r1.unserved>0) hint('h_g0','En el mes 1 la ancla consumiría ≈ '+n0(r1.ancS)+' y pagaría ≈ '+n0(r1.unserved)+' platillos/día no consumidos (≈ '+mxnK(r1.unserved*state.days*state.price)+'/mes). Es el costo que le pides aceptar a cambio de un mejor servicio.','var(--warn)');
+  else if(state.g0>0) hint('h_g0','El consumo esperado ya supera el mínimo: el mínimo sólo protege si baja la asistencia.');
+  else hint('h_g0','Sin mínimo: el ingreso depende por completo de lo que se consuma.');
+  if(r1.need>state.cooks0) hint('h_cooks0','Para '+n0(r1.served)+' platillos en el mes 1 se necesitan '+r1.need+' personas con la capacidad supuesta; el modelo las contrata automáticamente.','var(--warn)');
+  else hint('h_cooks0','Capacidad del arranque: '+(state.cooks0*state.cap)+' platillos/día. El modelo agrega personal de cocina cuando el volumen la supera.');
+  if(state.socio===0) hint('h_socio','Sin sueldo: tu trabajo diario (compras, reparto, administración) no aparece como costo. Una función así cuesta ≈ $20–25k/mes en el mercado; tenlo presente al negociar la sociedad.','var(--warn)');
+  else hint('h_socio','');
+  var maxServed = Math.max.apply(null, P.rows.slice(0,12).map(function(r){return r.served;}));
+  if(maxServed>250 && state.drivers===0) hint('h_drivers','En el año 1 se llega a ≈ '+n0(maxServed)+' platillos/día: repartir y servir esa cantidad solo es poco realista.','var(--bad)');
+  else hint('h_drivers','Mientras sea 0 o antes del mes de inicio, tú haces el reparto.');
+  if(state.salC>0 && state.salC<SM_MES) hint('h_salC','Por debajo del salario mínimo 2026 (≈ $9,582/mes).','var(--bad)'); else hint('h_salC','');
+
+  // tiles
   var outs = [
-    ['Ventas mensuales (sin IVA)', mxnK(r.rev), 'Con IVA 16%: '+mxnK(r.rev*1.16)],
-    ['Ventas anuales (sin IVA)', mxnK(r.rev*12), r.meals.toLocaleString('es-MX')+' comidas/mes'],
-    ['Margen de contribución / comida', mxn(r.cmMeal,2), pct(r.cmMeal/state.price)+' del precio'],
-    ['Costo directo / comida', mxn(state.food+state.ov+r.labor/r.meals,2), 'Alimentos, desechables, gas y nómina'],
-    ['Alimentos % ventas', pct(r.foodPct), ''],
-    ['Nómina % ventas', pct(r.laborPct), r.ops+' operativos + 3 de gestión'],
-    ['Utilidad bruta / mes', mxnK(r.gross), 'Ventas − alimentos − desechables/gas − nómina operativa'],
-    ['EBITDA / mes', mxnK(r.ebitda), 'Margen '+pct(r.margin)],
-    ['EBIT / mes', mxnK(r.ebit), 'Depreciación '+mxnK(r.dep)+'/mes'],
-    ['Punto de equilibrio', be?(be+' comidas/día'):'No se alcanza', be?('Con '+state.emp+' operativos fijos · volumen actual '+Math.abs(Math.round((state.q/be-1)*100))+'% '+(state.q>=be?'por encima':'por debajo')):'Ni con 2,000 comidas/día y '+state.emp+' operativos'],
-    ['Capital de trabajo', mxnK(r.wc), state.dso+' d cobro · '+state.dpo+' d pago'],
-    ['Recuperación aprox.', payback?(payback.toFixed(1)+' meses'):'Sin EBITDA positivo', '(inversión + capital) ÷ EBITDA']
+    ['Inversión inicial', mxnK(P.inv), 'Cocina '+mxnK(state.kit+state.adec+state.cont)+' · vehículo '+mxnK(state.vinv)+' · otros '+mxnK(state.dep+state.inv0)],
+    ['Capital máximo requerido', mxnK(-P.minCum), P.minM>=HORIZON?'La caja sigue cayendo al mes 36: con estos supuestos el negocio no se sostiene':(P.minM?('Peor momento de caja: mes '+P.minM+' (inversión + capital de trabajo)'):'Al arranque')],
+    ['Recuperación', payTxt(P.pay), 'Mes en que la caja acumulada vuelve a cero'],
+    ['EBITDA mes 1', mxnK(r1.ebitda), n0(r1.served)+' servidos · '+n0(r1.billed)+' facturados/día'],
+    ['EBITDA mes 12', mxnK(r12.ebitda), 'Margen '+pct(r12.rev?r12.ebitda/r12.rev:0)+' · '+n0(r12.served)+' platillos/día'],
+    ['EBITDA año 1', mxnK(P.y1e), 'Ventas año 1: '+mxnK(P.y1rev)+' (sin IVA)'],
+    ['Personal de cocina', r1.cooks+' → '+r12.cooks, 'Mes 1 → mes 12'+(r12.drv?' · + '+r12.drv+' repartidor':'')+(r12.enc?' · + encargado':'')],
+    ['Costo total por platillo (mes 12)', mxn((r12.varC+r12.labor+r12.fixed)/(r12.served*state.days),2), 'Insumos, empaque, gas, nómina y fijos'],
+    ['Equilibrio', be?(be+' platillos/día'):'No se alcanza', 'Estructura del mes 12, sin mínimo, a precio de contrato'],
+    ['Margen de contribución / platillo', mxn(state.price-state.food-state.pack-state.gas,2), 'Precio de contrato − insumos − empaque − gas'],
+    ['Meses con pérdida (año 1)', P.rows.slice(0,12).filter(function(r){return r.ebitda<0;}).length+' de 12', 'Meses con EBITDA negativo, antes de impuestos'],
+    ['Platillos no consumidos (mes 1)', n0(r1.unserved)+'/día', r1.unserved?('≈ '+mxnK(r1.unserved*state.days*state.price)+'/mes que paga la ancla'):'El consumo cubre el mínimo']
   ];
-  el('outs').innerHTML = outs.map(function(o){ var neg = /^−/.test(o[1]); return '<div class="out"><div class="l">'+o[0]+'</div><div class="v" style="color:'+(neg?'var(--bad)':'var(--ink)')+'">'+o[1]+'</div><div class="l">'+o[2]+'</div></div>'; }).join('');
-  renderCostBars(r);
-  renderTornado();
-  drawChart();
+  el('outs').innerHTML = outs.map(function(o){ var neg=/^−/.test(o[1]); return '<div class="out"><div class="l">'+o[0]+'</div><div class="v" style="color:'+(neg?'var(--bad)':'var(--ink)')+'">'+o[1]+'</div><div class="l">'+o[2]+'</div></div>'; }).join('');
+
+  renderProjTable(P); drawCash(P); renderCostBars(r12); renderTornado();
 }
 
+function renderProjTable(P){
+  var h = '<thead><tr><th>Mes</th><th class="num">Plantilla ancla</th><th class="num">Servidos / día</th><th class="num">Facturados / día</th><th class="num">Personal cocina</th><th class="num">Ventas</th><th class="num">Insumos y empaque</th><th class="num">Nómina</th><th class="num">Fijos</th><th class="num">EBITDA</th><th class="num">Flujo</th><th class="num">Caja acumulada</th></tr></thead><tbody>';
+  h += '<tr><td>0</td><td colspan="9" class="small">Inversión inicial</td><td class="num neg">'+mxnK(-P.inv)+'</td><td class="num neg">'+mxnK(-P.inv)+'</td></tr>';
+  P.rows.slice(0,12).forEach(function(r){
+    h += '<tr><td>'+r.m+'</td><td class="num">'+n0(r.head)+'</td><td class="num">'+n0(r.served)+'</td><td class="num">'+n0(r.billed)+'</td><td class="num">'+r.cooks+(r.drv?' +'+r.drv+'R':'')+(r.enc?' +E':'')+'</td><td class="num">'+mxnK(r.rev)+'</td><td class="num">'+mxnK(r.varC)+'</td><td class="num">'+mxnK(r.labor)+'</td><td class="num">'+mxnK(r.fixed)+'</td>'+
+      '<td class="num '+(r.ebitda<0?'neg':'pos')+'">'+mxnK(r.ebitda)+'</td><td class="num '+(r.cf<0?'neg':'')+'">'+mxnK(r.cf)+'</td><td class="num '+(r.cum<0?'neg':'pos')+'">'+mxnK(r.cum)+'</td></tr>';
+  });
+  var y=P.rows.slice(0,12), sum=function(k){return y.reduce(function(s,r){return s+r[k];},0);};
+  h += '<tr><td><strong>Año 1</strong></td><td colspan="4"></td><td class="num"><strong>'+mxnK(sum('rev'))+'</strong></td><td class="num">'+mxnK(sum('varC'))+'</td><td class="num">'+mxnK(sum('labor'))+'</td><td class="num">'+mxnK(sum('fixed'))+'</td><td class="num"><strong>'+mxnK(sum('ebitda'))+'</strong></td><td class="num">'+mxnK(sum('cf'))+'</td><td></td></tr>';
+  el('tblProj').innerHTML = h+'</tbody>';
+}
+
+function drawCash(P){
+  var svg=el('chartCash'), W=900, H=360, m={l:78,r:18,t:16,b:40};
+  var rows=P.rows.slice(0,SHOW);
+  var vals=[ -P.inv ].concat(rows.map(function(r){return r.ebitda;}), rows.map(function(r){return r.cum;}), [0]);
+  var ymin=Math.min.apply(null,vals), ymax=Math.max.apply(null,vals);
+  var step=niceStep((ymax-ymin)/6); ymin=Math.floor(ymin/step)*step; ymax=Math.ceil(ymax/step)*step;
+  var n=SHOW+1, bw=(W-m.l-m.r)/n;
+  function X(i){ return m.l+bw*(i+0.5); } function Y(v){ return m.t+(ymax-v)/(ymax-ymin)*(H-m.t-m.b); }
+  var g='';
+  for(var y=ymin;y<=ymax+1;y+=step){ var z=Math.abs(y)<1e-6; g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(y)+'" y2="'+Y(y)+'" stroke="'+(z?'#77736B':'#E6E1D6')+'"/><text x="'+(m.l-8)+'" y="'+(Y(y)+4)+'" text-anchor="end" font-size="12" fill="#77736B">'+mxnK(y)+'</text>'; }
+  for(var i=0;i<n;i++){ if(i%3===0 || i===n-1) g+='<text x="'+X(i)+'" y="'+(H-m.b+18)+'" text-anchor="middle" font-size="11" fill="#77736B">'+(i===0?'Inicio':'M'+i)+'</text>'; }
+  // inversión
+  g+='<rect x="'+(X(0)-bw*0.32)+'" y="'+Y(0)+'" width="'+(bw*0.64)+'" height="'+(Y(-P.inv)-Y(0))+'" fill="#C9B79A"><title>Inversión: '+mxnK(-P.inv)+'</title></rect>';
+  rows.forEach(function(r,k){ var i=k+1, v=r.ebitda, y0=Y(Math.max(0,v)), hgt=Math.abs(Y(v)-Y(0)); g+='<rect x="'+(X(i)-bw*0.32)+'" y="'+y0+'" width="'+(bw*0.64)+'" height="'+hgt+'" fill="'+(v>=0?'#7FA58C':'#C97A6E')+'" rx="2"><title>Mes '+r.m+' · EBITDA '+mxnK(v)+'</title></rect>'; });
+  var pts=[[0,-P.inv]].concat(rows.map(function(r,k){return [k+1,r.cum];}));
+  g+='<path d="'+pts.map(function(p,j){return (j?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1);}).join(' ')+'" fill="none" stroke="#B4532F" stroke-width="2.4" stroke-linejoin="round"/>';
+  pts.forEach(function(p){ g+='<circle cx="'+X(p[0])+'" cy="'+Y(p[1])+'" r="2.6" fill="#B4532F"/>'; });
+  if(P.pay && P.pay<=SHOW){ g+='<text x="'+X(P.pay)+'" y="'+(Y(0)-10)+'" text-anchor="middle" font-size="11" fill="#B4532F" font-weight="600" stroke="#fff" stroke-width="4" paint-order="stroke">recuperación</text>'; }
+  g+='<text x="'+(X(P.minM))+'" y="'+(Math.min(H-m.b-4,Y(P.minCum)+16))+'" text-anchor="middle" font-size="11" fill="#9B3328" stroke="#fff" stroke-width="4" paint-order="stroke">'+mxnK(P.minCum)+'</text>';
+  svg.innerHTML=g;
+  el('lgCash').innerHTML='<span><i style="background:#C9B79A;height:10px"></i>Inversión</span><span><i style="background:#7FA58C;height:10px"></i>EBITDA mensual positivo</span><span><i style="background:#C97A6E;height:10px"></i>EBITDA negativo</span><span><i style="background:#B4532F"></i>Caja acumulada (incluye capital de trabajo)</span>';
+}
+function niceStep(raw){ var p=Math.pow(10,Math.floor(Math.log10(Math.abs(raw)||1))); var n=raw/p; return (n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10)*p; }
+
 function renderCostBars(r){
-  var m = r.meals, p = state.price;
+  var B = r.billed*state.days, p = r.rev/B;
   var parts = [
-    ['Alimentos', state.food, '#D9774F'],
-    ['Desechables y gas', state.ov, '#E8A27F'],
-    ['Concesión', p*state.conc/100, '#C9B79A'],
-    ['Nómina con cargas', r.labor/m, '#3E5C7A'],
-    ['Otros fijos', state.oth/m, '#8FA3B8'],
-    [r.ebitda>=0?'EBITDA':'Pérdida', r.ebitda/m, r.ebitda>=0?'#3D6B4F':'#9B3328']
+    ['Alimentos', r.foodC/B, '#D9774F'], ['Empaque', r.packC/B, '#E8A27F'], ['Gas y energía', r.gasC/B, '#EFC2A6'],
+    ['Nómina con cargas', r.labor/B, '#3E5C7A'], ['Local, servicios y fijos', (state.rentL+state.util+state.othF)/B, '#8FA3B8'], ['Vehículo', state.vmon/B, '#B8C5D3'],
+    [r.ebitda>=0?'EBITDA':'Pérdida', r.ebitda/B, r.ebitda>=0?'#3D6B4F':'#9B3328']
   ];
-  var total = parts.slice(0,5).reduce(function(s,x){return s+x[1];},0);
-  var scale = Math.max(p, total);
+  var total = parts.slice(0,6).reduce(function(s,x){return s+x[1];},0), scale=Math.max(p,total);
   var h = '<div style="display:flex;height:30px;border-radius:5px;overflow:hidden;margin:6px 4px 10px;background:#F1ECE2">';
-  parts.forEach(function(x,i){ if(i===5 && x[1]<0) return; var w = Math.max(0,x[1])/scale*100; h += '<div title="'+x[0]+': '+mxn(x[1],2)+'" style="width:'+w.toFixed(2)+'%;background:'+x[2]+'"></div>'; });
+  parts.forEach(function(x,i){ if(i===6 && x[1]<0) return; h += '<div title="'+x[0]+': '+mxn(x[1],2)+'" style="width:'+(Math.max(0,x[1])/scale*100).toFixed(2)+'%;background:'+x[2]+'"></div>'; });
   h += '</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 12px;font-size:.8rem;margin:0 4px">';
   parts.forEach(function(x){ h += '<div><i style="display:inline-block;width:10px;height:10px;border-radius:2px;background:'+x[2]+';margin-right:6px;vertical-align:-1px"></i>'+x[0]+' <b style="font-variant-numeric:tabular-nums">'+mxn(x[1],2)+'</b></div>'; });
-  h += '</div>';
-  if(total > p) h += '<p class="small" style="margin:8px 4px 0;color:var(--bad)">Los costos por comida ('+mxn(total,2)+') superan el precio ('+mxn(p,2)+').</p>';
+  h += '</div><p class="small" style="margin:6px 4px 0">Precio promedio por platillo facturado en el mes 12: '+mxn(p,2)+'.</p>';
   el('costBars').innerHTML = h;
 }
 
 function renderTornado(){
-  var base = calc(state.q, state).ebitda;
-  var vars = [['Comidas/día','q'],['Precio','price'],['Costo de alimentos','food'],['Sueldo operativo','sal'],['Empleados (±1)','emp'],['Días operativos','days']];
+  var base = project(state).rows[11].ebitda;
+  var vars = [['Precio de contrato','price'],['Costo de alimentos','food'],['Plantilla meta de la ancla','h1'],['Participación','part'],['Capacidad por persona','cap'],['Sueldo cocinero','salC'],['Renta del local','rentL'],['Otros clientes','othQ']];
   var res = vars.map(function(v){
-    var lo = Object.assign({},state), hi = Object.assign({},state);
-    lo[v[1]] = state[v[1]]*0.9; hi[v[1]] = state[v[1]]*1.1;
-    if(v[1]==='days'){ lo.days=Math.round(lo.days); hi.days=Math.round(hi.days); }
-    if(v[1]==='emp'){ lo.emp=state.emp-1; hi.emp=state.emp+1; }
-    var a = calc(lo.q,lo).ebitda - base, b = calc(hi.q,hi).ebitda - base;
-    return {n:v[0], lo:a, hi:b, span:Math.abs(a)+Math.abs(b)};
+    var lo=merge(state), hi=merge(state); lo[v[1]]=state[v[1]]*0.9; hi[v[1]]=state[v[1]]*1.1;
+    var a=project(lo).rows[11].ebitda-base, b=project(hi).rows[11].ebitda-base;
+    return {n:v[0],lo:a,hi:b,span:Math.abs(a)+Math.abs(b)};
   }).sort(function(x,y){return y.span-x.span;});
-  var max = Math.max.apply(null,res.map(function(r){return Math.max(Math.abs(r.lo),Math.abs(r.hi));})) || 1;
-  var h = '';
+  var max = Math.max.apply(null,res.map(function(r){return Math.max(Math.abs(r.lo),Math.abs(r.hi));}))||1, h='';
   res.forEach(function(r){
-    function seg(v,lbl){ var w = Math.abs(v)/max*50; var left = v<0 ? 50-w : 50; return '<div title="'+lbl+': '+mxnK(v)+'" style="position:absolute;top:2px;bottom:2px;left:'+left.toFixed(2)+'%;width:'+w.toFixed(2)+'%;background:'+(v<0?'#C97A6E':'#7FA58C')+';border-radius:2px"></div>'; }
-    h += '<div class="barrow" style="grid-template-columns:140px 1fr 150px"><span>'+r.n+'</span><div style="position:relative;height:18px;background:#F4F0E7;border-radius:3px">'+seg(r.lo,'−10%')+seg(r.hi,'+10%')+'<div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#9A948A"></div></div><span style="font-size:.76rem;text-align:right;font-variant-numeric:tabular-nums">'+sgn(Math.min(r.lo,r.hi))+' / '+sgn(Math.max(r.lo,r.hi))+'</span></div>';
+    function seg(v){ var w=Math.abs(v)/max*50, left=v<0?50-w:50; return '<div style="position:absolute;top:2px;bottom:2px;left:'+left.toFixed(2)+'%;width:'+w.toFixed(2)+'%;background:'+(v<0?'#C97A6E':'#7FA58C')+';border-radius:2px"></div>'; }
+    h += '<div class="barrow tor"><span>'+r.n+'</span><div style="position:relative;height:18px;background:#F4F0E7;border-radius:3px">'+seg(r.lo)+seg(r.hi)+'<div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#9A948A"></div></div><span style="font-size:.76rem;text-align:right;font-variant-numeric:tabular-nums">'+sgn(Math.min(r.lo,r.hi))+' / '+sgn(Math.max(r.lo,r.hi))+'</span></div>';
   });
-  h += '<p class="small" style="margin:6px 4px 0">Cambio en EBITDA mensual al mover cada variable −10% / +10% (empleados −1 / +1) manteniendo las demás. Rojo reduce, verde aumenta.</p>';
+  h += '<p class="small" style="margin:6px 4px 0">Cambio en el EBITDA del mes 12 al mover cada variable −10% / +10%, manteniendo las demás.</p>';
   el('tornado').innerHTML = h;
 }
 
-/* ---------- Gráfica EBITDA vs volumen (SVG) ---------- */
-function drawChart(){
-  var svg = el('chartEbitda'), W=900, H=380, m={l:78,r:18,t:16,b:46};
-  var xs=[], q; for(q=100;q<=900;q+=10) xs.push(q);
-  var series = ['cons','base','fav'].map(function(k){ return {k:k,c:SCEN[k].color,name:SCEN[k].name,pts:xs.map(function(x){return [x,calc(x,SCEN[k]).ebitda];}),dash:''}; });
-  series.push({k:'sim',c:'#B4532F',name:'Tu simulación',pts:xs.map(function(x){return [x,calc(x,state).ebitda];}),dash:'7 5'});
-  var ys=[]; series.forEach(function(s){ s.pts.forEach(function(p){ ys.push(p[1]); }); });
-  var ymin=Math.min.apply(null,ys), ymax=Math.max.apply(null,ys);
-  var step = niceStep((ymax-ymin)/6); ymin=Math.floor(ymin/step)*step; ymax=Math.ceil(ymax/step)*step;
-  function X(v){ return m.l+(v-100)/(800)*(W-m.l-m.r); }
-  function Y(v){ return m.t+(ymax-v)/(ymax-ymin)*(H-m.t-m.b); }
-  var g='';
-  for(var y=ymin;y<=ymax+1;y+=step){ g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+Y(y)+'" y2="'+Y(y)+'" stroke="'+(y===0?'#77736B':'#E6E1D6')+'" stroke-width="'+(y===0?1.2:1)+'"/>'+
-     '<text x="'+(m.l-8)+'" y="'+(Y(y)+4)+'" text-anchor="end" font-size="12" fill="#77736B">'+mxnK(y)+'</text>'; }
-  for(var x=100;x<=900;x+=100){ g+='<line x1="'+X(x)+'" x2="'+X(x)+'" y1="'+(H-m.b)+'" y2="'+(H-m.b+5)+'" stroke="#9A948A"/><text x="'+X(x)+'" y="'+(H-m.b+20)+'" text-anchor="middle" font-size="12" fill="#77736B">'+x+'</text>'; }
-  g+='<text x="'+((W+m.l)/2)+'" y="'+(H-6)+'" text-anchor="middle" font-size="12" fill="#4A4741">Comidas facturables por día</text>';
-  g+='<text transform="translate(16,'+((H-m.b+m.t)/2)+') rotate(-90)" text-anchor="middle" font-size="12" fill="#4A4741">EBITDA mensual (MXN)</text>';
-  // loss zone shading
-  g+='<rect x="'+m.l+'" y="'+Y(0)+'" width="'+(W-m.l-m.r)+'" height="'+Math.max(0,Y(ymin)-Y(0))+'" fill="#F6E0DC" opacity=".35"/>';
-  series.forEach(function(s){
-    var d = s.pts.map(function(p,i){ return (i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1); }).join(' ');
-    g+='<path d="'+d+'" fill="none" stroke="'+s.c+'" stroke-width="'+(s.k==='sim'?2.6:2)+'" stroke-dasharray="'+s.dash+'" stroke-linejoin="round"/>';
-  });
-  var qx = Math.min(900,Math.max(100,state.q)), sv = calc(state.q,state).ebitda;
-  g+='<line x1="'+X(qx)+'" x2="'+X(qx)+'" y1="'+m.t+'" y2="'+(H-m.b)+'" stroke="#B4532F" stroke-width="1" stroke-dasharray="2 3"/>';
-  g+='<circle cx="'+X(qx)+'" cy="'+Y(sv)+'" r="5" fill="#B4532F" stroke="#fff" stroke-width="2"/>';
-  var lx = X(qx) > W-200 ? X(qx)-8 : X(qx)+8, anchor = X(qx) > W-200 ? 'end' : 'start';
-  g+='<text x="'+lx+'" y="'+(Math.max(m.t+14,Y(sv)-10))+'" text-anchor="'+anchor+'" font-size="12" fill="#B4532F" font-weight="600" stroke="#fff" stroke-width="4" paint-order="stroke">'+state.q+'/día · '+mxnK(sv)+'</text>';
-  var be = breakeven(state);
-  if(be && be<=900){ g+='<circle cx="'+X(be)+'" cy="'+Y(0)+'" r="4" fill="#fff" stroke="#B4532F" stroke-width="2"/><text x="'+X(be)+'" y="'+(Y(0)+18)+'" text-anchor="middle" font-size="11" fill="#B4532F" stroke="#fff" stroke-width="4" paint-order="stroke">equilibrio ≈ '+be+'</text>'; }
-  svg.innerHTML = g;
-  el('lgEbitda').innerHTML = series.map(function(s){ return '<span><i style="background:'+s.c+(s.dash?';background:repeating-linear-gradient(90deg,'+s.c+' 0 6px,transparent 6px 10px)':'')+'"></i>'+s.name+'</span>'; }).join('') + '<span><i style="background:#F6E0DC;height:10px"></i>Zona de pérdida</span>';
-}
-function niceStep(raw){ var p=Math.pow(10,Math.floor(Math.log10(Math.abs(raw)||1))); var n=raw/p; return (n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10)*p; }
-
-/* ---------- init ---------- */
+/* ===== init ===== */
 function init(){
-  renderAssumptions(); renderScenarios(); renderWC(); renderMuni(); renderTimeline();
+  renderAssumptions(); renderScenarios(); renderMuni(); renderTimeline();
+  syncInputs();
   FIELDS.forEach(function(f){
-    var inp = el('in_'+f); inp.value = state[f];
-    inp.addEventListener('input', function(){ readInputs(); Array.prototype.forEach.call(document.querySelectorAll('.preset button'),function(b){b.classList.remove('on');}); update(); });
+    el('in_'+f).addEventListener('input', function(){
+      state[f]=parseFloat(this.value);
+      if(A_FIELDS.indexOf(f)>=0) curA=null;
+      if(V_FIELDS.indexOf(f)>=0) curV=null;
+      markPresets(); update();
+    });
   });
-  Array.prototype.forEach.call(document.querySelectorAll('.preset button'),function(b){ b.addEventListener('click',function(){ loadPreset(b.getAttribute('data-p')); }); });
-  update();
-  // nav highlight
+  Array.prototype.forEach.call(document.querySelectorAll('#presetAssume button'),function(b){ b.addEventListener('click',function(){ loadAssume(b.getAttribute('data-as')); }); });
+  Array.prototype.forEach.call(document.querySelectorAll('#presetVeh button'),function(b){ b.addEventListener('click',function(){ loadVeh(b.getAttribute('data-vh')); }); });
+  markPresets(); update();
   var links = Array.prototype.slice.call(document.querySelectorAll('.navlinks a'));
   if('IntersectionObserver' in window){
     var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ links.forEach(function(a){ var on = a.getAttribute('href')==='#'+e.target.id; a.classList.toggle('active',on); if(on && a.scrollIntoView){ var nav=el('navlinks'); nav.scrollLeft = a.offsetLeft - nav.clientWidth/2 + a.clientWidth/2; } }); } });
+      entries.forEach(function(e){ if(e.isIntersecting){ links.forEach(function(a){ var on=a.getAttribute('href')==='#'+e.target.id; a.classList.toggle('active',on); if(on){ var nav=el('navlinks'); nav.scrollLeft=a.offsetLeft-nav.clientWidth/2+a.clientWidth/2; } }); } });
     },{rootMargin:'-45% 0px -50% 0px'});
     document.querySelectorAll('section.sec').forEach(function(s){ obs.observe(s); });
   }
 }
-window.__calc = calc; window.__SCEN = SCEN; window.__breakeven = breakeven;
+window.__project=project; window.__merge=merge; window.__BASE=BASE; window.__ASSUME=ASSUME; window.__VEH=VEH; window.__breakevenQ=breakevenQ;
 init();
 })();
 </script>
