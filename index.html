@@ -272,7 +272,7 @@ footer{padding:30px 0 60px;font-size:.82rem;color:var(--muted)}
       <li>Puntualidad, temperatura y satisfacción medidas y reportadas a RH.</li>
     </ul></div>
     <div class="card dark"><h4>Qué necesitamos para arrancar</h4><ul>
-      <li>Carta de intención con mínimo garantizado de 150 platillos/día.</li>
+      <li>Carta de intención con 150 platillos/día pagados, se consuman o no.</li>
       <li>Que la ancla aporte el espacio, mesas, sillas y contactos eléctricos.</li>
       <li>Capital disponible de <b id="sumCap">—</b> para el peor mes de caja.</li>
     </ul></div>
@@ -475,7 +475,7 @@ footer{padding:30px 0 60px;font-size:.82rem;color:var(--muted)}
   <h2>Lo que tiene que ser cierto antes de invertir</h2>
   <div class="cond">
     <div class="card"><span class="i">1</span><div><h4>Carta de intención primero</h4><p class="small" style="color:var(--ink-2);margin:0">No se renta el local ni se compran equipo o van sin un compromiso firmado de la ancla: precio, mínimo, plazo y espacio para el comedor.</p></div></div>
-    <div class="card"><span class="i">2</span><div><h4>Un mínimo que la ancla pueda aceptar</h4><p class="small" style="color:var(--ink-2);margin:0">150 platillos/día es el 100% de la plantilla actual. Si come el 85%, la ancla pagaría ≈ 23 platillos diarios sin consumir. Alternativa: el mayor entre 85% de la plantilla activa y un piso de 120.</p></div></div>
+    <div class="card"><span class="i">2</span><div><h4>150 platillos diarios pagados</h4><p class="small" style="color:var(--ink-2);margin:0">El contrato paga 150 platillos al día, se consuman o no; es el 100% de la plantilla actual. Si un día comen menos, la diferencia la paga la ancla. Al crecer la plantilla, se factura lo consumido. Conviene presentarlo como reserva de capacidad a cambio de precio fijo.</p></div></div>
     <div class="card"><span class="i">3</span><div><h4>Que la ancla absorba el montaje</h4><p class="small" style="color:var(--ink-2);margin:0">Negociar que la empresa ponga mesas, sillas y, de ser posible, la línea caliente (o que la pague). Si la compramos nosotros, pactar que la podemos retirar si el contrato termina antes.</p></div></div>
     <div class="card"><span class="i">4</span><div><h4>REPSE por servir en la planta</h4><p class="small" style="color:var(--ink-2);margin:0">Si nuestro personal trabaja todos los días dentro de la ancla, probablemente es un servicio especializado y requiere registro REPSE antes de facturar <sup class="ref"><a href="#s8">[8]</a></sup>. Validar con un abogado laboral.</p></div></div>
     <div class="card"><span class="i">5</span><div><h4>Un solo cliente</h4><p class="small" style="color:var(--ink-2);margin:0">El 100% del ingreso depende de la ancla. Se mitiga con un contrato de 12 meses y aviso de 60 días. La venta a otras empresas y en La Terraza se abre después.</p></div></div>
@@ -538,7 +538,7 @@ var ITEMS = [
  {c:'ad',id:'elec',n:'Adecuación eléctrica, hidráulica y trampa de grasa',q:1,u:30000,st:'s',sc:'ABC',exk:0.5},
  {c:'ad',id:'acab',n:'Acabados sanitarios: pintura epóxica, mosquiteros, lavamanos',q:1,u:15000,st:'s',sc:'ABC',exk:0.6},
  {c:'ad',id:'pc',n:'Protección Civil: extintores, señalética y botiquín',q:1,u:6000,st:'s',sc:'ABC'},
- {c:'tr',id:'van',n:'Van de carga usada',q:1,u:250000,st:'s',sc:'AB',note:'Presupuesto de compra, sin equipamiento adicional.'},
+ {c:'tr',id:'van',n:'Van de carga usada',q:1,u:200000,st:'s',sc:'AB',note:'Presupuesto de compra, sin equipamiento adicional.'},
  {c:'tr',id:'truck',n:'Food truck equipado (cocina de servicio, generador)',q:1,u:850000,st:'s',sc:'C'},
  {c:'tr',id:'cambro',n:'Contenedores térmicos de carga frontal (6 insertos GN)',q:6,u:9000,st:'r',src:6,sc:'AB',note:'Cambro UPC400: USD 456.50 en EUA; en México, ≈ $9,000 con importación (supuesto). Mantienen la comida a ≥ 60 °C.',qC:3},
  {c:'tr',id:'gn',n:'Insertos GN de acero inoxidable con tapa',q:30,u:350,st:'s',sc:'ABC'},
@@ -576,12 +576,12 @@ var SC = {
   C:{key:'C',name:'Food truck',short:'C · Food truck',pack:5,cap:45,aux:function(q){return 1;},vop:10000,color:'#9A948A'}
 };
 var K = {h0:150,ramp:6,gPct:0.714,gas:2,cooks0:3,salAux:10500,dStart:5,salD:11000,encStart:6,encSal:16000,fac:1.35,util:8000,othF:12000,dso:22,dpo:15,invDays:5,H:36};
-var DEF = {price:84,h1:350,part:85,g0:150,food:34,days:24,socio:0,salC:12000,rent:18000};
+var DEF = {price:85,h1:350,part:100,g0:150,food:30,days:22,socio:0,salC:12000,rent:16000};
 
 function month(s,v,m){
   var S=SC[s];
   var prog=Math.min(1,(m-1)/K.ramp), head=K.h0+(v.h1-K.h0)*prog;
-  var g = v.g0>0 ? Math.max(v.g0, K.gPct*head) : 0;
+  var g = v.g0;
   var served=head*v.part/100, billed=Math.max(served,g);
   var rev=billed*v.price*v.days;
   var food=served*v.days*v.food, pack=served*v.days*S.pack, gas=served*v.days*K.gas;
@@ -787,10 +787,10 @@ function renderSim(P){
   CTRL.forEach(function(c){ el('o_'+c.k).textContent=c.f(v[c.k]); });
   var X=P[cur], r1=X.rows[0], r12=X.rows[11], be=breakeven(cur,v);
   hint('price','Con IVA: '+mxn(v.price*1.16,2)+'. El trabajador paga '+mxn(v.price*1.16/2,2)+'.',v.price*1.16>100?'var(--warn)':'');
-  if(r1.unserved>0.5) hint('g0','Mes 1: comen ≈ '+n0(r1.served)+' y la ancla paga ≈ '+n0(r1.unserved)+' platillos/día sin consumir. Después, el mínimo sube a 71% de la plantilla.','var(--warn)');
-  else hint('g0',v.g0?'El mínimo sube a 71% de la plantilla conforme crece.':'Sin mínimo: el ingreso depende sólo de lo que se consuma.');
+  if(r1.unserved>0.5) hint('g0','Mes 1: comen ≈ '+n0(r1.served)+' y la ancla paga ≈ '+n0(r1.unserved)+' platillos/día sin consumir.','var(--warn)');
+  else hint('g0',v.g0?'Se pagan '+v.g0+' platillos diarios, se consuman o no. Arriba de eso se cobra lo consumido.':'Sin mínimo: el ingreso depende sólo de lo que se consuma.');
   hint('h1','Se alcanza en 6 meses desde 150 empleados.');
-  hint('food','Incluye merma. Objetivo del menú: ≈ $34.');
+  hint('food','Incluye merma. Base: $30.');
   if(v.salC<SM_MES) hint('salC','Por debajo del salario mínimo 2026 (≈ '+mxn(SM_MES)+'/mes) <sup class="ref"><a href="#s9">[9]</a></sup>.','var(--bad)'); else hint('salC','Más 35% de cargas sociales. Personal en línea: $10,500.');
   hint('rent','También cambia el depósito en la inversión.');
   hint('socio',v.socio?'':'En $0, tu trabajo diario no aparece como costo; esa función vale ≈ $20–25k/mes.',v.socio?'':'var(--warn)');
@@ -839,7 +839,7 @@ function renderProj(X){
   el('tblProj').innerHTML=h+'</tbody>';
 }
 function renderFixed(){
-  var r=[['Plantilla inicial de la ancla','150 empleados; llega a la meta en 6 meses'],['Mínimo garantizado','El mayor entre el valor elegido y 71% de la plantilla (150 → 250)'],['Cocineros','3 al arranque; 1 por cada '+SC[cur].cap+' platillos/día'],['Personal de línea en sitio','Escenario B: 1 por cada 150 platillos/día · C: 1 · A: ninguno · $10,500 brutos'],['Repartidor','Desde el mes 5 · $11,000 brutos'],['Encargado de cocina','Desde el mes 6 · $16,000 brutos'],['Cargas sociales','35% sobre sueldos brutos'],['Gas y energía','$2 por platillo'],['Empaque y consumibles','A y C: $5 (contenedor individual) · B: $4.50 (plato desechable de buena calidad, cubiertos, vaso y servilleta)'],['Servicios del local / otros fijos','$8,000 / $12,000 al mes (contador, seguro de responsabilidad civil, plagas, mantenimiento)'],['Operación del vehículo','Van usada: $7,000/mes (combustible, mantenimiento y seguro) · Food truck: $10,000/mes'],['Capital de trabajo','Cobro a 22 días, pago a proveedores a 15 días y 5 días de inventario'],['Impuestos','No incluidos: el EBITDA es antes de impuestos, intereses y depreciación']];
+  var r=[['Plantilla inicial de la ancla','150 empleados; llega a la meta en 6 meses'],['Mínimo garantizado','Se paga el valor elegido (base: 150 platillos/día), se consuma o no; arriba de eso, lo consumido'],['Cocineros','3 al arranque; 1 por cada '+SC[cur].cap+' platillos/día'],['Personal de línea en sitio','Escenario B: 1 por cada 150 platillos/día · C: 1 · A: ninguno · $10,500 brutos'],['Repartidor','Desde el mes 5 · $11,000 brutos'],['Encargado de cocina','Desde el mes 6 · $16,000 brutos'],['Cargas sociales','35% sobre sueldos brutos'],['Gas y energía','$2 por platillo'],['Empaque y consumibles','A y C: $5 (contenedor individual) · B: $4.50 (plato desechable de buena calidad, cubiertos, vaso y servilleta)'],['Servicios del local / otros fijos','$8,000 / $12,000 al mes (contador, seguro de responsabilidad civil, plagas, mantenimiento)'],['Operación del vehículo','Van usada: $7,000/mes (combustible, mantenimiento y seguro) · Food truck: $10,000/mes'],['Capital de trabajo','Cobro a 22 días, pago a proveedores a 15 días y 5 días de inventario'],['Impuestos','No incluidos: el EBITDA es antes de impuestos, intereses y depreciación']];
   el('tblFixed').innerHTML='<tbody>'+r.map(function(x){return '<tr><td style="width:38%">'+x[0]+'</td><td>'+x[1]+'</td></tr>';}).join('')+'</tbody>';
 }
 function update(){ var P=all(); renderHero(P); renderSide(P); renderVol(P.B); renderWin(P); renderScCards(P); renderComp(P); renderInvBars(P); renderInvest(P); renderSim(P); }
